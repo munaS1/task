@@ -1,0 +1,164 @@
+<section class="ASSection">
+
+  <!-- ============================== -->
+  <!-- Page Header -->
+  <!-- ============================== -->
+  <header class="mb-4">
+    <h2 class="h5 mb-1">Data Tables</h2>
+    <p class="u-muted mb-0">
+      Structured tables with sorting, filtering, and responsive layouts.
+    </p>
+  </header>
+
+  <div class="ASTablesGrid">
+
+    <!-- ============================== -->
+    <!-- Basic Table -->
+    <!-- ============================== -->
+    <section class="ASTablesBlock">
+      <h3>Basic Table</h3>
+      <p class="u-muted">Simple structured data table</p>
+
+      <div class="ASCard">
+        <div class="ASCardBody">
+
+          <div class="ASTableWrap">
+            <table class="ASTable">
+              <thead class="ASTableHead">
+                <tr>
+                  <th>#</th>
+                  <th>Name</th>
+                  <th>Department</th>
+                  <th>Status</th>
+                  <th>Action</th>
+                </tr>
+              </thead>
+
+              <tbody>
+                <tr>
+                  <td>1</td>
+                  <td>Ahmed Khalid</td>
+                  <td>IT</td>
+                  <td><span class="ASTableStatus is-success">Active</span></td>
+                  <td>
+                    <button class="ASBtn ASBtnLight--primary">View</button>
+                  </td>
+                </tr>
+
+                <tr>
+                  <td>2</td>
+                  <td>Sarah Ali</td>
+                  <td>HR</td>
+                  <td><span class="ASTableStatus is-error">Inactive</span></td>
+                  <td>
+                    <button class="ASBtn ASBtnLight--info">Details</button>
+                  </td>
+                </tr>
+
+                <tr>
+                  <td>3</td>
+                  <td>Mohammed Saleh</td>
+                  <td>Finance</td>
+                  <td><span class="ASTableStatus is-warning">Pending</span></td>
+                  <td>
+                    <button class="ASBtn ASBtnLight--secondary">Open</button>
+                  </td>
+                </tr>
+
+              </tbody>
+            </table>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================== -->
+    <!-- Striped Table -->
+    <!-- ============================== -->
+    <section class="ASTablesBlock">
+      <h3>Striped Table</h3>
+      <p class="u-muted">Rows with alternating background</p>
+
+      <div class="ASCard">
+        <div class="ASCardBody">
+
+          <div class="ASTableWrap">
+            <table class="ASTable ASTable--striped">
+              <thead class="ASTableHead">
+                <tr>
+                  <th>#</th>
+                  <th>Service</th>
+                  <th>Requests</th>
+                  <th>Status</th>
+                </tr>
+              </thead>
+
+              <tbody>
+                <tr>
+                  <td>1</td>
+                  <td>License</td>
+                  <td>120</td>
+                  <td><span class="ASTableStatus is-success">Active</span></td>
+                </tr>
+                <tr>
+                  <td>2</td>
+                  <td>Permits</td>
+                  <td>80</td>
+                  <td><span class="ASTableStatus is-warning">Pending</span></td>
+                </tr>
+                <tr>
+                  <td>3</td>
+                  <td>Complaints</td>
+                  <td>45</td>
+                  <td><span class="ASTableStatus is-error">Closed</span></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================== -->
+    <!-- Table with Search -->
+    <!-- ============================== -->
+    <section class="ASTablesBlock">
+      <h3>Table with Search</h3>
+      <p class="u-muted">Filter table data instantly</p>
+
+      <div class="ASCard">
+        <div class="ASCardHeader">
+          <input 
+            type="text" 
+            class="ASInput ASTableSearch" 
+            placeholder="Search..." 
+          />
+        </div>
+
+        <div class="ASCardBody">
+          <div class="ASTableWrap">
+            <table class="ASTable" id="searchTable">
+              <thead class="ASTableHead">
+                <tr>
+                  <th>Name</th>
+                  <th>Department</th>
+                </tr>
+              </thead>
+
+              <tbody>
+                <tr><td>Ahmed</td><td>IT</td></tr>
+                <tr><td>Sarah</td><td>HR</td></tr>
+                <tr><td>Ali</td><td>Finance</td></tr>
+                <tr><td>Fahad</td><td>Operations</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+  </div>
+</section>

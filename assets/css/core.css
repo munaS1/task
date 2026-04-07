@@ -1,0 +1,38 @@
+/**
+ File: core.css
+ Purpose: Reset, base typography, a11y & small utilities
+*/
+* { box-sizing: border-box; }
+html { font-size: 100%; }
+html[dir="rtl"] body { direction: rtl; text-align: start; }
+* {
+  text-align: start;
+}
+body {
+  margin: 0;
+  background: var(--ASSurface);
+  color: var(--ASText);
+  font: 400 var(--ASFontSize)/var(--ASLineHeight) var(--ASFontPrimary);
+}
+
+/* links */
+a { color: var(--ASPrimary); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+/* focus visible */
+:focus-visible { outline: none; box-shadow: var(--ASFocus); border-radius: 6px; }
+
+/* images */
+img { max-width: 100%; height: auto; }
+
+/* utilities (global, tiny) */
+.u-muted { color: var(--ASText); }
+.u-shadow-sm { box-shadow: var(--ASShadowSm); }
+.u-rounded { border-radius: var(--ASRadiusMd); }
+.u-divider { border-inline-start: 1px solid var(--ASBorder); display: inline-block; inline-size:1px; block-size:1.25rem; }
+.u-visually-hidden { position:absolute!important; inline-size:1px; block-size:1px; overflow:hidden; clip:rect(0 0 0 0); white-space:nowrap; clip-path:inset(50%); }
+
+/* spacing helpers commonly used */
+.u-px { padding-inline: var(--ASSpaceMd); }
+.u-py { padding-block: var(--ASSpaceMd); }
+.u-mb { margin-block-end: var(--ASSpaceMd); }

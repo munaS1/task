@@ -1,0 +1,268 @@
+<section class="ASSection">
+  <div class="ASContainer">
+
+    <header class="ASPageHead mb-3">
+      <div>
+        <h2 class="h5 mb-1">Rating Collection</h2>
+        <p class="u-muted mb-0">Premium rating patterns in AS tokens (stars / half / NPS / distribution / sentiment).</p>
+      </div>
+    </header>
+
+    <!-- ===================================== -->
+    <!-- Block: Premium Icon Ratings -->
+    <!-- ===================================== -->
+    <section class="ASCardsBlock">
+      <h3>Premium Icon Ratings</h3>
+      <p class="ASCardsBlock__sub u-muted">Clean layout, smooth hover, keyboard, half steps</p>
+
+      <div class="ASCardsRow ASCardsRow--3">
+
+        <!-- Star (Half) -->
+        <article class="ASCard">
+          <header class="ASCardHeader">
+            <h4 class="ASCardTitle">Star (Half Step)</h4>
+          </header>
+
+          <div class="ASCardBody">
+            <div class="ASRatingTop">
+              <div class="ASRatingKPI">
+                <div class="ASRatingKPI__num"><span data-as="rating-kpi">4.5</span></div>
+                <div class="ASRatingKPI__meta">
+                  <div class="ASRatingKPI__label">Overall</div>
+                  <div class="ASRatingKPI__sub u-muted">2,341 reviews</div>
+                </div>
+              </div>
+
+              <span class="ASBadgeLite ASBadgeLite--info">Verified</span>
+            </div>
+
+            <div class="ASRatingWrap">
+              <div
+                class="ASRating"
+                data-as="rating"
+                data-icon="star"
+                data-color="primary"
+                data-max="5"
+                data-step="0.5"
+                data-value="4.5"
+                aria-label="Star rating"
+              ></div>
+
+              <div class="ASRatingHintRow">
+                <span class="ASHintDot"></span>
+                <span class="u-muted">Press ← / → to adjust</span>
+              </div>
+            </div>
+
+            <!-- Distribution -->
+            <div class="ASDist">
+              <div class="ASDistRow">
+                <span class="ASDistLabel">5</span>
+                <div class="ASDistTrack" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="64">
+                  <div class="ASDistFill" style="width:64%"></div>
+                </div>
+                <span class="ASDistPct u-muted">64%</span>
+              </div>
+              <div class="ASDistRow">
+                <span class="ASDistLabel">4</span>
+                <div class="ASDistTrack" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="22">
+                  <div class="ASDistFill" style="width:22%"></div>
+                </div>
+                <span class="ASDistPct u-muted">22%</span>
+              </div>
+              <div class="ASDistRow">
+                <span class="ASDistLabel">3</span>
+                <div class="ASDistTrack" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="9">
+                  <div class="ASDistFill" style="width:9%"></div>
+                </div>
+                <span class="ASDistPct u-muted">9%</span>
+              </div>
+              <div class="ASDistRow">
+                <span class="ASDistLabel">2</span>
+                <div class="ASDistTrack" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="3">
+                  <div class="ASDistFill" style="width:3%"></div>
+                </div>
+                <span class="ASDistPct u-muted">3%</span>
+              </div>
+              <div class="ASDistRow">
+                <span class="ASDistLabel">1</span>
+                <div class="ASDistTrack" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="2">
+                  <div class="ASDistFill" style="width:2%"></div>
+                </div>
+                <span class="ASDistPct u-muted">2%</span>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Heart -->
+        <article class="ASCard">
+          <header class="ASCardHeader">
+            <h4 class="ASCardTitle">Heart Rating</h4>
+          </header>
+
+          <div class="ASCardBody">
+            <div class="ASRatingTop">
+              <div class="ASRatingMiniMeta">
+                <span class="ASDot ASDot--success"></span>
+                <span class="u-muted">Customer love</span>
+              </div>
+              <span class="ASBadgeLite">Live</span>
+            </div>
+
+            <div
+              class="ASRating ASRating--lg"
+              data-as="rating"
+              data-icon="heart"
+              data-color="error"
+              data-max="5"
+              data-step="1"
+              data-value="3"
+              aria-label="Heart rating"
+            ></div>
+
+            <div class="ASInlineMeta">
+              <span class="ASInlineMeta__value"><span data-as="rating-kpi">3</span>/5</span>
+              <span class="u-muted">Based on last week</span>
+            </div>
+
+            <div class="ASDivider"></div>
+
+            <div class="ASQuickPills">
+              <button class="ASChip is-active" type="button" data-set-rating="5">Amazing</button>
+              <button class="ASChip" type="button" data-set-rating="4">Good</button>
+              <button class="ASChip" type="button" data-set-rating="3">Okay</button>
+              <button class="ASChip" type="button" data-set-rating="2">Bad</button>
+              <button class="ASChip" type="button" data-set-rating="1">Awful</button>
+            </div>
+          </div>
+        </article>
+
+        <!-- Emoji Sentiment -->
+        <article class="ASCard">
+          <header class="ASCardHeader">
+            <h4 class="ASCardTitle">Sentiment (Emoji)</h4>
+          </header>
+
+          <div class="ASCardBody">
+            <div class="ASSentiment">
+              <div class="ASSentimentTop">
+                <div class="ASSentimentFace" data-as="sentiment-face" aria-hidden="true">🙂</div>
+                <div class="ASSentimentText">
+                  <div class="ASSentimentTitle">How was your experience?</div>
+                  <div class="u-muted">Tap an emoji to choose</div>
+                </div>
+              </div>
+
+              <div
+                class="ASRating ASRating--emoji"
+                data-as="rating"
+                data-icon="emoji"
+                data-color="secondary"
+                data-max="5"
+                data-step="1"
+                data-value="4"
+                aria-label="Emoji sentiment"
+              ></div>
+
+              <div class="ASInlineMeta">
+                <span class="ASInlineMeta__value"><span data-as="rating-kpi">4</span>/5</span>
+                <span class="u-muted" data-as="sentiment-label">Happy</span>
+              </div>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- ===================================== -->
+    <!-- Block: NPS (0–10) -->
+    <!-- ===================================== -->
+    <section class="ASCardsBlock">
+      <h3>NPS Score</h3>
+      <p class="ASCardsBlock__sub u-muted">0–10 pills with clear selection & categories</p>
+
+      <div class="ASCardsRow ASCardsRow--2">
+
+        <article class="ASCard">
+          <header class="ASCardHeader">
+            <h4 class="ASCardTitle">NPS (0–10)</h4>
+          </header>
+
+          <div class="ASCardBody">
+            <div class="ASNPSHead">
+              <div>
+                <div class="ASNPSQ">How likely to recommend?</div>
+                <div class="u-muted">0 = not likely, 10 = very likely</div>
+              </div>
+              <div class="ASNPSBadge">
+                <span class="ASBadgeLite ASBadgeLite--info" data-as="nps-kpi">8</span>
+              </div>
+            </div>
+
+            <div class="ASNPSPills" data-as="nps" data-value="8" aria-label="NPS score"></div>
+
+            <div class="ASNPSMeta">
+              <span class="ASDot ASDot--info"></span>
+              <span class="u-muted" data-as="nps-label">Promoter</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="ASCard">
+          <header class="ASCardHeader">
+            <h4 class="ASCardTitle">Read-only (Listing)</h4>
+          </header>
+
+          <div class="ASCardBody">
+            <div class="ASListingRate">
+              <div class="ASListingRate__left">
+                <div class="ASAvatarLite" aria-hidden="true"><i class="fa-solid fa-building"></i></div>
+                <div>
+                  <div class="ASListingRate__title">Aseer Services</div>
+                  <div class="u-muted">Support center</div>
+                </div>
+              </div>
+
+              <div class="ASListingRate__right">
+                <span class="ASBadgeLite">4.2</span>
+                <div
+                  class="ASRating ASRating--sm"
+                  data-as="rating"
+                  data-icon="star"
+                  data-color="info"
+                  data-max="5"
+                  data-step="0.5"
+                  data-value="4"
+                  data-readonly="true"
+                  aria-label="Read only rating"
+                ></div>
+              </div>
+            </div>
+
+            <div class="ASDivider"></div>
+
+            <div class="ASScoreRow">
+              <span class="u-muted">Resolution</span>
+              <div class="ASScoreTrack" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="82">
+                <div class="ASScoreFill" style="width:82%"></div>
+              </div>
+              <span class="ASScoreNum">82%</span>
+            </div>
+
+            <div class="ASScoreRow">
+              <span class="u-muted">Speed</span>
+              <div class="ASScoreTrack" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="68">
+                <div class="ASScoreFill ASScoreFill--secondary" style="width:68%"></div>
+              </div>
+              <span class="ASScoreNum">68%</span>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+  </div>
+</section>

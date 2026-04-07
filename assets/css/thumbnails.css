@@ -1,0 +1,80 @@
+/* =====================================
+   AS THUMBNAILS SYSTEM
+   ===================================== */
+
+.ASThumbnailsGrid {
+  display: grid;
+  gap: 2rem;
+}
+
+.ASThumbnailsBlock h3 {
+  margin-bottom: .25rem;
+}
+
+.ASThumbnailsBlock p {
+  color: var(--ASTextMuted);
+  margin-bottom: 1rem;
+}
+
+.ASThumbnailsRow {
+  display: grid;
+  gap: 1.25rem;
+}
+
+.ASThumbnailsRow--4 {
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+}
+
+.ASThumbnailsRow--3 {
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+}
+
+/* Thumbnail Component */
+
+.ASThumbnail {
+  overflow: hidden;
+  cursor: pointer;
+  transition: transform .2s ease;
+}
+
+.ASThumbnail:hover {
+  transform: translateY(-4px);
+}
+
+.ASThumbnailMedia {
+  position: relative;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  border-radius: var(--ASRadiusLg);
+}
+
+.ASThumbnailMedia img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Overlay */
+
+.ASThumbnailOverlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,.45);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity .2s ease;
+}
+
+.ASThumbnail:hover .ASThumbnailOverlay {
+  opacity: 1;
+}
+/* Active State */
+
+.ASThumbnail.is-active {
+  outline: 3px solid var(--ASPrimary);
+  outline-offset: 2px;
+  transform: translateY(-4px);
+}

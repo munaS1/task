@@ -1,0 +1,241 @@
+/* =====================================
+   AS TABLES SYSTEM
+===================================== */
+
+.ASTablesGrid {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.ASTablesBlock h3 {
+  margin-bottom: .25rem;
+}
+
+.ASTableWrap {
+  overflow-x: auto;
+}
+
+/* Table */
+
+.ASTable {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: .9rem;
+}
+
+.ASTable th,
+.ASTable td {
+  padding: .75rem;
+  text-align: start;
+  border-bottom: 1px solid var(--ASBorder);
+}
+
+.ASTableHead th {
+  font-weight: 600;
+  background: var(--ASSurface);
+}
+
+/* Striped */
+.ASTable--striped tbody tr:nth-child(even) {
+  background: rgba(0,0,0,0.02);
+}
+
+/* Hover */
+.ASTable tbody tr:hover {
+  background: rgba(0,0,0,0.04);
+}
+
+/* Status */
+
+.ASTableStatus {
+  padding: .2rem .5rem;
+  border-radius: 999px;
+  font-size: .75rem;
+}
+
+.ASTableStatus.is-success {
+  background: var(--ASColor-success);
+  color: #fff;
+}
+
+.ASTableStatus.is-error {
+  background: var(--ASColor-error);
+  color: #fff;
+}
+
+.ASTableStatus.is-warning {
+  background: var(--ASColor-alert);
+  color: #fff;
+}
+/* =====================================
+   AS EDITOR TABLE
+===================================== */
+
+.ASEditTableBar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: .75rem;
+}
+
+.ASTableActionsCol {
+  min-width: 220px;
+}
+
+.ASTableActions {
+  white-space: nowrap;
+}
+
+.ASTableActionGroup {
+  display: flex;
+  align-items: center;
+  gap: .5rem;
+  flex-wrap: wrap;
+}
+
+.ASEditInput,
+.ASEditSelect {
+  width: 100%;
+  min-width: 120px;
+  border: 1px solid var(--ASBorder);
+  background: #fff;
+  color: var(--ASText);
+  padding: .55rem .75rem;
+  border-radius: 10px;
+  font: inherit;
+}
+
+.ASEditInput:focus,
+.ASEditSelect:focus {
+  outline: 0;
+  border-color: var(--ASPrimary);
+  box-shadow: var(--ASFocus);
+}
+
+.ASTable tr.is-editing {
+  background: rgba(0, 123, 105, 0.04);
+}
+/* =====================================
+   AS EXTENSION TABLES
+===================================== */
+
+.ASExtTableToolbar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.ASExtTableToolbarGroup {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: .75rem;
+  width: 100%;
+}
+
+.ASExtTableSearch {
+  min-width: 260px;
+  flex: 1 1 320px;
+}
+
+.ASExtTableFilter {
+  min-width: 180px;
+  flex: 0 0 auto;
+}
+
+.ASExtTableBulkBar {
+  display: flex;
+  align-items: center;
+  gap: .75rem;
+  flex-wrap: wrap;
+  width: 100%;
+  padding: .85rem 1rem;
+  border: 1px solid var(--ASBorder);
+  border-radius: 12px;
+  background: rgba(0, 123, 105, 0.05);
+}
+
+.ASExtBulkText {
+  color: var(--ASText);
+}
+
+.ASExtBulkActions {
+  display: flex;
+  align-items: center;
+  gap: .5rem;
+  flex-wrap: wrap;
+}
+
+.ASTableWrap--sticky {
+  max-height: 540px;
+  overflow: auto;
+}
+
+.ASTableWrap--sticky .ASTableHead th {
+  position: sticky;
+  top: 0;
+  z-index: 2;
+  background: var(--ASSurface);
+}
+
+.ASExtCheckboxCol {
+  width: 52px;
+  min-width: 52px;
+  text-align: center;
+}
+
+.ASExtRow.is-selected {
+  background: rgba(0, 123, 105, 0.06);
+}
+
+.ASSortButton {
+  border: 0;
+  background: transparent;
+  padding: 0;
+  color: inherit;
+  font: inherit;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: .35rem;
+  cursor: pointer;
+}
+
+.ASSortIcon {
+  font-size: .8rem;
+  color: var(--ASTextMuted);
+}
+
+.ASSortButton.is-active .ASSortIcon {
+  color: var(--ASPrimary);
+}
+
+.ASExtDetailRow td {
+  background: rgba(0, 0, 0, 0.02);
+  border-bottom: 1px solid var(--ASBorder);
+}
+
+.ASExtDetailBox {
+  padding: .9rem 1rem;
+  color: var(--ASText);
+  line-height: 1.7;
+}
+
+@media (max-width: 768px) {
+  .ASExtTableToolbar {
+    align-items: stretch;
+  }
+
+  .ASExtTableToolbarGroup,
+  .ASExtTableBulkBar {
+    width: 100%;
+  }
+
+  .ASExtTableSearch,
+  .ASExtTableFilter {
+    width: 100%;
+    min-width: 100%;
+  }
+}

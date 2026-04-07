@@ -1,0 +1,352 @@
+/**
+ * File: counter.css
+ * Purpose: AS Counters components (page-scoped)
+ */
+
+/* ===== Page grid (like Buttons / Cards) ===== */
+.ASCountersGrid { row-gap: 1.5rem; }
+@media (min-width: 992px){
+  .ASCountersGrid{
+    display:grid; grid-template-columns:1fr 1fr; column-gap:1.25rem;
+  }
+}
+
+.ASCountersBlock{
+  background:#fff;
+  border:1px solid var(--ASBorder);
+  border-radius:12px;
+  padding:1rem;
+}
+.ASCountersBlock h3{ font-size:1.05rem; margin:0 0 .25rem; }
+.ASCountersBlock p{ color:var(--ASTextMuted); margin:0 0 .75rem; font-size:.95rem; }
+
+/* section rows */
+.ASCountersRow{ display:grid; grid-template-columns:1fr; gap:.75rem; }
+.ASCountersRow--2{ grid-template-columns:1fr; }
+.ASCountersRow--3{ grid-template-columns:1fr; }
+.ASCountersRow--4{ grid-template-columns:1fr; }
+@media(min-width:768px){
+  .ASCountersRow--2{ grid-template-columns: repeat(2,1fr); }
+  .ASCountersRow--3{ grid-template-columns: repeat(3,1fr); }
+}
+@media(min-width:1200px){
+  .ASCountersRow--4{ grid-template-columns: repeat(4,1fr); }
+}
+
+/* =============== Countdown cards ====================== */
+.ASCounterCard{
+  background: var(--ASSurface);
+  border:2px solid var(--ASBorder);
+  border-radius: var(--ASRadiusLg);
+  box-shadow: var(--ASShadowSm);
+  padding: 1rem;
+  display:flex; flex-direction:column; gap:.75rem;
+}
+.ASCounterHeader{ display:flex; align-items:center; gap:.75rem; }
+.ASCounterTitle{ margin:0; font-weight:700; font-size:1rem; }
+.ASCounterIcon{
+  inline-size:2.25rem; block-size:2.25rem;
+  border-radius: var(--ASRadiusSm); object-fit:contain;
+  background: var(--ASInfo); ;
+  padding:.25rem;
+}
+.ASCounterBody{
+  display:flex; align-items:center; justify-content:space-between; gap:1rem;
+}
+.ASCounterTime{
+  display:flex; align-items:baseline; gap:.25rem;
+  font-weight:800; font-size:2.25rem;
+}
+.ASCounterTime .lbl{ font-size:.8rem; color:var(--ASSubText); margin-inline-start:.25rem; }
+.ASCounterTime .sep{ font-size:1.5rem; color:var(--ASSubText); margin-inline:.25rem; }
+.ASCounterTime .num{ font-weight:200; }
+
+
+.ASCounterAside{ text-align:end; }
+.ASCounterAside .lbl{ font-size:.85rem; color:var(--ASSubText); }
+.ASCounterAside .val{ font-size:1.5rem; font-weight:200; }
+
+.ASCounterPanel{
+  border-radius: var(--ASRadiusMd);
+  padding: .85rem;
+  background: color-mix(in oklab, #fff);
+  display:flex; flex-direction:column; gap:.5rem;
+}
+.ASCounterPanelHead{ display:flex; align-items:center; gap:.5rem; color:var(--ASInfo); }
+.ASCounterPanelHead img{ inline-size:1.25rem; }
+.ASCounterPanelVal{ color:var(--ASInfo); font-weight:700; }
+
+/* color mods */
+.is-teal .ASCounterIcon{ background: var(--ASPrimary); }
+.is-teal .ASCounterTime, .is-teal .ASCounterAside .val{ color: var(--ASPrimary); }
+
+.is-blue .ASCounterIcon{ background: var(--ASInfo); }
+.is-blue .ASCounterTime, .is-blue .ASCounterAside .val{ color: var(--ASInfo); }
+
+.is-orange .ASCounterIcon{ background: var(--ASWarning); }
+.is-orange .ASCounterTime, .is-orange .ASCounterAside .val{ color: var(--ASWarning); }
+
+.is-outline-blue{ border-color: var(--ASInfo); }
+
+/* =========== Number counters =========================== */
+.ASCounterNumber{
+  background: var(--ASSurface);
+  border:1px solid var(--ASBorder);
+  border-radius: var(--ASRadiusLg);
+  box-shadow: var(--ASShadowSm);
+  text-align:center;
+  padding: 1.25rem 1rem;
+}
+.ASCounterNumberIcon{
+  inline-size:4rem; block-size:4rem;
+  border-radius: 999px;
+  display:grid; place-items:center;
+  margin: 0 auto .75rem;
+  background: color-mix(in oklab, #fff);
+}
+
+.ASCounterNumberLabel{ color:var(--ASSubText); margin-bottom:.25rem; }
+.ASCounterNumberVal{ font-size:2.25rem; font-weight:500; }
+
+.ASCounterNumber.is-teal  .ASCounterNumberVal{ color: var(--ASPrimary); }
+.ASCounterNumber.is-brown .ASCounterNumberVal{ color: var(--ASSecondary); }
+.ASCounterNumber.is-red   .ASCounterNumberVal{ color: var(--ASDanger); }
+
+
+/* ================= Statistic tiles ===================== */
+.ASCounterStat{
+  background:#fff;
+  border-radius: var(--ASRadiusLg);
+  box-shadow: var(--ASShadowSm);
+  padding: .9rem 1rem;
+  position:relative;
+  border-inline-start:4px solid var(--ASPrimary);
+  color: var(--ASPrimary);
+}
+.ASCounterStatTop{ display:flex; align-items:center; justify-content:space-between; }
+.ASCounterBadge{
+  font-size:.75rem; padding:.2rem .55rem; border-radius:8px;
+  background: color-mix(in oklab, #fff);
+}
+.ASCounterStatVal{ display:block; font-size:1.5rem; font-weight:800; margin:.5rem 0 .25rem; }
+.ASCounterStatLabel{ color:var(--ASSubText); }
+
+.ASCounterStat.is-success{ border-color:var(--ASSuccess); color:var(--ASSuccess); }
+.ASCounterStat.is-info{    border-color:var(--ASInfo);    color:var(--ASInfo); }
+.ASCounterStat.is-alert{   border-color:var(--ASWarning); color:var(--ASWarning); }
+.ASCounterStat.is-error{   border-color:var(--ASDanger);  color:var(--ASDanger); }
+
+/* ================== Progress Counters =================== */
+.ASProgressCounter {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: var(--ASRadiusLg);
+    color: var(--ASColor-greyFg);
+    height: 5.75rem;
+    font-weight: 400;
+    text-align: center;
+    box-shadow: var(--ASShadowSm);
+  }
+  .ASProgressVal {
+    font-size: 1.875rem;
+    line-height: 1;
+    margin-bottom: 0.25rem;
+    letter-spacing: 0.3px;
+  }
+  .ASProgressLabel {
+    font-size: 0.9rem;
+    opacity: 0.95;
+  }
+  
+  /* Solid background colors matching Figma */
+  .ASProgressCounter.is-brown  { background: var(--ASSecondary); }
+  .ASProgressCounter.is-green  { background: var(--ASSuccess); }
+  .ASProgressCounter.is-orange { background: var(--ASWarning); }
+  .ASProgressCounter.is-blue   { background: var(--ASInfo); }
+  
+  /* ================== Badge Counters =================== */
+  .ASBadgeCounters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    align-items: center;
+  }
+  .ASBadgeCounter {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    padding: 0.45rem 0.9rem;
+    border-radius: 8px;
+    font-size: 0.95rem;
+    font-weight: 500;
+    background: rgba(0,0,0,0.05);
+    line-height: 1.4;
+  }
+  .ASBadgeCounter img {
+    inline-size: 1rem;
+    block-size: 1rem;
+  }
+  
+  /* Figma-accurate color tones */
+  .ASBadgeCounter.is-green {
+    background: rgba(27,131,84,0.1);
+    color: var(--ASSuccess);
+  }
+  .ASBadgeCounter.is-teal {
+    background: rgba(0,123,105,0.1);
+    color: var(--ASPrimary);
+  }
+  .ASBadgeCounter.is-blue {
+    background: rgba(71,151,208,0.1);
+    color: var(--ASInfo);
+  }
+  .ASBadgeCounter.is-orange {
+    background: rgba(236,127,33,0.1);
+    color: var(--ASWarning);
+  }
+  .ASBadgeCounter.is-red {
+    background: rgba(180,35,24,0.1);
+    color: var(--ASDanger);
+  }
+  
+  /* ================== Minimal Counters =================== */
+  .ASMinimalCounter {
+    text-align: center;
+    padding: 1.25rem 1rem;
+  }
+  .ASMinimalVal {
+    font-size: 2.25rem;
+    font-weight: 400;
+    line-height: 1.1;
+    letter-spacing: 0.4px;
+  }
+  .ASMinimalLabel {
+    font-size: 0.9rem;
+    color: var(--ASSubText);
+    margin-top: 0.35rem;
+  }
+  .ASMinimalCounter.is-teal .ASMinimalVal   { color: var(--ASPrimary) ; }
+  .ASMinimalCounter.is-green .ASMinimalVal  { color: var(--ASSuccess); }
+  .ASMinimalCounter.is-blue .ASMinimalVal   { color: var(--ASInfo); }
+  .ASMinimalCounter.is-orange .ASMinimalVal { color: var(--ASWarning); }
+  
+  /* ================= Card Summary Counters ================= */
+/* ===== Refined Figma-accurate card alignment ===== */
+.ASCardCounter {
+    background: var(--ASWhite);
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    border-radius: var(--ASRadiusLg);
+    padding: 1.25rem 1.5rem;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    transition: all 0.25s ease;
+  }
+  .ASCardCounter:hover {
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.06);
+    transform: translateY(-2px);
+  }
+  
+  /* Left content (icon + label + value) */
+  .ASCardLeft {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+  .ASCardIcon {
+    inline-size: 2.25rem;
+    block-size: 2.25rem;
+    border-radius: 6px;
+    display: grid;
+    place-items: center;
+  }
+  .ASCardIcon img {
+    inline-size: 1.25rem;
+    block-size: 1.25rem;
+  }
+  .ASCardText h4 {
+    margin: 0;
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: var(--ASSubText);
+  }
+  .ASCardValue {
+    font-size: 1.2rem;
+    font-weight: 500;
+    line-height: 1.1;
+    margin-top: 0.2rem;
+  }
+  
+  /* Right percentage */
+  .ASCardDelta {
+    font-size: 1.3rem;
+    font-weight: 400;
+    padding: 0.25rem 0.55rem;
+    border-radius: 4px;
+  }
+  .ASCardDelta.is-up {
+    color: var(--ASSuccess);
+  }
+  .ASCardDelta.is-down {
+    color: var(--ASWarning);
+  }
+  
+  /* Category colors */
+  .ASCardCounter:nth-child(1) .ASCardValue { color: var(--ASSuccess); }
+  .ASCardCounter:nth-child(2) .ASCardValue { color: var(--ASInfo); }
+  .ASCardCounter:nth-child(3) .ASCardValue { color: var(--ASSuccess); }
+  .ASCardCounter:nth-child(4) .ASCardValue { color: var(--ASWarning); }
+  
+  
+  /* ================= Icon Overview Counters ================= */
+  .ASIconCounter {
+    background: var(--ASWhite);
+    border: 1px solid rgba(0,0,0,0.08);
+    border-radius: var(--ASRadiusLg);
+    padding: 1.25rem 1rem;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    transition: box-shadow 0.25s ease, transform 0.25s ease;
+  }
+  .ASIconCounter:hover {
+    box-shadow: 0 3px 6px rgba(0,0,0,0.06);
+    transform: translateY(-2px);
+  }
+  
+  .ASIconCounter img {
+    inline-size: 1.75rem;
+    block-size: 1.75rem;
+    margin-bottom: 0.25rem;
+  }
+  
+  .ASIconValue {
+    font-size: 1.25rem;
+    font-weight: 400;
+    line-height: 1.1;
+  }
+  .ASIconLabel {
+    font-size: 0.9rem;
+    color: var(--ASSubText);
+  }
+  
+  /* Color mappings for icon counters */
+  .ASIconCounter.is-teal .ASIconValue   { color: var(--ASPrimary); }
+  .ASIconCounter.is-blue .ASIconValue   { color: var(--ASInfo); }
+  .ASIconCounter.is-green .ASIconValue  { color: var(--ASSuccess); }
+  .ASIconCounter.is-orange .ASIconValue { color: var(--ASWarning); }
+  .ASIconCounter.is-brown .ASIconValue  { color: var(--ASSecondary); }
+  
+  /* Consistent sizing grid */
+  .ASCountersRow--5 {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 1rem;
+  }
+  

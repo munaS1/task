@@ -1,0 +1,583 @@
+/**
+ File: footer.css
+ Purpose: Footer component styles
+*/
+
+/* ---------- Showcase layout (single column) ---------- */
+.ASFooterGrid {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+.ASFooterBlock {
+  background: var(--ASSurface);
+  border: 1px solid var(--ASBorder);
+  border-radius: var(--ASRadiusMd);
+  padding: var(--ASSpaceLg);
+  box-shadow: var(--ASShadowSm);
+}
+.ASFooterBlock h3 {
+  font-size: 1.05rem;
+  margin: 0 0 0.25rem;
+}
+.ASFooterBlock p {
+  color: var(--ASTextMuted);
+  margin: 0 0 0.75rem;
+  font-size: 0.95rem;
+}
+
+/* ---------- Common footer base ---------- */
+.ASFooter {
+  border-radius: var(--ASRadiusLg);
+  overflow: hidden;
+  margin-top: var(--ASSpaceMd);
+  font-size: 0.95rem;
+}
+.ASFooter a {
+  color: var(--ASText);
+  text-decoration: none;
+}
+.ASFooter a:hover {
+  color: var(--ASColor-primary);
+  text-decoration: underline;
+}
+
+/* ---------- Style 01 ---------- */
+.ASFooter--style1 {
+  background: var(--ASBg);
+  color: var(--ASText);
+  border-top: 4px dotted var(--ASColor-primary);
+  padding: var(--ASSpaceLg);
+}
+.ASFooter--style1 .ASFooterTop {
+  display: grid;
+  gap: var(--ASSpaceLg);
+}
+@media (min-width: 992px) {
+  .ASFooter--style1 .ASFooterTop {
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+  }
+}
+.ASFooterLogo {
+  max-width: 160px;
+  margin-bottom: var(--ASSpaceSm);
+}
+.ASFooter--style1 h4 {
+  font-weight: 700;
+  font-size: 1rem;
+  margin-bottom: var(--ASSpaceSm);
+  color: var(--ASColor-primary);
+}
+.ASFooterList {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.ASFooterList li {
+  margin-bottom: 0.35rem;
+}
+.ASFooterContact {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 var(--ASSpaceSm);
+}
+.ASFooterContact li {
+  margin-bottom: 0.4rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--ASText);
+}
+.ASFooterContact i {
+  color: var(--ASColor-primary);
+  font-size: 1rem;
+}
+.ASFooterSocial {
+  display: flex;
+  gap: 0.75rem;
+}
+.ASFooterSocial a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: color-mix(in oklab, var(--ASColor-primary) 12%, #fff);
+  color: var(--ASColor-primary);
+  transition: all 0.3s ease;
+}
+.ASFooterSocial a:hover {
+  background: var(--ASColor-primary);
+  color: var(--ASColor-primaryFg);
+}
+.ASFooterBottom {
+  margin-top: var(--ASSpaceLg);
+  padding-top: var(--ASSpaceSm);
+  border-top: 1px solid var(--ASBorder);
+  text-align: center;
+  font-size: 0.875rem;
+  color: var(--ASTextMuted);
+}
+
+/* ---------- Style 02 ---------- */
+.ASFooter--style2 {
+  background: var(--ASSurface);
+  border: 1px solid var(--ASBorder);
+  position: relative;
+}
+.ASFooter--style2 .ASFooterAccent {
+  height: 8px;
+  background: linear-gradient(
+    90deg,
+    var(--ASColor-primary) 0%,
+    var(--ASColor-secondary) 100%
+  );
+}
+.ASFooter--style2 .ASFooterContent {
+  padding: var(--ASSpaceLg);
+}
+.ASFooter--style2 .ASFooterTop {
+  display: grid;
+  gap: var(--ASSpaceLg);
+  text-align: start;
+}
+@media (min-width: 992px) {
+  .ASFooter--style2 .ASFooterTop {
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    align-items: flex-start;
+  }
+}
+.ASFooter--style2 h4 {
+  font-size: 1rem;
+  font-weight: 700;
+  margin-bottom: var(--ASSpaceSm);
+  color: var(--ASColor-primary);
+}
+.ASFooter--style2 .ASFooterBottom {
+  text-align: center;
+  margin-top: var(--ASSpaceMd);
+  padding-top: var(--ASSpaceSm);
+  border-top: 1px solid var(--ASBorder);
+  color: var(--ASTextMuted);
+  font-size: 0.875rem;
+}
+.ASFooter--style2 .ASFooterSocial {
+  display: flex;
+  gap: 0.5rem;
+}
+.ASFooter--style2 .ASFooterSocial a {
+  color: var(--ASColor-primary);
+  font-size: 1.1rem;
+  transition: color 0.3s ease;
+}
+.ASFooter--style2 .ASFooterSocial a:hover {
+  color: var(--ASColor-secondary);
+}
+
+/* ---------- Style 03 (Card-Based Layout) ---------- */
+.ASFooter--style3 {
+  background: var(--color-linen, var(--ASBg));
+  padding: var(--ASSpaceXl);
+  color: var(--color-gray-200, var(--ASText));
+}
+.ASFooterContactCards {
+  display: grid;
+  gap: var(--ASSpaceMd);
+  margin-bottom: var(--ASSpaceLg);
+}
+@media (min-width: 992px) {
+  .ASFooterContactCards {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+.ASContactCard {
+  background: #fff;
+  border: 1px solid var(--ASBorder);
+  border-radius: var(--ASRadiusLg);
+  padding: var(--ASSpaceMd);
+  box-shadow: var(--ASShadowSm);
+}
+.ASContactCard .ASCardIconCall {
+  background: color-mix(in oklab, var(--ASColor-success) 12%, #fff);
+  color: var(--ASColor-success);
+}
+.ASContactCard .ASCardIconMail {
+  background: color-mix(in oklab, var(--ASColor-alert) 12%, #fff);
+  color: var(--ASColor-alert);
+}
+.ASContactCard .ASCardIconLocation {
+  background: color-mix(in oklab, var(--ASColor-error) 12%, #fff);
+  color: var(--ASColor-error);
+}
+.ASCardHeader {
+  display: flex;
+  align-items: center;
+  gap: var(--ASSpaceSm);
+  margin-bottom: var(--ASSpaceSm);
+}
+
+.ASCardHeader h4 {
+  margin: 0;
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--color-gray-200, var(--ASText));
+}
+
+.ASContactCard .ASCardIcon {
+  width: 48px;
+  height: 48px;
+  border-radius: var(--ASRadiusMd);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.25rem;
+  flex-shrink: 0;
+}
+.ASContactCard p {
+  margin: 0 0 0.25rem;
+  font-size: 0.9rem;
+  color: var(--color-gray-100, var(--ASTextMuted));
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+
+}
+
+.ASFooterLinksGrid {
+  display: grid;
+  gap: var(--ASSpaceLg);
+  margin-top: var(--ASSpaceXl);
+}
+@media (min-width: 992px) {
+  .ASFooterLinksGrid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+.ASFooterCol h5 {
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: var(--ASColor-primary);
+}
+.ASFooterCol ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.ASFooterCol li {
+  margin-bottom: 0.25rem;
+}
+.ASFooterCol a {
+  color: var(--color-gray-100, var(--ASText));
+  text-decoration: none;
+}
+.ASFooterCol a:hover {
+  color: var(--ASColor-primary);
+}
+.ASFooter--style3 .ASFooterBottom {
+  margin-top: var(--ASSpaceXl);
+  padding-top: var(--ASSpaceSm);
+  border-top: 1px solid var(--ASBorder);
+  text-align: center;
+  color: var(--color-gray-100, var(--ASTextMuted));
+  font-size: 0.875rem;
+}
+
+/* ---------- Style 04 (Centered Minimal) ---------- */
+.ASFooter--style4 {
+  background: #fff;
+  text-align: center;
+  padding: var(--ASSpaceXl) var(--ASSpaceLg);
+  color: var(--ASColor-primary);
+  position: relative;
+}
+.ASFooter--style4 .ASFooterAccent {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60%;
+  height: 4px;
+  background: linear-gradient(
+    90deg,
+    var(--ASColor-primary),
+    var(--ASColor-secondary)
+  );
+  border-radius: 2px;
+}
+.ASFooterCentered {
+  margin-top: var(--ASSpaceLg);
+}
+.ASFooterLogoBox img {
+  width: 56px;
+  height: auto;
+  border-radius: 16px;
+  background: color-mix(in oklab, var(--ASColor-success) 5%, #fff);
+  padding: 0.5rem;
+  margin-bottom: var(--ASSpaceMd);
+}
+.ASFooterNav {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  margin-bottom: var(--ASSpaceMd);
+}
+.ASFooterNav a {
+  color: var(--color-gray-200, var(--ASText));
+  font-weight: 500;
+  text-decoration: none;
+}
+.ASFooterNav a:hover {
+  color: var(--ASColor-primary);
+}
+.ASFooter--style4 .ASFooterSocial {
+  display: flex;
+  justify-content: center;
+  gap: 0.75rem;
+  margin-bottom: var(--ASSpaceMd);
+}
+.ASFooter--style4 .ASFooterSocial a {
+  width: 40px;
+  height: 40px;
+  border: 2px solid var(--ASColor-primary);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+  color: var(--ASColor-primary);
+  transition: all 0.3s ease;
+}
+.ASFooter--style4 .ASFooterSocial a:hover {
+  background: var(--ASColor-primary);
+  color: #fff;
+}
+.ASFooter--style4 .ASFooterBottom {
+  color: var(--color-gray-100, var(--ASTextMuted));
+  font-size: 0.875rem;
+}
+
+/* ---------- Style 05 – Newsletter Subscription ---------- */
+.ASFooter--style5 {
+    background: var(--color-linen);
+    padding: var(--ASSpaceXl);
+    color: var(--color-gray-200);
+  }
+  .ASNewsletterCard {
+    background: #fff;
+    border-radius: var(--ASRadiusLg);
+    box-shadow: var(--ASShadowSm);
+    text-align: center;
+    padding: 2rem 3rem;
+    margin-bottom: 2rem;
+  }
+  .ASNewsletterCard h4 {
+    margin: 0 0 .25rem;
+    font-size: 1.1rem;
+    font-weight: 600;
+  }
+  .ASNewsletterCard p {
+    color: var(--color-gray-100);
+    margin: 0 0 1rem;
+  }
+  .ASNewsletterForm {
+    display: flex;
+    justify-content: center;
+    gap: .5rem;
+    flex-wrap: wrap;
+  }
+  .ASNewsletterForm input {
+    width: 320px;
+    padding: .75rem 1rem;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    font-size: .95rem;
+    color: var(--color-gray-200);
+    outline: none;
+  }
+  .ASNewsletterForm input:focus {
+    border-color: var(--ASColor-primary);
+  }
+  .ASNewsletterForm button {
+    background: var(--ASColor-primary);
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    width: 42px;
+    height: 42px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all .3s ease;
+  }
+  .ASNewsletterForm button:hover {
+    background: var(--ASColor-secondary);
+  }
+  
+  /* Footer link columns */
+  .ASFooter--style5 .ASFooterLinks {
+    display: grid;
+    gap: 2rem;
+    margin-top: 2rem;
+  }
+  @media (min-width:992px) {
+    .ASFooter--style5 .ASFooterLinks {
+      grid-template-columns: repeat(3,1fr);
+    }
+  }
+  .ASFooter--style5 h5 {
+    color: var(--color-gray-200);
+    font-weight: 600;
+    margin-bottom: .5rem;
+  }
+  .ASFooter--style5 ul {
+    list-style: none;
+    padding: 0; margin: 0;
+  }
+  .ASFooter--style5 li { margin-bottom: .25rem; }
+  .ASFooter--style5 a {
+    color: var(--color-gray-100);
+    text-decoration: none;
+  }
+  .ASFooter--style5 a:hover { color: var(--ASColor-primary); }
+  .ASFooter--style5 .ASFooterBottom {
+    margin-top: 2rem;
+    padding-top: 1rem;
+    border-top: 1px solid var(--ASBorder);
+    text-align: center;
+    color: var(--color-gray-100);
+    font-size: .875rem;
+  }
+  .ASFooter--style5 .ASFooterSocial {
+    display: flex;
+    justify-content: center;
+    gap: .75rem;
+    margin-bottom: .5rem;
+  }
+  .ASFooter--style5 .ASFooterSocial a {
+    width: 40px; height: 40px;
+    border-radius: 8px;
+    background: color-mix(in oklab, var(--ASColor-primary) 8%, #fff);
+    color: var(--ASColor-primary);
+    display: flex; align-items: center; justify-content: center;
+    transition: all .3s ease;
+  }
+  .ASFooter--style5 .ASFooterSocial a:hover {
+    background: var(--ASColor-primary);
+    color: #fff;
+  }
+  
+  /* ---------- Style 06 – Service Icons Grid ---------- */
+.ASFooter--style6 {
+    background: #fff;
+    padding: var(--ASSpaceXl);
+    color: var(--color-gray-200);
+  }
+  
+  .ASServiceIconsGrid {
+    display: grid;
+    gap: 1.25rem;
+    margin-bottom: 2rem;
+  }
+  @media (min-width:992px){
+    .ASServiceIconsGrid { grid-template-columns: repeat(6,1fr); }
+  }
+  
+  /* Card container */
+  .ASServiceCard {
+    border-radius: 16px;
+    /* background: #f9efe9;           */
+    text-align: center;
+    box-shadow: var(--ASShadowSm);
+    padding: 1rem 0rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 2.2rem;
+  }
+  
+  /* icon holder  */
+  .ASServiceCard::before {
+    content: "";
+    width: 80px;
+    height: 80px;
+    border-radius: 14px;
+    margin-bottom: .75rem;
+    display: block;
+    background: var(--ASIconBg, #fff);
+    background-size: cover;
+  }
+  
+  /* actual icon image centered above span */
+  .ASServiceCard img {
+    position: relative;
+    width: 44px;
+    height: 44px;
+    margin-top: -4.5rem; 
+    z-index: 1;
+  }
+  
+  /* text label centered */
+  .ASServiceCard span {
+    display: block;
+    margin-top: 2.5rem;
+    font-weight: 500;
+    color: var(--color-gray-200);
+    text-align: center;
+  }
+  
+  /* individual color tints (icon background only) */
+  .ASServiceCard--green { --ASIconBg: color-mix(in oklab, var(--ASColor-success) 90%, #fff); }
+  .ASServiceCard--teal  { --ASIconBg: color-mix(in oklab, var(--ASColor-primary) 90%, #fff); }
+  .ASServiceCard--blue  { --ASIconBg: color-mix(in oklab, var(--ASColor-info) 90%, #fff); }
+  .ASServiceCard--orange{ --ASIconBg: color-mix(in oklab, var(--ASColor-alert) 90%, #fff); }
+  .ASServiceCard--brown { --ASIconBg: color-mix(in oklab, var(--ASColor-error) 90%, #fff); }
+  .ASServiceCard--amber { --ASIconBg: color-mix(in oklab, var(--ASColor-secondary) 90%, #fff); }
+  
+  /* Footer link grid under icons  */
+  .ASFooterLinksGrid6 {
+    display: grid;
+    gap: 2rem;
+    margin-bottom: 1.5rem;
+  }
+  @media (min-width:992px){
+    .ASFooterLinksGrid6 { grid-template-columns: 2fr 1fr 1fr 1fr; }
+  }
+  .ASFooterLogoRow {
+    display: flex;
+    align-items: center;
+    gap: .65rem;
+  }
+  .ASFooterLogoRow img {
+    width: 28px; height: 28px;
+  }
+  .ASFooterLinksGrid6 h5 {
+    font-size: 1rem;
+    font-weight: 600;
+    margin: 0 0 .25rem;
+    color: var(--ASSubBorder);
+  }
+  .ASFooterLinksGrid6 p {
+    color: var(--ASColor-quaternary);
+    font-size: .8rem;
+    padding-left: 2.5rem;
+  }
+  .ASFooterLinksGrid6 ul { list-style:none;margin:0;padding:0; }
+  .ASFooterLinksGrid6 li { margin-bottom:.25rem; }
+  .ASFooterLinksGrid6 a { color:var(--ASColor-quaternary);text-decoration:none; }
+  .ASFooterLinksGrid6 a:hover { color:var(--ASColor-quaternary); }
+
+  
+  .ASFooter--style6 .ASFooterBottom {
+    text-align: center;
+    border-top: 1px solid var(--ASBorder);
+    padding-top: 1rem;
+    font-size: .875rem;
+    color: var(--ASColor-quaternary);
+  }
+  
+  

@@ -1,0 +1,603 @@
+/* ===========================
+   AS Loaders (scoped + portable)
+   =========================== */
+.ASLoadersGrid {
+  row-gap: 1.5rem;
+}
+@media (min-width: 992px) {
+  .ASLoadersGrid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 1.25rem;
+  }
+}
+.ASLoadersBlock {
+  background: #fff;
+  border: 1px solid var(--ASBorder, rgba(0, 0, 0, 0.08));
+  border-radius: 12px;
+  padding: 1rem;
+}
+.ASLoadersBlock h3 {
+  font-size: 1.05rem;
+  margin: 0 0 0.25rem;
+}
+.ASLoadersBlock p {
+  color: var(--ASTextMuted, #6b7280);
+  margin: 0 0 0.75rem;
+  font-size: 0.95rem;
+}
+.ASLoadersRow {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.75rem 1rem;
+}
+.ASLoaderItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.25rem;
+  min-width: 90px;
+  text-align: center;
+  font-size: 0.875rem;
+  color: var(--ASTextMuted);
+}
+
+/* ---------- Border Spinners ---------- */
+.ASBorderSpinner {
+  width: 2rem;
+  height: 2rem;
+  border: 3px solid currentColor;
+  border-top-color: transparent;
+  border-radius: 50%;
+  animation: ASLoaderSpin 1s linear infinite;
+}
+.ASBorderSpinner--primary {
+  color: var(--ASColor-primary);
+}
+.ASBorderSpinner--secondary {
+  color: var(--ASColor-secondary);
+}
+.ASBorderSpinner--info {
+  color: var(--ASColor-info);
+}
+.ASBorderSpinner--success {
+  color: var(--ASColor-success);
+}
+.ASBorderSpinner--alert {
+  color: var(--ASColor-alert);
+}
+.ASBorderSpinner--error {
+  color: var(--ASColor-error);
+}
+
+/* ---------- Dual Ring Spinners ---------- */
+.ASDualRing {
+  position: relative;
+  width: 2.5rem;
+  height: 2.5rem;
+}
+.ASDualRingTrack,
+.ASDualRingActive {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  border: 3px solid currentColor;
+}
+.ASDualRingTrack {
+  opacity: 0.25;
+}
+.ASDualRingActive {
+  border-top-color: transparent;
+  animation: ASLoaderSpin 1s linear infinite;
+}
+.ASDualRing--primary {
+  color: var(--ASColor-primary);
+}
+.ASDualRing--info {
+  color: var(--ASColor-info);
+}
+.ASDualRing--success {
+  color: var(--ASColor-success);
+}
+.ASDualRing--alert {
+  color: var(--ASColor-alert);
+}
+
+/* ---------- Bar Loaders ---------- */
+.ASBarGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+.ASBarWrap label {
+  font-size: 0.85rem;
+  color: var(--ASTextMuted);
+  display: block;
+  margin-bottom: 0.25rem;
+}
+.ASBarTrack {
+  height: 8px;
+  border-radius: 100px;
+  background: var(--ASBorder);
+  overflow: hidden;
+}
+.ASBarFill {
+  position: relative;
+  height: 100%;
+  width: 100%;
+  border-radius: inherit;
+  overflow: hidden;
+}
+
+.ASBarFill::before {
+  content: "";
+  position: absolute;
+  left: -40%;
+  width: 40%;
+  height: 100%;
+  border-radius: inherit;
+  background: currentColor;
+  animation: ASBarSlide 1.3s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+}
+
+/* Use color tokens for each variant */
+.ASBarFill--primary {
+  color: var(--ASColor-primary);
+}
+.ASBarFill--info {
+  color: var(--ASColor-info);
+}
+.ASBarFill--success {
+  color: var(--ASColor-success);
+}
+
+/* ---------- Multi-Bar Loader ---------- */
+.ASMultiBars {
+  display: flex;
+  align-items: flex-end;
+  gap: 4px;
+  height: 32px;
+  justify-content: left;
+}
+.ASMiniBar {
+  width: 6px;
+  height: 14px;
+  border-radius: 100px;
+  background: var(--ASColor-primary);
+  animation: ASBarBounce 1s ease-in-out infinite;
+}
+.ASMiniBar:nth-child(2) {
+  animation-delay: 0.1s;
+}
+.ASMiniBar:nth-child(3) {
+  animation-delay: 0.2s;
+}
+.ASMiniBar:nth-child(4) {
+  animation-delay: 0.3s;
+}
+.ASMiniBar:nth-child(5) {
+  animation-delay: 0.4s;
+}
+
+/* ---------- Animations ---------- */
+@keyframes ASLoaderSpin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+@keyframes ASBarSlide {
+  0% {
+    width: 0%;
+    opacity: 0.8;
+  }
+  50% {
+    width: 75%;
+    opacity: 1;
+  }
+  100% {
+    width: 0%;
+    opacity: 0.8;
+  }
+}
+@keyframes ASBarBounce {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+/* Proper moving animation */
+@keyframes ASBarSlide {
+  0% {
+    left: -40%;
+    width: 40%;
+    opacity: 0.2;
+  }
+  25% {
+    left: 10%;
+    width: 50%;
+    opacity: 0.8;
+  }
+  50% {
+    left: 60%;
+    width: 40%;
+    opacity: 1;
+  }
+  75% {
+    left: 100%;
+    width: 35%;
+    opacity: 0.8;
+  }
+  100% {
+    left: 120%;
+    width: 30%;
+    opacity: 0;
+  }
+}
+
+/* ---------- Progress Loaders ---------- */
+.ASProgressGroup {
+  margin-bottom: 1rem;
+}
+.ASProgressHead {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.9rem;
+  margin-bottom: 0.3rem;
+}
+.ASProgressTrack {
+  position: relative;
+  width: 100%;
+  height: 8px;
+  border-radius: 9999px;
+  background: color-mix(in srgb, currentColor 15%, white);
+  overflow: hidden;
+}
+.ASProgressBar {
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 0%;
+  border-radius: inherit;
+  background: currentColor;
+  transition: width 0.4s ease;
+}
+
+/* Color tokens */
+[data-color="primary"] {
+  color: var(--ASColor-primary);
+}
+[data-color="info"] {
+  color: var(--ASColor-info);
+}
+[data-color="success"] {
+  color: var(--ASColor-success);
+}
+[data-color="alert"] {
+  color: var(--ASColor-alert);
+}
+[data-color="error"] {
+  color: var(--ASColor-error);
+}
+
+/* ---------- Button Loaders ---------- */
+.ASButtonsRow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+.ASBtn.is-loading {
+  position: relative;
+  opacity: 0.9;
+  pointer-events: none;
+}
+.ASBtn.is-loading img {
+    height: 1rem;
+    width: 1rem;
+    margin-inline-end: .5rem;
+    vertical-align: middle;
+  }
+  
+  /* Continuous spin (Loading, Refreshing) */
+  .ASBtn.is-loading img[src*="LoadingIconWhite"],
+  .ASBtn.is-loading img[src*="RefershIconWhite"] {
+    animation: ASIconSpin 1s linear infinite;
+  }
+  
+  /* Up–Down bounce (Uploading, Downloading) */
+  .ASBtn.is-loading img[src*="UploadingIconWhite"],
+  .ASBtn.is-loading img[src*="DownloadingIconWhite"] {
+    animation: ASIconBounce 1.2s ease-in-out infinite;
+  }
+  
+  /* Fixed (Saving, Sending, Searching) — no animation */
+  .ASBtn.is-loading img[src*="SavingIconWhite"],
+  .ASBtn.is-loading img[src*="SendingIconBrown"],
+  .ASBtn.is-loading img[src*="SearchingIconBlue"] {
+    animation: none;
+  }
+  
+  /* Animations */
+  @keyframes ASIconSpin {
+    to { transform: rotate(360deg); }
+  }
+  @keyframes ASIconBounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-3px); }
+  }
+
+/* ---------- Grid Loaders ---------- */
+.ASGridRow {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+  font-size: 0.9rem;
+}
+.ASGridLoader {
+  display: grid;
+  gap: 3px;
+}
+.ASGridLoader div {
+  width: 8px;
+  height: 8px;
+  border-radius: 2px;
+  background: currentColor;
+  opacity: 0.3;
+  animation: ASGridBlink 1.2s infinite;
+}
+@keyframes ASGridBlink {
+  0%,
+  100% {
+    opacity: 0.3;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+/* 2x2 Grid */
+.ASGrid--2x2 {
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+}
+
+/* 3x3 Grid */
+.ASGrid--3x3 {
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+}
+
+/* Wave Grid */
+.ASGrid--wave {
+  display: flex;
+  gap: 4px;
+}
+.ASGrid--wave div {
+  width: 6px;
+  height: 6px;
+  border-radius: 1px;
+  background: currentColor;
+  animation: ASGridWave 0.9s ease-in-out infinite;
+}
+.ASGrid--wave div:nth-child(2) {
+  animation-delay: 0.1s;
+}
+.ASGrid--wave div:nth-child(3) {
+  animation-delay: 0.2s;
+}
+.ASGrid--wave div:nth-child(4) {
+  animation-delay: 0.3s;
+}
+@keyframes ASGridWave {
+  0%,
+  100% {
+    opacity: 0.3;
+    transform: scaleY(0.6);
+  }
+  50% {
+    opacity: 1;
+    transform: scaleY(1);
+  }
+}
+
+/* =========================== AS Skeleton Loaders =========================== */
+   .ASSkeletonCard,
+   .ASSkeletonList,
+   .ASSkeletonTable {
+     background: #fff;
+     border: 1px solid var(--ASBorder, rgba(0, 0, 0, .08));
+     border-radius: 12px;
+     padding: 1rem;
+     margin-bottom: 1.25rem;
+   }
+   
+   /* Shared shimmer animation */
+   @keyframes ASShimmer {
+     0% { background-position: -200% 0; }
+     100% { background-position: 200% 0; }
+   }
+   .ASSkeletonLine,
+   .ASSkeletonCircle,
+   .ASSkeletonSquare,
+   .ASSkeletonCell {
+     background: linear-gradient(
+       90deg,
+       var(--ASColor-bgLight, #f3f4f6) 25%,
+       color-mix(in srgb, var(--ASColor-primary) 10%, #ffffff) 50%,
+       var(--ASColor-bgLight, #f3f4f6) 75%
+     );
+     background-size: 200% 100%;
+     animation: ASShimmer 1.8s ease-in-out infinite;
+     opacity: 0.8;
+   }
+   
+   /* ---------- Card Skeleton ---------- */
+   .ASSkeletonHeader {
+     display: flex;
+     align-items: center;
+     gap: 1rem;
+     margin-bottom: 1rem;
+   }
+   .ASSkeletonCircle {
+     width: 3rem;
+     height: 3rem;
+     border-radius: 50%;
+   }
+   .ASSkeletonTextGroup {
+     flex: 1;
+     display: flex;
+     flex-direction: column;
+     gap: .5rem;
+   }
+   .ASSkeletonLine {
+     height: .75rem;
+     border-radius: 4px;
+   }
+   .ASSkeletonLine.short { width: 40%; }
+   .ASSkeletonLine.medium { width: 70%; }
+   .ASSkeletonLine.long { width: 90%; }
+   .ASSkeletonLine.full { width: 100%; }
+   
+   .ASSkeletonBody {
+     display: flex;
+     flex-direction: column;
+     gap: .75rem;
+   }
+   
+   /* ---------- List Skeleton ---------- */
+   .ASSkeletonList {
+     display: flex;
+     flex-direction: column;
+     gap: .75rem;
+   }
+   .ASSkeletonItem {
+     display: flex;
+     align-items: center;
+     gap: 1rem;
+     background: var(--ASSurface, #fff);
+     border: 1px solid var(--ASBorder, rgba(0,0,0,.05));
+     border-radius: 8px;
+     padding: .75rem 1rem;
+   }
+   .ASSkeletonSquare {
+     width: 2.5rem;
+     height: 2.5rem;
+     border-radius: 6px;
+   }
+   
+   /* ---------- Table Skeleton ---------- */
+   .ASSkeletonTableHeader {
+     height: 2.5rem;
+     border-radius: 6px;
+     margin-bottom: .5rem;
+     background: color-mix(in srgb, var(--ASColor-primary) 5%, #f3f4f6);
+     animation: ASShimmer 1.8s ease-in-out infinite;
+   }
+   .ASSkeletonTableRows {
+     display: flex;
+     flex-direction: column;
+     gap: .5rem;
+   }
+   .ASSkeletonRow {
+     display: grid;
+     grid-template-columns: repeat(4, 1fr);
+     gap: .75rem;
+   }
+   .ASSkeletonCell {
+     height: 1rem;
+     border-radius: 4px;
+   }
+   
+   /* ========================= Minimal Loaders =========================== */
+    .ASMinimalRow {
+        display: flex;
+        align-items: center;
+        gap: 2rem;
+        flex-wrap: wrap;
+    }
+    .ASMiniItem {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        font-size: 0.9rem;
+        color: var(--ASTextMuted, #717182);
+    }
+    
+    /* ---------- Tiny Dots ---------- */
+    .ASMiniDots {
+        display: flex;
+        align-items: center;
+        gap: 4px;
+    }
+    .ASMiniDots span {
+        width: 6px;
+        height: 6px;
+        border-radius: 50%;
+        background: var(--ASColor-primary, #643c2a);
+        animation: ASDotBlink 1.2s infinite ease-in-out;
+    }
+    .ASMiniDots span:nth-child(2) { animation-delay: 0.2s; }
+    .ASMiniDots span:nth-child(3) { animation-delay: 0.4s; }
+    
+    @keyframes ASDotBlink {
+        0%, 80%, 100% { opacity: 0.2; transform: scale(0.9); }
+        40% { opacity: 1; transform: scale(1); }
+    }
+    
+    /* ---------- Line ---------- */
+    .ASMiniLine {
+        width: 40px;
+        height: 6px;
+        border-radius: 999px;
+        background: linear-gradient(90deg, var(--ASColor-info, #4796cf) 0%, transparent 100%);
+        background-size: 200% 100%;
+        animation: ASLineMove 1.2s linear infinite;
+    }
+    
+    @keyframes ASLineMove {
+        0% { background-position: 200% 0; opacity: 0.5; }
+        100% { background-position: -200% 0; opacity: 1; }
+    }
+    
+    /* ---------- Bars ---------- */
+    .ASMiniBars {
+        display: flex;
+        align-items: flex-end;
+        gap: 3px;
+        height: 16px;
+    }
+    .ASMiniBars span {
+        width: 3px;
+        height: 8px;
+        border-radius: 4px;
+        background: var(--ASColor-success, #53b347);
+        animation: ASBarPulse 0.8s ease-in-out infinite;
+    }
+    .ASMiniBars span:nth-child(2) { animation-delay: 0.1s; }
+    .ASMiniBars span:nth-child(3) { animation-delay: 0.2s; }
+    
+    @keyframes ASBarPulse {
+        0%, 100% { transform: scaleY(0.6); opacity: 0.5; }
+        50% { transform: scaleY(1); opacity: 1; }
+    }
+    
+    /* ---------- Micro Spinner ---------- */
+    .ASMiniSpinner {
+        width: 18px;
+        height: 18px;
+        border: 2px solid var(--ASColor-alert, #ed7f21);
+        border-top-color: transparent;
+        border-radius: 50%;
+        animation: ASMiniSpin 0.9s linear infinite;
+    }
+    
+    @keyframes ASMiniSpin {
+        to { transform: rotate(360deg); }
+    }
+  

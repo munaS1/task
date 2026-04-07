@@ -1,0 +1,398 @@
+/* =====================================
+   AS FORMS COLLECTION
+   ===================================== */
+
+.ASFormsCollection {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.ASFormsHero h2 {
+  margin: 0 0 .35rem;
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--ASText);
+}
+
+.ASFormsHero p {
+  margin: 0;
+  color: var(--ASTextMuted, #6b7280);
+}
+
+.ASFormsGrid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 2rem;
+}
+
+.ASFormsBlock {
+  padding: 1.5rem;
+  border-radius: 14px;
+}
+
+.ASFormsBlockHeader {
+  margin-bottom: 1.25rem;
+}
+
+.ASFormsBlockHeader h3 {
+  margin: 0 0 .4rem;
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--ASText);
+}
+
+.ASFormsBlockHeader p {
+  margin: 0;
+  font-size: .95rem;
+  color: var(--ASTextMuted, #6b7280);
+}
+
+.ASFormsStack {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.ASField {
+  display: flex;
+  flex-direction: column;
+  gap: .5rem;
+}
+
+.ASLabel {
+  font-size: .92rem;
+  font-weight: 600;
+  color: var(--ASText);
+}
+
+.ASLabel--primary { color: var(--ASPrimary); }
+.ASLabel--secondary { color: var(--ASSecondary); }
+.ASLabel--success { color: var(--ASSuccess, #00C950); }
+.ASLabel--error { color: var(--ASDanger, #FB2C36); }
+.ASLabel--info { color: var(--ASInfo, #2B7FFF); }
+.ASLabel--alert { color: var(--ASAccent); }
+
+.ASInput,
+.ASTextarea,
+.ASSelect {
+  min-height: 42px;
+  border-radius: 10px;
+  border: 1px solid var(--ASBorder);
+  background: #fff;
+  transition: border-color .2s ease, box-shadow .2s ease, background-color .2s ease;
+}
+
+.ASTextarea {
+  min-height: 92px;
+  resize: vertical;
+}
+
+.ASSelect {
+  appearance: none;
+  background-image:
+    linear-gradient(45deg, transparent 50%, currentColor 50%),
+    linear-gradient(135deg, currentColor 50%, transparent 50%);
+  background-position:
+    calc(100% - 18px) calc(50% - 3px),
+    calc(100% - 12px) calc(50% - 3px);
+  background-size: 6px 6px, 6px 6px;
+  background-repeat: no-repeat;
+  padding-inline-end: 2.5rem;
+}
+
+html[dir="rtl"] .ASSelect {
+  background-position:
+    18px calc(50% - 3px),
+    24px calc(50% - 3px);
+  padding-inline-end: .8rem;
+  padding-inline-start: 2.5rem;
+}
+
+.ASInput::placeholder,
+.ASTextarea::placeholder,
+.ASSelect {
+  color: rgba(10, 10, 10, 0.55);
+}
+
+/* outline variants */
+.ASInput--primary,
+.ASTextarea.ASInput--primary,
+.ASSelect.ASInput--primary {
+  border-color: var(--ASPrimary);
+}
+
+.ASInput--secondary,
+.ASTextarea.ASInput--secondary,
+.ASSelect.ASInput--secondary {
+  border-color: #C9A88A;
+}
+
+.ASInput--success,
+.ASTextarea.ASInput--success,
+.ASSelect.ASInput--success {
+  border-color: #00C950;
+}
+
+.ASInput--error,
+.ASTextarea.ASInput--error,
+.ASSelect.ASInput--error {
+  border-color: #FB2C36;
+}
+
+.ASInput--info,
+.ASTextarea.ASInput--info,
+.ASSelect.ASInput--info {
+  border-color: #2B7FFF;
+}
+
+.ASInput--alert,
+.ASTextarea.ASInput--alert,
+.ASSelect.ASInput--alert {
+  border-color: #FF6900;
+}
+
+/* filled variants */
+.ASInput--filled {
+  background: #F3F4F6;
+  border-color: transparent;
+}
+
+.ASInput--filled-primary {
+  background: #4A2F1F;
+  border-color: #4A2F1F;
+  color: #fff;
+}
+
+.ASInput--filled-primary::placeholder {
+  color: rgba(255,255,255,.65);
+}
+
+.ASInput--filled-secondary {
+  background: #E5D4C1;
+  border-color: #C9A88A;
+}
+
+.ASInput--filled-success {
+  background: #F0FDF4;
+  border-color: #00C950;
+}
+
+.ASInput--filled-error {
+  background: #FEF2F2;
+  border-color: #FB2C36;
+}
+
+.ASInput--filled-info {
+  background: #EFF6FF;
+  border-color: #2B7FFF;
+}
+
+.ASInput--filled-alert {
+  background: #FFF7ED;
+  border-color: #FF6900;
+}
+
+.ASInput--pill {
+  border-radius: 999px;
+  padding-inline: 1.25rem;
+}
+
+/* icon controls */
+.ASFieldControl {
+  position: relative;
+}
+
+.ASFieldControl .ASInput {
+  width: 100%;
+}
+
+.ASFieldControl--icon .ASInput {
+  padding-inline-start: 2.5rem;
+}
+
+.ASFieldControl--iconEnd .ASInput {
+  padding-inline-end: 2.75rem;
+}
+
+.ASFieldIcon {
+  position: absolute;
+  inset-inline-start: .9rem;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: .95rem;
+  color: var(--ASTextMuted, #6b7280);
+  pointer-events: none;
+}
+
+.ASFieldIcon--secondary { color: #A67C52; }
+.ASFieldIcon--success { color: #00C950; }
+.ASFieldIcon--error { color: #FB2C36; }
+.ASFieldIcon--info { color: #2B7FFF; }
+.ASFieldIcon--alert { color: #FF6900; }
+
+.ASFieldAction {
+  position: absolute;
+  inset-inline-end: .65rem;
+  top: 50%;
+  transform: translateY(-50%);
+  border: 0;
+  background: transparent;
+  color: var(--ASTextMuted, #6b7280);
+  padding: .25rem;
+  cursor: pointer;
+}
+
+/* meta */
+.ASFieldMeta {
+  display: flex;
+  justify-content: flex-end;
+  font-size: .75rem;
+  color: var(--ASTextMuted, #6b7280);
+}
+
+/* checkbox & radio groups */
+.ASChoiceGroup,
+.ASSwitchGroup {
+  display: flex;
+  flex-direction: column;
+  gap: .8rem;
+}
+
+.ASChoiceTitle {
+  font-size: .92rem;
+  font-weight: 600;
+  color: var(--ASText);
+}
+
+.ASChoiceGroup--primary .ASChoiceTitle { color: var(--ASPrimary); }
+.ASChoiceGroup--secondary .ASChoiceTitle { color: #A67C52; }
+.ASChoiceGroup--success .ASChoiceTitle { color: #008236; }
+.ASChoiceGroup--info .ASChoiceTitle { color: #1447E6; }
+
+.ASChoice {
+  display: inline-flex;
+  align-items: center;
+  gap: .65rem;
+  font-size: 1rem;
+  color: var(--ASText);
+}
+
+.ASChoice input[type="checkbox"],
+.ASChoice input[type="radio"] {
+  inline-size: 18px;
+  block-size: 18px;
+  accent-color: var(--ASPrimary);
+  margin: 0;
+}
+
+.ASChoiceGroup--secondary input[type="radio"] {
+  accent-color: #A67C52;
+}
+
+.ASChoiceGroup--success input[type="checkbox"] {
+  accent-color: #00C950;
+}
+
+.ASChoiceGroup--info input[type="radio"] {
+  accent-color: #2B7FFF;
+}
+
+/* =====================================
+   Toggle Switches - Final Clean Version
+   ===================================== */
+
+.ASFormsBlock--toggle {
+  max-width: 620px;
+}
+
+.ASFormsStack--toggle {
+  gap: 1.5rem;
+}
+
+.ASSwitchGroup {
+  display: flex;
+  flex-direction: column;
+  gap: .9rem;
+  padding: 0;
+}
+
+.ASChoiceTitle {
+  margin: 0 0 .15rem;
+  font-size: .98rem;
+  font-weight: 700;
+  color: var(--ASText);
+}
+
+.ASSwitch {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: .85rem;
+  min-height: 2rem;
+  cursor: pointer;
+}
+
+.ASSwitch input {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.ASSwitchSlider {
+  position: relative;
+  flex: 0 0 52px;
+  width: 52px;
+  height: 28px;
+  border-radius: 999px;
+  background: #D1D5DB;
+  transition: background-color .2s ease;
+  overflow: hidden;
+  direction: ltr;
+}
+
+.ASSwitchSlider::after {
+  content: "";
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: #fff;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.18);
+  transition: left .2s ease;
+}
+
+/* OFF = left */
+.ASSwitch input:not(:checked) + .ASSwitchSlider::after {
+  left: 3px;
+}
+
+/* ON = right */
+.ASSwitch input:checked + .ASSwitchSlider::after {
+  left: 27px;
+}
+
+.ASSwitchText {
+  font-size: 1rem;
+  line-height: 1.5;
+  color: var(--ASText);
+}
+
+/* checked colors */
+.ASSwitch input:checked + .ASSwitchSlider {
+  background: var(--ASPrimary);
+}
+
+.ASSwitchGroup--primary .ASSwitch input:checked + .ASSwitchSlider {
+  background: #A67C52;
+}
+
+.ASSwitchGroup--success .ASSwitch input:checked + .ASSwitchSlider {
+  background: #00C950;
+}
+
+.ASSwitchGroup--alert .ASSwitch input:checked + .ASSwitchSlider {
+  background: #FF6900;
+}

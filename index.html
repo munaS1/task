@@ -1,0 +1,175 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>AS UI Catalog</title>
+
+  <!-- Global CSS -->
+  <link href="assets/css/bootstrap.rtl.min.css" rel="stylesheet" />
+  <link href="assets/css/theme.css" rel="stylesheet" />
+  <link href="assets/css/core.css" rel="stylesheet" />
+  <link href="assets/css/layout.css" rel="stylesheet" />
+  <link href="assets/css/components.css" rel="stylesheet" />
+  <link href="assets/css/buttons.css" rel="stylesheet" />
+  <link href="assets/css/cards.css" rel="stylesheet" />
+  <link href="assets/css/dropdowns.css" rel="stylesheet" />
+  <link href="assets/css/notifications.css" rel="stylesheet" />
+  <link href="assets/css/loader.css" rel="stylesheet" /> 
+  <link href="assets/css/counter.css" rel="stylesheet" /> 
+  <link href="assets/css/footer.css" rel="stylesheet" /> 
+  <link href="assets/css/profile.css" rel="stylesheet" /> 
+  <link href="assets/css/elements.css" rel="stylesheet" /> 
+  <link href="assets/css/navigation.css" rel="stylesheet" /> 
+  <link href="assets/css/carousel.css" rel="stylesheet" />
+  <link href="assets/css/thumbnails.css" rel="stylesheet" />
+  <link href="assets/css/maps.css" rel="stylesheet" />
+  <link href="assets/css/rating.css" rel="stylesheet" />
+  <link href="assets/css/tooltip.css" rel="stylesheet" />
+  <link href="assets/css/popover.css" rel="stylesheet" />
+  <link href="assets/css/tables.css" rel="stylesheet" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;600;700&family=Cairo:wght@400;700&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="ASHeaderBar">
+    <div class="ASHeaderLeft">
+      <button class="ASIconButton" data-toggle-class="isActive" data-target="body" aria-label="Toggle menu">
+        <img src="assets/icons/sideBarIcon.svg" alt="" />
+      </button>
+      <img class="ASBrand" src="assets/img/Logo.svg" alt="AS Logo" />
+    </div>
+  
+    <!-- Search on the RIGHT -->
+    <div class="ASHeaderRight">
+      <button class="ASIconButton" id="lang-toggle" aria-label="Toggle language">
+        <img src="assets/icons/HeaderLanguageIcon.svg" alt="" />
+      </button>
+      <!-- <div class="ASSearch"> -->
+  </header>
+
+  <!-- Decorative strip -->
+  <div class="ASTopPattern" role="presentation">
+    <img src="assets/img/BrandStrip.svg" alt="" />
+  </div>
+
+<!-- Main grid -->
+<div class="ASLayout">
+    <!-- Sidebar (left) -->
+    <aside class="ASNav" aria-label="Sidebar navigation" style="grid-area: sidebar;">
+      <div class="ASNavSectionTitle">MAIN</div>
+        <a class="ASNavLink js-view" data-view="pages/partials/Dashboard.html" href="#">Dashboard</a>  
+      <div class="ASNavSectionTitle">UI KIT</div>
+
+      <button class="ASNavGroup" data-accordion="Apps">
+        <span>Apps</span><span class="ASCarat">›</span>
+      </button>
+      <nav class="ASSubNav" data-panel="Apps">
+        <a class="ASNavLink js-view" data-view="pages/components/buttons.html" href="#">Buttons</a>
+        <a class="ASNavLink js-view" data-view="pages/components/cards.html" href="#">Cards</a>
+        <a class="ASNavLink js-view" data-view="pages/components/notifications.html" href="#">Notifications</a>
+        <a class="ASNavLink js-view" data-view="pages/components/dropdowns.html" href="#">DropDown</a>
+        <a class="ASNavLink js-view" data-view="pages/components/loader.html" href="#">Loader</a>
+        <a class="ASNavLink js-view" data-view="pages/components/counter.html" href="#">counter</a>
+        <a class="ASNavLink js-view" data-view="pages/components/footer.html" href="#">footer</a>
+        <a class="ASNavLink js-view" data-view="pages/components/profile.html" href="#">profile</a>
+        <a class="ASNavLink js-view" data-view="pages/components/thumbnails.html" href="#">Thumbnails</a>
+        <a class="ASNavLink js-view" data-view="pages/components/carousel.html" href="#">Carousel</a>
+        <a class="ASNavLink js-view" data-view="pages/components/navigation.html" href="#">Navigation</a>
+        <a class="ASNavLink js-view" data-view="pages/components/rating.html" href="#">Rating</a>
+        <a class="ASNavLink js-view" data-view="pages/components/tooltip-popover.html" href="#">Tooltip & Popover</a>
+      </nav>
+  
+      <button class="ASNavGroup" data-accordion="bootstrap">
+        <span>Bootstrap</span><span class="ASCarat">›</span>
+      </button>
+      <nav class="ASSubNav" data-panel="bootstrap">
+        <a class="ASNavLink js-view" data-view="pages/components/buttons.html" href="#">Buttons</a>
+        <a class="ASNavLink js-view" data-view="pages/components/pagination.html" href="#">Pagination</a>
+        <a class="ASNavLink js-view" data-view="pages/components/dropdowns.html" href="#">DropDown</a>
+        <a class="ASNavLink js-view" data-view="pages/components/media-carousel.html" href="#">Thumbnails</a>
+        <a class="ASNavLink js-view" data-view="pages/components/media-carousel.html" href="#">Carousel</a>
+      </nav>
+  
+      <div class="ASNavSectionTitle">Pre-Build Pages</div>
+  
+      <button class="ASNavGroup" data-accordion="pages">
+        <span>Pages</span><span class="ASCarat">›</span>
+      </button>
+      <nav class="ASSubNav" data-panel="pages">
+
+        <div class="ASSubTitle">Partials</div>
+        <a class="ASNavLink js-view" data-view="pages/partials/footer.html" href="#">footer</a>
+        <a class="ASNavLink js-view" data-view="pages/partials/header.html" href="#">header</a>
+        <a class="ASNavLink js-view" data-view="pages/partials/sidebar.html" href="#">sidebar</a>
+
+        <div class="ASSubTitle">Forms</div>
+        <a class="ASNavLink js-view" data-view="pages/forms/elements.html" href="#">Form-Elements</a>
+        <a class="ASNavLink js-view" data-view="pages/forms/layouts.html" href="#">Form-Layouts</a>
+        <a class="ASNavLink js-view" data-view="pages/forms/validation.html" href="#">Form-Validations</a>
+  
+        <div class="ASSubTitle mt-2">Tables</div>
+        <a class="ASNavLink js-view" data-view="pages/tables/data.html" href="#">Data Table</a>
+        <a class="ASNavLink js-view" data-view="pages/tables/editable.html" href="#">Editor-Table</a>
+        <a class="ASNavLink js-view" data-view="pages/tables/extensions.html" href="#">Extension-Tables</a>
+      </nav>
+  
+      <button class="ASNavGroup" data-accordion="charts">
+        <span>Charts</span><span class="ASCarat">›</span>
+      </button>
+      <nav class="ASSubNav" data-panel="charts">
+        <a class="ASNavLink js-view" data-view="charts.html" href="#">Charts Catalog</a>
+      </nav>
+      <button class="ASNavGroup" data-accordion="maps">
+  <span>Maps</span><span class="ASCarat">›</span>
+</button>
+
+<nav class="ASSubNav" data-panel="maps">
+  <a class="ASNavLink js-view" data-view="pages/components/maps/leaflet.html" href="#">Leaflet Maps</a>
+  <a class="ASNavLink js-view" data-view="pages/components/maps/mapael.html" href="#">Mapael Maps</a>
+  <a class="ASNavLink js-view" data-view="pages/components/maps/vector.html" href="#">Vector Maps</a>
+</nav>
+    </aside>
+    <div class="ASNavBackdrop" data-toggle-class="isActive" data-target="body" aria-hidden="true"></div>
+  
+    <!-- Main column (content + footer) -->
+    <div class="ASMainWrap" style="grid-area: main;">
+      <main id="ASContent" class="ASContent" role="main" aria-live="polite" aria-busy="false"></main>
+  
+      <footer class="ASPageFooter" role="contentinfo">
+        جميع الحقوق محفوظة © أمانة منطقة عسير
+      </footer>
+    </div>
+  </div>  
+
+  <!-- JS -->
+  <script src="assets/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/js/utils.js" type="module"></script>
+  <script src="assets/js/main.js" type="module"></script> 
+  <script src="assets/js/components.js" type="module"></script>
+  <script src="assets/js/buttons.js"></script>
+  <script src="assets/js/cards.js"></script>
+  <script src="assets/js/dropdowns.js"></script>
+  <script src="assets/js/notifications.js"></script>
+  <script src="assets/js/loader.js"></script>
+  <script src="assets/js/counter.js"></script>
+  <script src="assets/js/footer.js"></script>
+  <script src="assets/js/profile.js"></script>
+  <script src="assets/js/elements.js"></script>
+  <script src="assets/js/navigation.js"></script>
+  <script src="assets/js/carousel.js"></script>
+  <script src="assets/js/thumbnails.js"></script>
+  <script src="assets/js/maps.js"></script>
+  <script src="assets/js/rating.js"></script>
+  <script src="assets/js/tooltip.js" type="module"></script>
+  <script src="assets/js/popover.js" type="module"></script>
+  <script src="assets/js/tables.js" type="module"></script>
+  <script type="module">
+    import { initViewLoader, initAccordion } from './assets/js/components.js';
+    initAccordion();
+    initViewLoader('pages/components/dropdowns.html'); 
+  </script>
+</body>
+</html>

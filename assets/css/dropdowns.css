@@ -1,0 +1,632 @@
+/**
+ * File: components/dropdowns.css
+ * Purpose: AS Dropdown components (standalone, token-driven)
+ * Depends on: theme.css 
+ */
+
+/* ========== Base ========== */
+.ASDropdown {
+  position: relative;
+  display: inline-block;
+  /* color context defaults; overridden by [data-variant] below */
+  --_accent: var(--ASColor-primary);
+  --_accentFg: var(--ASColor-primaryFg);
+  --_hoverTint: color-mix(in oklab, var(--_accent) 10%, #fff);
+  --_hoverTintStrong: color-mix(in oklab, var(--_accent) 18%, #fff);
+}
+
+.ASDDTrigger {
+  --_padY: var(--ASBtn-padY, 0.5rem);
+  --_padX: var(--ASBtn-padX, 1rem);
+  --_r: var(--ASBtn-r, 0.425rem);
+
+  appearance: none;
+  border: 0;
+  border-radius: var(--_r);
+  padding: var(--_padY) var(--_padX);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font: inherit;
+  font-weight: 600;
+  line-height: 1;
+  cursor: pointer;
+  user-select: none;
+  white-space: nowrap;
+  transition: transform 0.2s ease, box-shadow 0.2s ease,
+    background-color 0.15s ease, color 0.15s ease, border-color 0.15s ease,
+    filter 0.15s ease;
+  background: var(--ASSurface);
+  color: var(--ASText);
+}
+.ASDDTrigger:focus-visible {
+  outline: 0;
+  box-shadow: var(--ASFocus, 0 0 0 3px rgba(0, 123, 105, 0.25));
+}
+.ASDDTrigger:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+/* Chevron */
+.ASDDChevron {
+  inline-size: 1rem;
+  block-size: 1rem;
+  flex: 0 0 auto;
+  display: inline-block;
+  mask: url("data:image/svg+xml,%3Csvg viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill='%23000' d='M7.41 8.59 12 13.17l4.59-4.58L18 10l-6 6-6-6z'/%3E%3C/svg%3E")
+    no-repeat center / contain;
+  background: currentColor;
+  opacity: 0.9;
+  transition: transform 0.2s ease;
+}
+.ASDropdown.is-open > .ASDDTrigger .ASDDChevron {
+  transform: rotate(180deg);
+}
+
+/* ========== Trigger Variants (solid / outline / light) ========== */
+.ASDDTrigger--primary {
+  background: var(--ASColor-primary);
+  color: var(--ASColor-primaryFg);
+}
+.ASDDTrigger--secondary {
+  background: var(--ASColor-secondary);
+  color: var(--ASColor-secondaryFg);
+}
+.ASDDTrigger--info {
+  background: var(--ASColor-info);
+  color: var(--ASColor-infoFg);
+}
+.ASDDTrigger--success {
+  background: var(--ASColor-success);
+  color: var(--ASColor-successFg);
+}
+.ASDDTrigger--alert {
+  background: var(--ASColor-alert);
+  color: var(--ASColor-alertFg);
+}
+.ASDDTrigger--error {
+  background: var(--ASColor-error);
+  color: var(--ASColor-errorFg);
+}
+.ASDDTrigger--grey {
+  background: var(--ASColor-grey);
+  color: var(--ASColor-greyFg);
+}
+
+.ASDDTrigger--primary:hover,
+.ASDDTrigger--secondary:hover,
+.ASDDTrigger--info:hover,
+.ASDDTrigger--success:hover,
+.ASDDTrigger--alert:hover,
+.ASDDTrigger--error:hover,
+.ASDDTrigger--grey:hover {
+  transform: translateY(-1px);
+  box-shadow: var(--ASShadowSm);
+  filter: brightness(0.97);
+}
+
+/* Outline (border, fills on hover) */
+.ASDDTriggerOutline {
+  background: transparent;
+  border: 2px solid currentColor;
+  color: inherit;
+}
+.ASDDTriggerOutline--primary {
+  color: var(--ASColor-primary);
+}
+.ASDDTriggerOutline--info {
+  color: var(--ASColor-info);
+}
+.ASDDTriggerOutline--success {
+  color: var(--ASColor-success);
+}
+.ASDDTriggerOutline--alert {
+  color: var(--ASColor-alert);
+}
+.ASDDTriggerOutline--error {
+  color: var(--ASColor-error);
+}
+.ASDDTriggerOutline--grey {
+  color: var(--ASColor-grey);
+}
+.ASDDTriggerOutline--grey:hover {
+  background: var(--ASColor-grey);
+  color: var(--ASColor-greyFg);
+}
+.ASDDTriggerOutline--primary:hover {
+  background: var(--ASColor-primary);
+  color: var(--ASColor-primaryFg);
+}
+.ASDDTriggerOutline--success:hover,
+.ASDDTriggerOutline--Success:hover {
+  background: var(--ASColor-success);
+  color: var(--ASColor-successFg);
+}
+.ASDDTriggerOutline--error:hover,
+.ASDDTriggerOutline--Error:hover {
+  background: var(--ASColor-error);
+  color: var(--ASColor-errorFg);
+}
+.ASDDTriggerOutline--info:hover,
+.ASDDTriggerOutline--Info:hover {
+  background: var(--ASColor-info);
+  color: var(--ASColor-infoFg);
+}
+.ASDDTriggerOutline--alert:hover,
+.ASDDTriggerOutline--Alert:hover {
+  background: var(--ASColor-alert);
+  color: var(--ASColor-alertFg);
+}
+
+/* Light (tinted bg, colored text) */
+.ASDDTriggerLight--primary {
+  background: color-mix(in oklab, var(--ASColor-primary) 12%, #fff);
+  color: var(--ASColor-primary);
+}
+.ASDDTriggerLight--info {
+  background: color-mix(in oklab, var(--ASColor-info) 12%, #fff);
+  color: var(--ASColor-info);
+}
+.ASDDTriggerLight--success {
+  background: color-mix(in oklab, var(--ASColor-success) 12%, #fff);
+  color: var(--ASColor-success);
+}
+.ASDDTriggerLight--alert {
+  background: color-mix(in oklab, var(--ASColor-alert) 12%, #fff);
+  color: var(--ASColor-alert);
+}
+.ASDDTriggerLight--error {
+  background: color-mix(in oklab, var(--ASColor-error) 12%, #fff);
+  color: var(--ASColor-error);
+}
+.ASDDTriggerLight--grey {
+  background: color-mix(in oklab, var(--ASColor-grey) 12%, #fff);
+  color: var(--ASColor-grey);
+}
+.ASDDTriggerLight--primary:hover,
+.ASDDTriggerLight--info:hover,
+.ASDDTriggerLight--success:hover,
+.ASDDTriggerLight--alert:hover,
+.ASDDTriggerLight--error:hover,
+.ASDDTriggerLight--grey:hover {
+  background: color-mix(in oklab, currentColor 18%, #fff);
+}
+
+/* Shapes & sizes */
+.ASDDTrigger--pill {
+  border-radius: 9999px;
+}
+.ASDDTrigger--icon {
+  inline-size: 2.5rem;
+  block-size: 2.5rem;
+  padding: 0;
+  border-radius: 9999px;
+  justify-content: center;
+}
+.ASDDTrigger--block {
+  display: flex;
+  inline-size: 100%;
+  justify-content: space-between;
+}
+.ASDDTrigger--sm {
+  padding: 0.3rem 0.6rem;
+  font-size: 0.825rem;
+}
+.ASDDTrigger--md {
+  padding: 0.45rem 1rem;
+  font-size: 1rem;
+}
+.ASDDTrigger--lg {
+  padding: 0.65rem 1.25rem;
+  font-size: 1.0625rem;
+}
+
+/* Split group */
+.ASDDSplit {
+  display: inline-flex;
+  grid-template-columns: 1fr auto;
+  border-radius: var(--ASBtn-r);
+  overflow: visible;
+  position: relative;
+}
+.ASDDSplit > .ASDDTrigger,
+.ASDDSplit > .ASDropdown > .ASDDTrigger {
+  inline-size: 100%;
+  block-size: calc(var(--ASBtn-padY, 0.5rem) * 2 + 1.25rem);
+  line-height: 1;
+  border-radius: 0;
+  transform: none;
+  box-shadow: none;
+}
+
+/* corners: left piece gets left radii, right piece gets right radii */
+.ASDDSplit > .ASDDTrigger:first-child {
+  border-top-left-radius: var(--ASBtn-r);
+  border-bottom-left-radius: var(--ASBtn-r);
+}
+.ASDDSplit > .ASDropdown > .ASDDTrigger {
+  border-top-right-radius: var(--ASBtn-r);
+  border-bottom-right-radius: var(--ASBtn-r);
+}
+.ASDDSplit > .ASDropdown > .ASDDTrigger {
+  margin-inline-start: -2px;
+  position: relative;
+}
+.ASDDSplit > .ASDropdown > .ASDDTrigger::before {
+  content: "";
+  position: absolute;
+  inset-block: 6px;
+  inline-size: 2px;
+  inset-inline-start: -1px;
+  border-radius: 2px;
+  background: rgba(255, 255, 255, 0.22);
+  pointer-events: none;
+}
+
+/* ========== Menu ========== */
+.ASDDMenu {
+  position: absolute;
+  inset-block-start: calc(100% + 6px);
+  inset-inline-start: 0;
+  min-inline-size: 14rem;
+
+  background: var(--ASSurface);
+  color: var(--ASText);
+  border: 1px solid var(--ASBorder);
+  border-radius: var(--ASRadiusLg);
+  box-shadow: var(--ASShadowMd);
+  padding: 0.25rem;
+  z-index: 1000;
+  display: none;
+  transform-origin: top left;
+  opacity: 0;
+  transform: translateY(4px) scale(0.98);
+  transition: opacity 0.15s ease, transform 0.15s ease;
+  overflow: hidden;
+}
+
+.ASDDMenu::before {
+  content: "";
+  position: absolute;
+  inset-inline: 0;
+  inset-block-start: 0;
+  block-size: 3px;
+  background: var(--_accent);
+  border-top-left-radius: inherit;
+  border-top-right-radius: inherit;
+}
+
+.ASDropdown[data-align="end"] .ASDDMenu {
+  inset-inline-start: auto;
+  inset-inline-end: 0;
+  transform-origin: top right;
+}
+.ASDropdown.is-open > .ASDDMenu {
+  display: block;
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+/* Menu pieces */
+.ASDDLabel {
+  padding: 0.625rem 0.75rem;
+  font-weight: 800;
+  font-size: 0.95rem;
+  color: var(--ASText);
+  letter-spacing: 0.01em;
+}
+.ASDDSeparator {
+  block-size: 1px;
+  background: color-mix(in oklab, var(--ASBorder) 85%, #fff);
+  margin: 0.25rem;
+  border: 0;
+}
+
+.ASDDItem {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  inline-size: 100%;
+  padding: 0.625rem 0.75rem;
+  border-radius: 0.625rem;
+  background: transparent;
+  color: inherit;
+  cursor: pointer;
+  border: 0;
+  font: inherit;
+  text-align: start;
+  white-space: nowrap;
+  transition: background-color 0.15s ease, color 0.15s ease, opacity 0.15s ease;
+}
+.ASDDItem:hover {
+  background: var(--_hoverTint);
+}
+.ASDDMenu[data-hover="fill"] .ASDDItem:hover {
+  background: var(--_accent);
+  color: var(--_accentFg);
+}
+.ASDDItem[aria-disabled="true"] {
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+.ASDDItem .ASDDShortcut {
+  margin-inline-start: auto;
+  color: var(--ASSubText);
+  font-size: 0.8125rem;
+}
+
+/* Badges for counts/status */
+.ASBadge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-inline-size: 1.25rem;
+  block-size: 1.25rem;
+  padding: 0 0.375rem;
+  border-radius: 9999px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  line-height: 1;
+}
+.ASBadge--error {
+  background: var(--ASColor-error);
+  color: var(--ASColor-errorFg);
+}
+.ASBadge--success {
+  background: var(--ASColor-success);
+  color: var(--ASColor-successFg);
+}
+.ASBadge--info {
+  background: var(--ASColor-info);
+  color: var(--ASColor-infoFg);
+}
+.ASBadge--alert {
+  background: var(--ASColor-alert);
+  color: var(--ASColor-alertFg);
+}
+.ASBadge--grey {
+  background: var(--ASColor-grey);
+  color: var(--ASColor-greyFg);
+}
+
+/* ========== Submenu ========== */
+.ASDDItem.has-sub {
+  position: relative;
+}
+.ASDDItem.has-sub .ASDDCaret {
+  margin-inline-start: auto;
+  inline-size: 1rem;
+  block-size: 1rem;
+  background: currentColor;
+  mask: url("data:image/svg+xml,%3Csvg viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill='%23000' d='M9.29 6.71 13.58 11 9.3 15.29 10.71 16.7l5-5-5-5z'/%3E%3C/svg%3E")
+    no-repeat center / contain;
+  opacity: 0.8;
+}
+.ASDDSubMenu {
+  position: absolute;
+  inset-block-start: -0.25rem;
+  inset-inline-start: calc(100% + 0.25rem);
+  min-inline-size: 12rem;
+  background: var(--ASSurface);
+  border: 1px solid var(--ASBorder);
+  border-radius: var(--ASRadiusLg);
+  box-shadow: var(--ASShadowMd);
+  padding: 0.25rem;
+  display: none;
+  z-index: 1001;
+  transform-origin: top left;
+  opacity: 0;
+  transform: translateY(2px) scale(0.98);
+  transition: opacity 0.15s ease, transform 0.15s ease;
+}
+.ASDDItem[aria-expanded="true"] + .ASDDSubMenu {
+  display: block;
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+/* ========== Block / full width container helpers ========== */
+.ASDDBlock {
+  inline-size: 100%;
+}
+.ASDDBlock .ASDropdown {
+  inline-size: 100%;
+}
+.ASDDBlock .ASDDMenu {
+  inline-size: 100%;
+}
+
+/* ========== RTL support ========== */
+:root[dir="rtl"] .ASDDSplit .ASDDTrigger + .ASDDTrigger {
+  border-inline-start: none;
+  border-inline-end: 2px solid rgba(255, 255, 255, 0.2);
+}
+:root[dir="rtl"] .ASDDItem.has-sub .ASDDCaret {
+  transform: scaleX(-1);
+}
+:root[dir="rtl"] .ASDDSubMenu {
+  inset-inline-start: auto;
+  inset-inline-end: calc(100% + 0.25rem);
+  transform-origin: top right;
+}
+
+/* ========== Variant context (applies to MENU + its hover tints) ========== */
+.ASDropdown[data-variant="primary"] {
+  --_accent: var(--ASColor-primary);
+  --_accentFg: var(--ASColor-primaryFg);
+}
+.ASDropdown[data-variant="secondary"] {
+  --_accent: var(--ASColor-secondary);
+  --_accentFg: var(--ASColor-secondaryFg);
+}
+.ASDropdown[data-variant="info"] {
+  --_accent: var(--ASColor-info);
+  --_accentFg: var(--ASColor-infoFg);
+}
+.ASDropdown[data-variant="success"] {
+  --_accent: var(--ASColor-success);
+  --_accentFg: var(--ASColor-successFg);
+}
+.ASDropdown[data-variant="alert"] {
+  --_accent: var(--ASColor-alert);
+  --_accentFg: var(--ASColor-alertFg);
+}
+.ASDropdown[data-variant="error"] {
+  --_accent: var(--ASColor-error);
+  --_accentFg: var(--ASColor-errorFg);
+}
+.ASDropdown[data-variant="grey"] {
+  --_accent: var(--ASColor-grey);
+  --_accentFg: var(--ASColor-greyFg);
+}
+
+/* ========== Showcase container (like cards/buttons stage) ========== */
+.ASDropdownsBlock {
+  background: #fff;
+  border: 1px solid var(--ASBorder);
+  border-radius: 12px;
+  padding: 1rem;
+}
+.ASDropdownsBlock h3 {
+  font-size: 1.05rem;
+  margin: 0 0 0.25rem;
+}
+.ASDropdownsBlock p {
+  color: var(--ASTextMuted);
+  margin: 0 0 0.75rem;
+  font-size: 0.95rem;
+}
+.ASDropdownsRow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+/* Auto-propagate accent vars to the menu based on the trigger class */
+.ASDropdown:has(.ASDDTrigger--primary) {
+  --_accent: var(--ASColor-primary);
+  --_accentFg: var(--ASColor-primaryFg);
+}
+.ASDropdown:has(.ASDDTrigger--secondary) {
+  --_accent: var(--ASColor-secondary);
+  --_accentFg: var(--ASColor-secondaryFg);
+}
+.ASDropdown:has(.ASDDTrigger--info) {
+  --_accent: var(--ASColor-info);
+  --_accentFg: var(--ASColor-infoFg);
+}
+.ASDropdown:has(.ASDDTrigger--success) {
+  --_accent: var(--ASColor-success);
+  --_accentFg: var(--ASColor-successFg);
+}
+.ASDropdown:has(.ASDDTrigger--alert) {
+  --_accent: var(--ASColor-alert);
+  --_accentFg: var(--ASColor-alertFg);
+}
+.ASDropdown:has(.ASDDTrigger--error) {
+  --_accent: var(--ASColor-error);
+  --_accentFg: var(--ASColor-errorFg);
+}
+.ASDropdown:has(.ASDDTrigger--grey) {
+  --_accent: var(--ASColor-grey);
+  --_accentFg: var(--ASColor-greyFg);
+}
+.ASDDSplit:has(
+    .ASDDTriggerLight--primary,
+    .ASDDTriggerLight--info,
+    .ASDDTriggerLight--success,
+    .ASDDTriggerLight--alert,
+    .ASDDTriggerLight--error,
+    .ASDDTriggerLight--grey
+  )
+  > .ASDropdown
+  > .ASDDTrigger::before {
+  background: color-mix(in oklab, currentColor 18%, #fff);
+}
+/* unified hover states: tint the whole split on hover */
+.ASDDSplit:hover > .ASDDTrigger,
+.ASDDSplit:hover > .ASDropdown > .ASDDTrigger {
+  filter: brightness(0.97);
+  box-shadow: var(--ASShadowSm);
+}
+.ASDDSplit .ASDDTrigger:hover {
+  transform: none;
+}
+
+/* one focus ring around the whole control when any half is focused */
+.ASDDSplit:has(:focus-visible) {
+  outline: 0;
+  box-shadow: var(--ASFocus);
+}
+
+/* keep the small divider on dark/solid halves only  */
+.ASDDSplit .ASDDTrigger + .ASDDTrigger {
+  border-inline-start: none;
+}
+
+/* === Menus opened from the split toggle ================================ */
+.ASDDSplit > .ASDropdown .ASDDMenu {
+  inset-inline-start: 0;
+  inset-inline-end: auto;
+  transform-origin: top right;
+}
+
+/* make menu accent auto-match the right toggle’s color */
+.ASDDSplit > .ASDropdown:has(.ASDDTrigger--primary) {
+  --_accent: var(--ASColor-primary);
+  --_accentFg: var(--ASColor-primaryFg);
+}
+.ASDDSplit > .ASDropdown:has(.ASDDTrigger--info) {
+  --_accent: var(--ASColor-info);
+  --_accentFg: var(--ASColor-infoFg);
+}
+.ASDDSplit > .ASDropdown:has(.ASDDTrigger--success) {
+  --_accent: var(--ASColor-success);
+  --_accentFg: var(--ASColor-successFg);
+}
+.ASDDSplit > .ASDropdown:has(.ASDDTrigger--alert) {
+  --_accent: var(--ASColor-alert);
+  --_accentFg: var(--ASColor-alertFg);
+}
+.ASDDSplit > .ASDropdown:has(.ASDDTrigger--error) {
+  --_accent: var(--ASColor-error);
+  --_accentFg: var(--ASColor-errorFg);
+}
+.ASDDSplit > .ASDropdown:has(.ASDDTrigger--grey) {
+  --_accent: var(--ASColor-grey);
+  --_accentFg: var(--ASColor-greyFg);
+}
+
+/* ---------- Showcase grid (2 columns on lg+) ---------- */
+.ASDropDownGrid {
+  row-gap: 1.5rem;
+}
+@media (min-width: 992px) {
+  .ASDropDownGrid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 1.25rem;
+  }
+}
+.ASDropdownsBlock {
+  background: #fff;
+  border: 1px solid var(--ASBorder, rgba(0, 0, 0, 0.08));
+  border-radius: 12px;
+  padding: 1rem;
+}
+.ASDropdown h3 {
+  font-size: 1.05rem;
+  margin: 0 0 0.25rem;
+}
+.ASDropdown p {
+  color: var(--ASTextMuted, #6b7280);
+  margin: 0 0 0.75rem;
+  font-size: 0.95rem;
+}
+.ASDropdownRow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}

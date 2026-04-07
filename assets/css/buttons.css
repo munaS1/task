@@ -1,0 +1,320 @@
+/* ===========================
+   AS Buttons (scoped + portable)
+   =========================== */
+.ASBtn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: var(--ASBtn-padY) var(--ASBtn-padX);
+  border: 0;
+  border-radius: var(--ASBtn-r);
+  font-weight: 600;
+  line-height: 1;
+  white-space: nowrap;
+  cursor: pointer;
+  user-select: none;
+  transition: transform var(--ASBtn-tr), box-shadow var(--ASBtn-tr),
+    background-color var(--ASBtn-tr), color var(--ASBtn-tr),
+    border-color var(--ASBtn-tr);
+}
+.ASBtn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+.ASBtn:focus-visible {
+  outline: 0;
+  box-shadow: var(--ASFocus);
+}
+
+/* sizes */
+.ASBtn--sm {
+  padding: 0.3rem 0.55rem;
+  font-size: 0.775rem;
+}
+.ASBtn--md {
+  padding: 0.425rem 1rem;
+  font-size: 1.0225rem;
+}
+.ASBtn--lg {
+  padding: 0.625rem 1.25rem;
+  font-size: 1.0625rem;
+}
+
+/* rounded */
+.ASBtn--pill {
+  border-radius: 9999px;
+}
+
+/* icon inside button */
+.ASBtn i,
+.ASBtn .ASIcon {
+  font-size: 1rem;
+}
+
+/* ---------- Solid (default) ---------- */
+.ASBtn--grey {
+  background: var(--ASColor-grey);
+  color: var(--ASColor-greyFg);
+}
+.ASBtn--primary {
+  background: var(--ASColor-primary);
+  color: var(--ASColor-primaryFg);
+}
+.ASBtn--secondary {
+  background: var(--ASColor-secondary);
+  color: var(--ASColor-secondaryFg);
+}
+.ASBtn--tertiary {
+  background: var(--ASColor-tertiary);
+  color: var(--ASColor-tertiaryFg);
+}
+.ASBtn--quaternary {
+  background: var(--ASColor-quaternary);
+  color: var(--ASColor-quaternaryFg);
+}
+.ASBtn--success,
+.ASBtn--Success {
+  background: var(--ASColor-success);
+  color: var(--ASColor-successFg);
+}
+.ASBtn--error,
+.ASBtn--Error {
+  background: var(--ASColor-error);
+  color: var(--ASColor-errorFg);
+}
+.ASBtn--info,
+.ASBtn--Info {
+  background: var(--ASColor-info);
+  color: var(--ASColor-infoFg);
+}
+.ASBtn--alert,
+.ASBtn--Alert {
+  background: var(--ASColor-alert);
+  color: var(--ASColor-alertFg);
+}
+
+.ASBtn--grey:hover,
+.ASBtn--primary:hover,
+.ASBtn--secondary:hover,
+.ASBtn--tertiary:hover,
+.ASBtn--quaternary:hover,
+.ASBtn--success:hover,
+.ASBtn--error:hover,
+.ASBtn--info:hover,
+.ASBtn--alert:hover,
+.ASBtn--Success:hover,
+.ASBtn--Error:hover,
+.ASBtn--Info:hover,
+.ASBtn--Alert:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.08);
+  filter: brightness(0.95);
+}
+
+/* ---------- Outline (fills on hover exactly like Figma) ---------- */
+.ASBtnOutline {
+  background: transparent;
+  border: var(--ASBtn-bw) solid currentColor;
+}
+.ASBtnOutline--grey {
+  color: var(--ASColor-grey);
+}
+.ASBtnOutline--primary {
+  color: var(--ASColor-primary);
+}
+.ASBtnOutline--secondary {
+  color: var(--ASColor-secondary);
+}
+.ASBtnOutline--tertiary {
+  color: var(--ASColor-tertiary);
+}
+.ASBtnOutline--quaternary {
+  color: var(--ASColor-quaternary);
+}
+.ASBtnOutline--success,
+.ASBtnOutline--Success {
+  color: var(--ASColor-success);
+}
+.ASBtnOutline--error,
+.ASBtnOutline--Error {
+  color: var(--ASColor-error);
+}
+.ASBtnOutline--info,
+.ASBtnOutline--Info {
+  color: var(--ASColor-info);
+}
+.ASBtnOutline--alert,
+.ASBtnOutline--Alert {
+  color: var(--ASColor-alert);
+}
+
+/* fill + invert text on hover */
+.ASBtnOutline--grey:hover {
+  background: var(--ASColor-grey);
+  color: var(--ASColor-greyFg);
+}
+.ASBtnOutline--primary:hover {
+  background: var(--ASColor-primary);
+  color: var(--ASColor-primaryFg);
+}
+.ASBtnOutline--secondary:hover {
+  background: var(--ASColor-secondary);
+  color: var(--ASColor-secondaryFg);
+}
+.ASBtnOutline--tertiary:hover {
+  background: var(--ASColor-tertiary);
+  color: var(--ASColor-tertiaryFg);
+}
+.ASBtnOutline--quaternary:hover {
+  background: var(--ASColor-quaternary);
+  color: var(--ASColor-quaternaryFg);
+}
+.ASBtnOutline--success:hover,
+.ASBtnOutline--Success:hover {
+  background: var(--ASColor-success);
+  color: var(--ASColor-successFg);
+}
+.ASBtnOutline--error:hover,
+.ASBtnOutline--Error:hover {
+  background: var(--ASColor-error);
+  color: var(--ASColor-errorFg);
+}
+.ASBtnOutline--info:hover,
+.ASBtnOutline--Info:hover {
+  background: var(--ASColor-info);
+  color: var(--ASColor-infoFg);
+}
+.ASBtnOutline--alert:hover,
+.ASBtnOutline--Alert:hover {
+  background: var(--ASColor-alert);
+  color: var(--ASColor-alertFg);
+}
+
+/* ---------- Light (tint background, colored text) ---------- */
+/* Use color-mix so tints derive from the tokens */
+.ASBtnLight--grey {
+  background: color-mix(in oklab, var(--ASColor-grey) 12%, #fff);
+  color: var(--ASColor-grey);
+}
+.ASBtnLight--primary {
+  background: color-mix(in oklab, var(--ASColor-primary) 12%, #fff);
+  color: var(--ASColor-primary);
+}
+.ASBtnLight--secondary {
+  background: color-mix(in oklab, var(--ASColor-secondary) 12%, #fff);
+  color: var(--ASColor-secondary);
+}
+.ASBtnLight--tertiary {
+  background: color-mix(in oklab, var(--ASColor-tertiary) 12%, #fff);
+  color: var(--ASColor-tertiary);
+}
+.ASBtnLight--quaternary {
+  background: color-mix(in oklab, var(--ASColor-quaternary) 12%, #fff);
+  color: var(--ASColor-quaternary);
+}
+.ASBtnLight--success,
+.ASBtnLight--Success {
+  background: color-mix(in oklab, var(--ASColor-success) 12%, #fff);
+  color: var(--ASColor-success);
+}
+.ASBtnLight--error,
+.ASBtnLight--Error {
+  background: color-mix(in oklab, var(--ASColor-error) 12%, #fff);
+  color: var(--ASColor-error);
+}
+.ASBtnLight--info,
+.ASBtnLight--Info {
+  background: color-mix(in oklab, var(--ASColor-info) 12%, #fff);
+  color: var(--ASColor-info);
+}
+.ASBtnLight--alert,
+.ASBtnLight--Alert {
+  background: color-mix(in oklab, var(--ASColor-alert) 12%, #fff);
+  color: var(--ASColor-alert);
+}
+
+.ASBtnLight--grey:hover,
+.ASBtnLight--primary:hover,
+.ASBtnLight--secondary:hover,
+.ASBtnLight--tertiary:hover,
+.ASBtnLight--quaternary:hover,
+.ASBtnLight--success:hover,
+.ASBtnLight--error:hover,
+.ASBtnLight--info:hover,
+.ASBtnLight--alert:hover,
+.ASBtnLight--Success:hover,
+.ASBtnLight--Error:hover,
+.ASBtnLight--Info:hover,
+.ASBtnLight--Alert:hover {
+  filter: brightness(0.98);
+  background: color-mix(in oklab, currentColor 20%, #fff);
+}
+
+/* ---------- Block (full width, light look) ---------- */
+.ASBtn--block {
+  width: 100%;
+  display: block;
+}
+
+/* ---------- Groups ---------- */
+.ASBtnGroup {
+  display: inline-flex;
+  border-radius: var(--ASBtn-r);
+  overflow: hidden;
+}
+.ASBtnGroup .ASBtn {
+  border-radius: 0;
+}
+.ASBtnGroup .ASBtn + .ASBtn {
+  border-inline-start: 1px solid rgba(255, 255, 255, 0.25);
+}
+
+/* Checkbox/Radio (state via .is-active) */
+.ASBtn.is-active {
+  transform: none;
+  box-shadow: none;
+}
+.ASCheck.is-active {
+  background: var(--ASColor-success);
+  color: var(--ASColor-successFg);
+  border-color: var(--ASColor-success);
+}
+.ASRadio.is-active {
+  background: var(--ASColor-tertiary);
+  color: var(--ASColor-tertiaryFg);
+  border-color: var(--ASColor-tertiary);
+}
+
+/* ---------- Showcase grid (2 columns on lg+) ---------- */
+.ASButtonsGrid {
+  row-gap: 1.5rem;
+}
+@media (min-width: 992px) {
+  .ASButtonsGrid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 1.25rem;
+  }
+}
+.ASButtonsBlock {
+  background: #fff;
+  border: 1px solid var(--ASBorder, rgba(0, 0, 0, 0.08));
+  border-radius: 12px;
+  padding: 1rem;
+}
+.ASButtonsBlock h3 {
+  font-size: 1.05rem;
+  margin: 0 0 0.25rem;
+}
+.ASButtonsBlock p {
+  color: var(--ASTextMuted, #6b7280);
+  margin: 0 0 0.75rem;
+  font-size: 0.95rem;
+}
+.ASButtonsRow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}

@@ -1,0 +1,244 @@
+<section class="ASSection">
+  <div class="ASContainer">
+    <header class="mb-3">
+      <h2>Navigation Collection</h2>
+      <p class="text-muted">
+        Comprehensive navigation styles based on our custom AS design system.
+      </p>
+    </header>
+
+    <div class="ASNavGrid">
+      <!-- =============== Basic Navigation =================== -->
+      <div class="ASNavBlock">
+        <h3>Basic Nav</h3>
+        <p>Simple horizontal navigation</p>
+
+        <ul class="ASNav ASNav--tabs">
+          <li>
+            <button class="ASNavLink is-active">Active</button>
+          </li>
+          <li>
+            <button class="ASNavLink">Link</button>
+          </li>
+          <li>
+            <button class="ASNavLink">Link</button>
+          </li>
+          <li>
+            <button class="ASNavLink is-disabled">Disabled</button>
+          </li>
+        </ul>
+      </div>
+
+      <!-- =============== Vertical Navigation =================== -->
+      <div class="ASNavBlock">
+        <h3>Vertical Nav</h3>
+        <p>Stacked navigation</p>
+
+        <ul class="ASNav ASNav--verticalTabs">
+          <li>
+            <button class="ASNavLink is-active">Active</button>
+          </li>
+          <li>
+            <button class="ASNavLink">Link</button>
+          </li>
+          <li>
+            <button class="ASNavLink">Link</button>
+          </li>
+          <li>
+            <button class="ASNavLink is-disabled">Disabled</button>
+          </li>
+        </ul>
+      </div>
+
+      <!-- =============== Tabs Navigation =================== -->
+      <div class="ASNavBlock">
+        <h3>Tabs Navigation</h3>
+        <p>Interactive tabs navigation with content switching</p>
+
+        <ul class="ASNavTabs">
+          <li>
+            <button class="ASNavTab is-active" data-target="#tab1">
+              <i class="fa-solid fa-house"></i>
+              Home
+            </button>
+          </li>
+
+          <li>
+            <button class="ASNavTab" data-target="#tab2">
+              <i class="fa-solid fa-lock"></i>
+              Lock
+            </button>
+          </li>
+
+          <li>
+            <button class="ASNavTab" data-target="#tab3">
+              <i class="fa-solid fa-play"></i>
+              Videos
+            </button>
+          </li>
+
+          <li>
+            <button class="ASNavTab" data-target="#tab4">
+              <i class="fa-solid fa-layer-group"></i>
+              Servers
+            </button>
+          </li>
+        </ul>
+
+        <div class="ASTabContent">
+          <div id="tab1" class="ASTabPane is-active">
+            <p>Home content...</p>
+          </div>
+
+          <div id="tab2" class="ASTabPane">
+            <p>Lock content...</p>
+          </div>
+
+          <div id="tab3" class="ASTabPane">
+            <p>Videos content...</p>
+          </div>
+
+          <div id="tab4" class="ASTabPane">
+            <p>Servers content...</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- =============== Underline Navigation =================== -->
+      <div class="ASNavBlock">
+        <h3>Underline Navigation</h3>
+        <p>Underline style navigation</p>
+
+        <ul class="ASNav ASNav--underline">
+          <li><button class="ASNavLink is-active">Active</button></li>
+          <li><button class="ASNavLink">Link</button></li>
+          <li><button class="ASNavLink">Link</button></li>
+          <li><button class="ASNavLink is-disabled">Disabled</button></li>
+        </ul>
+      </div>
+
+      <!-- =============== Pills Navigation =================== -->
+      <div class="ASNavBlock">
+        <h3>Pills Navigation</h3>
+        <p>Rounded pills navigation</p>
+
+        <ul class="ASNav ASNav--pills">
+          <li><button class="ASNavLink is-active">Active</button></li>
+          <li><button class="ASNavLink">Link</button></li>
+          <li><button class="ASNavLink">Link</button></li>
+          <li><button class="ASNavLink is-disabled">Disabled</button></li>
+        </ul>
+      </div>
+
+      <!-- =============== Icon Navigation =================== -->
+      <div class="ASNavBlock">
+        <h3>Icon Navigation</h3>
+        <p>Navigation with icons</p>
+
+        <ul class="ASNav ASNav--icon">
+          <li>
+            <button class="ASNavIcon is-active">
+              <i class="fa-solid fa-house"></i>
+              <span>Home</span>
+            </button>
+          </li>
+          <li>
+            <button class="ASNavIcon">
+              <i class="fa-solid fa-lock"></i>
+              <span>Lock</span>
+            </button>
+          </li>
+          <li>
+            <button class="ASNavIcon">
+              <i class="fa-solid fa-play"></i>
+              <span>Videos</span>
+            </button>
+          </li>
+          <li>
+            <button class="ASNavIcon">
+              <i class="fa-solid fa-layer-group"></i>
+              <span>Servers</span>
+            </button>
+          </li>
+        </ul>
+      </div>
+
+      <!-- =============== Icon Only Navigation =================== -->
+      <div class="ASNavBlock">
+        <h3>Icon Only Navigation</h3>
+        <p>Circular icon navigation</p>
+
+        <ul class="ASNav ASNav--iconOnly">
+          <li>
+            <button class="ASNavCircle is-active">
+              <i class="fa-solid fa-house"></i>
+            </button>
+          </li>
+          <li>
+            <button class="ASNavCircle">
+              <i class="fa-solid fa-lock"></i>
+            </button>
+          </li>
+          <li>
+            <button class="ASNavCircle">
+              <i class="fa-solid fa-play"></i>
+            </button>
+          </li>
+          <li>
+            <button class="ASNavCircle">
+              <i class="fa-solid fa-layer-group"></i>
+            </button>
+          </li>
+        </ul>
+      </div>
+
+      <!-- =============== Background Navigation =================== -->
+      <div class="ASNavBlock">
+        <h3>Background Navigation</h3>
+        <p>Navigation with background colors</p>
+
+        <div class="ASNavStack">
+          <!-- Primary -->
+          <ul class="ASNav ASNav--bg ASNav--primary">
+            <li><button class="ASNavLink is-active">Active</button></li>
+            <li><button class="ASNavLink">Link</button></li>
+            <li><button class="ASNavLink">Link</button></li>
+            <li><button class="ASNavLink is-disabled">Disabled</button></li>
+          </ul>
+
+          <!-- Info -->
+          <ul class="ASNav ASNav--bg ASNav--info mt-3">
+            <li><button class="ASNavLink is-active">Active</button></li>
+            <li><button class="ASNavLink">Link</button></li>
+            <li><button class="ASNavLink">Link</button></li>
+            <li><button class="ASNavLink is-disabled">Disabled</button></li>
+          </ul>
+
+          <!-- Success -->
+          <ul class="ASNav ASNav--bg ASNav--success mt-3">
+            <li><button class="ASNavLink is-active">Active</button></li>
+            <li><button class="ASNavLink">Link</button></li>
+            <li><button class="ASNavLink">Link</button></li>
+            <li><button class="ASNavLink is-disabled">Disabled</button></li>
+          </ul>
+
+          <!-- Danger -->
+          <ul class="ASNav ASNav--bg ASNav--danger mt-3">
+            <li><button class="ASNavLink is-active">Active</button></li>
+            <li><button class="ASNavLink">Link</button></li>
+            <li><button class="ASNavLink">Link</button></li>
+            <li><button class="ASNavLink is-disabled">Disabled</button></li>
+          </ul>
+
+          <!-- Warning -->
+          <ul class="ASNav ASNav--bg ASNav--warning mt-3">
+            <li><button class="ASNavLink is-active">Active</button></li>
+            <li><button class="ASNavLink">Link</button></li>
+            <li><button class="ASNavLink">Link</button></li>
+            <li><button class="ASNavLink is-disabled">Disabled</button></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

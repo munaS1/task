@@ -1,0 +1,54 @@
+/**
+ File: components.css
+ Purpose: Primitive AS components shared everywhere
+*/
+
+/* Button (base variants used across pages) */
+.ASButton {
+    --btn-bg: var(--ASPrimary);
+    --btn-fg: #fff;
+    display:inline-flex; align-items:center; justify-content:center;
+    gap:.5rem; border:1px solid transparent; border-radius: var(--ASRadiusSm);
+    background: var(--btn-bg); color: var(--btn-fg);
+    padding:.55rem 1rem; cursor:pointer; transition:transform .05s ease, opacity .2s ease;
+  }
+  .ASButton:active { transform: translateY(1px); }
+  .ASButton--secondary { --btn-bg: var(--ASSecondary); }
+  .ASButton--accent { --btn-bg: var(--ASAccent); }
+  .ASButton--ghost { --btn-bg: transparent; --btn-fg: var(--ASText); border-color: var(--ASBorder); }
+  
+  /* Card shell */
+  .ASCard { background: var(--ASSurface); border:1px solid var(--ASBorder); border-radius: var(--ASRadiusLg); box-shadow: var(--ASShadowSm); }
+  .ASCardHeader { padding:.75rem 1rem; border-block-end:1px solid var(--ASBorder); font-weight:600; }
+  .ASCardBody { padding:1rem; }
+  
+  /* Form control primitive */
+  .ASInput, .ASTextarea, .ASSelect {
+    width:100%; border:1px solid var(--ASBorder); background:#fff; color:var(--ASText);
+    padding:.6rem .8rem; border-radius:10px;
+  }
+  .ASInput:focus, .ASTextarea:focus, .ASSelect:focus { box-shadow: var(--ASFocus); border-color: var(--ASPrimary); outline:0; }
+  .isInvalid { border-color: var(--ASDanger) !important; }
+  .isValid { border-color: var(--ASSuccess) !important; }
+  /* ===== ASInput – Gov Style ===== */
+.ASInput--gov{
+  background-color: rgba(0, 128, 96, 0.06);
+  border-color: rgba(0, 128, 96, 0.35);
+}
+
+.ASInput--gov:focus{
+  background-color: rgba(0, 128, 96, 0.1);
+  border-color: var(--ASSuccess);
+  box-shadow: 0 0 0 3px rgba(0, 128, 96, 0.18);
+}
+/* ===== ASInput – Accent Style ===== */
+.ASInput--accented{
+  background-color: rgba(120, 72, 32, 0.06);
+  border-color: rgba(120, 72, 32, 0.35);
+}
+
+.ASInput--accented:focus{
+  background-color: rgba(120, 72, 32, 0.1);
+  border-color: var(--ASAccent);
+  box-shadow: 0 0 0 3px rgba(120, 72, 32, 0.18);
+}

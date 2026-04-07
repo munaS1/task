@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>AS - إدارة المستخدمين</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.rtl.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <style>
+    :root {
+      --as-brown: #392015;
+    }
+    body {
+      background-color: #f9f9f9;
+      font-family: "Tajawal", sans-serif;
+    }
+    .AS-sidebar {
+      background-color: var(--as-brown);
+      min-height: 100vh;
+      color: #fff;
+      padding-top: 2rem;
+    }
+    .AS-sidebar a {
+      color: #fff;
+      padding: 0.75rem 1.5rem;
+      display: block;
+      text-decoration: none;
+    }
+    .AS-sidebar a.active,
+    .AS-sidebar a:hover {
+      background-color: #2e180f;
+      border-radius: 0.375rem;
+    }
+    .AS-header {
+      background-color: #fff;
+      border-bottom: 1px solid #eee;
+      padding: 1rem;
+    }
+    .AS-header .fa-bell, .AS-header .fa-globe {
+      margin-left: 1rem;
+      color: #000;
+    }
+    .AS-content {
+      padding: 2rem;
+    }
+    .AS-table-box {
+      background: white;
+      border-radius: 0.5rem;
+      padding: 1rem;
+      overflow-x: auto;
+    }
+    .AS-avatar {
+      background-color: #d7a980;
+      color: #fff;
+      border-radius: 50%;
+      width: 35px;
+      height: 35px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 14px;
+    }
+    .AS-search-box {
+      position: relative;
+    }
+    .AS-search-box input {
+      padding-right: 2.5rem;
+    }
+    .AS-search-box .fa-search {
+      position: absolute;
+      right: 10px;
+      top: 10px;
+      color: #ccc;
+    }
+    .AS-sidebar-toggle {
+      display: none;
+      background-color: var(--as-brown);
+      color: white;
+      border: none;
+      padding: 0.5rem 1rem;
+    }
+
+    @media (max-width: 991.98px) {
+      .AS-sidebar {
+        position: fixed;
+        top: 0;
+        right: -250px;
+        width: 250px;
+        transition: all 0.3s;
+        z-index: 1050;
+      }
+      .AS-sidebar.open {
+        right: 0;
+      }
+      .AS-sidebar-toggle {
+        display: block;
+        margin: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container-fluid">
+    <div class="row">
+      
+      <!-- Sidebar -->
+      <nav class="col-lg-2 AS-sidebar" id="AS-sidebar">
+        <div class="text-center mb-4">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3e/Saudi_Arabia_Logo.svg/512px-Saudi_Arabia_Logo.svg.png" alt="شعار" class="img-fluid" width="60" />
+        </div>
+        <a href="#" class="active"><i class="fas fa-users me-2"></i> المستخدمون</a>
+        <a href="#"><i class="fas fa-tasks me-2"></i> المهام</a>
+        <a href="#"><i class="fas fa-handshake me-2"></i> الاجتماعات</a>
+        <a href="#"><i class="fas fa-bell me-2"></i> الإشعارات</a>
+      </nav>
+
+      <!-- Main Content -->
+      <main class="col-lg-10 ms-auto">
+        <!-- Header -->
+        <div class="AS-header d-flex justify-content-between align-items-center">
+          <button class="AS-sidebar-toggle d-lg-none" onclick="toggleSidebar()">
+            <i class="fas fa-bars"></i>
+          </button>
+          <div class="d-flex align-items-center">
+            <span>فاطمة الغامدي</span>
+            <span class="text-muted ms-2">Coordinator</span>
+          </div>
+          <div>
+            <i class="fas fa-bell"></i><span class="badge bg-danger">3</span>
+            <i class="fas fa-globe"></i> EN
+          </div>
+        </div>
+
+        <!-- Page Content -->
+        <div class="AS-content">
+          <div class="d-flex justify-content-between align-items-center mb-3">
+            <h4>إدارة المستخدمين</h4>
+            <button class="btn btn-dark rounded-pill"><i class="fas fa-plus ms-2"></i> مستخدم جديد</button>
+          </div>
+
+          <!-- Search -->
+          <div class="AS-search-box mb-3">
+            <input type="text" class="form-control" placeholder="بحث">
+            <i class="fas fa-search"></i>
+          </div>
+
+          <!-- Table -->
+          <div class="AS-table-box">
+            <table class="table table-bordered table-hover align-middle text-center">
+              <thead>
+                <tr>
+                  <th>الاسم الكامل</th>
+                  <th>البريد الإلكتروني</th>
+                  <th>الدور الوظيفي</th>
+                  <th>الحالة</th>
+                  <th>الصوت</th>
+                  <th>الإجراءات</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><span class="AS-avatar">أ</span> أحمد السعيد</td>
+                  <td>ahmed.saeed@aseer.gov.sa</td>
+                  <td><span class="badge bg-light text-dark">CEO</span></td>
+                  <td><span class="badge bg-success text-white">نشط</span></td>
+                  <td>3</td>
+                  <td>
+                    <i class="fas fa-user-times text-danger me-2"></i>
+                    <i class="fas fa-edit text-dark"></i>
+                  </td>
+                </tr>
+                <!-- Add more users as needed -->
+              </tbody>
+            </table>
+          </div>
+
+          <!-- Stats -->
+          <div class="row mt-4 g-3">
+            <div class="col-md-4">
+              <div class="bg-white p-3 rounded text-center">إجمالي المستخدمين<br><strong>6</strong></div>
+            </div>
+            <div class="col-md-4">
+              <div class="bg-white p-3 rounded text-center">نشط<br><strong>5</strong></div>
+            </div>
+            <div class="col-md-4">
+              <div class="bg-white p-3 rounded text-center">غير نشط<br><strong>1</strong></div>
+            </div>
+          </div>
+        </div>
+      </main>
+
+    </div>
+  </div>
+
+  <script>
+    function toggleSidebar() {
+      document.getElementById('AS-sidebar').classList.toggle('open');
+    }
+  </script>
+
+</body>
+</html>

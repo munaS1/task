@@ -1,0 +1,105 @@
+<section class="ASSection" data-page="ASMaps" data-maps="mapael">
+  <div class="ASContainer">
+
+    <header class="mb-4">
+      <h2 class="h5 mb-1">Mapael Maps</h2>
+      <p class="u-muted mb-0">Links / Static / Legend Areas</p>
+    </header>
+
+    <div class="ASCardsGrid ASCardsGrid--2">
+
+      <!-- ============================== -->
+      <!-- Links -->
+      <!-- ============================== -->
+      <section class="ASCard">
+        <div class="ASCardHeader">
+          <h3 class="ASCardTitle">Map with links between the plotted cities</h3>
+        </div>
+        <div class="ASCardBody">
+          <div class="ASMapFrame ASMapFrame--lg">
+            <div class="ASMapael" id="ASMapaelLinks" aria-label="Mapael links map">
+              <div class="map"></div>
+              <div class="areaLegend"></div>
+              <div class="plotLegend"></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============================== -->
+      <!-- Static -->
+      <!-- ============================== -->
+      <section class="ASCard">
+        <div class="ASCardHeader">
+          <h3 class="ASCardTitle">Static MapelMaps</h3>
+        </div>
+        <div class="ASCardBody">
+          <div class="ASMapFrame ASMapFrame--lg">
+            <div class="ASMapael" id="ASMapaelStatic" aria-label="Mapael static map">
+              <div class="map"></div>
+              <div class="areaLegend"></div>
+              <div class="plotLegend"></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============================== -->
+      <!-- Legend -->
+      <!-- ============================== -->
+      <section class="ASCard">
+        <div class="ASCardHeader">
+          <h3 class="ASCardTitle">Map with a legend for areas</h3>
+        </div>
+        <div class="ASCardBody">
+          <div class="ASMapFrame ASMapFrame--lg">
+            <div class="ASMapael" id="ASMapaelLegend" aria-label="Mapael legend map">
+              <div class="map"></div>
+              <div class="areaLegend"></div>
+              <div class="plotLegend"></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </div>
+  </div>
+</section>
+<!-- ============================== -->
+<!-- City Data (Interactive) -->
+<!-- ============================== -->
+<section class="ASCard">
+  <div class="ASCardHeader">
+    <h3 class="ASCardTitle">City Data (Interactive)</h3>
+  </div>
+
+  <div class="ASCardBody">
+    <!-- Toolbar -->
+    <div class="ASMapToolbar">
+  <input
+    class="ASInput"
+    id="ASMapaelCitySearch"
+    type="search"
+    placeholder="ابحث عن مدينة… (مثال: Abha)"
+    aria-label="Search city"
+  />
+
+  <button class="ASBtn ASBtn--soft" type="button" id="ASMapaelResetBtn">Reset</button>
+</div>
+
+    <!-- Map Frame -->
+    <div class="ASMapFrame ASMapFrame--lg">
+      <div class="ASMapael" id="ASMapaelCityData" aria-label="Mapael city data map">
+        <div class="map"></div>
+        <div class="areaLegend"></div>
+        <div class="plotLegend"></div>
+      </div>
+    </div>
+
+    <!-- Data Panel -->
+    <div class="ASMapInfo" id="ASMapaelInfo" aria-live="polite">
+      <div class="ASMapInfoTitle">تفاصيل المدينة</div>
+      <div class="ASMapInfoBody u-muted">اضغطي على أي مدينة داخل الخريطة عشان يطلع لك البيانات هنا.</div>
+    </div>
+  </div>
+</section>

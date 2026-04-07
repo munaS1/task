@@ -1,0 +1,252 @@
+/**
+ File: profile.css
+ Purpose: Profile Components (avatars, info cards)
+*/
+
+/* =====================================================
+   Section 01 – Avatar Styles
+===================================================== */
+.ASAvatarStyles {
+  display: flex;
+  flex-direction: row;
+  gap: 1.5rem;
+}
+.ASAvatarRow {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1.25rem 1.5rem;
+}
+
+.ASAvatar {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  font-weight: 600;
+  color: #fff;
+  background: var(--ASColor-secondary);
+  box-shadow: var(--ASShadowSm);
+  text-transform: uppercase;
+}
+
+/* sizes */
+.ASAvatar--sm {
+  width: 40px;
+  height: 40px;
+  font-size: 0.8rem;
+  background: var(--ASColor-quaternary);
+}
+.ASAvatar--md {
+  width: 48px;
+  height: 48px;
+  font-size: 0.9rem;
+  background: var(--ASColor-secondary);
+}
+.ASAvatar--lg {
+  width: 64px;
+  height: 64px;
+  font-size: 1rem;
+  background: var(--ASColor-tertiary);
+}
+.ASAvatar--xl {
+  width: 80px;
+  height: 80px;
+  font-size: 1.1rem;
+  background: var(--ASColor-primary);
+}
+
+/* status dots */
+.ASAvatar[data-status]::after {
+  content: "";
+  position: absolute;
+  bottom: 4px;
+  right: 2px;
+  width: 10px;
+  height: 10px;
+  border-radius: 80%;
+  border: 2px solid #fff;
+}
+.ASAvatar[data-status="online"]::after {
+  background: var(--ASColor-success);
+}
+.ASAvatar[data-status="away"]::after {
+  background: var(--ASColor-alert);
+}
+.ASAvatar[data-status="busy"]::after {
+  background: var(--ASColor-error);
+}
+.ASAvatar[data-status="offline"]::after {
+  background: var(--ASColor-grey);
+}
+
+/* numeric badge */
+.ASAvatar[data-badge]::after {
+  content: attr(data-badge);
+  position: absolute;
+  top: -4px;
+  right: -4px;
+  min-width: 22px;
+  height: 22px;
+  border-radius: 20px;
+  background: var(--ASColor-error);
+  color: #fff;
+  font-size: 0.75rem;
+  font-weight: 300;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid;
+}
+.ASAvatar[data-badge="12"]::after {
+  background: var(--ASColor-info);
+}
+
+/* =====================================================
+   Section 02 – Profile Cards (Horizontal)
+===================================================== */
+@media (min-width: 992px) {
+  .ASProfileCardGrid {
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+.ASProfileBlock {
+  background: #fff;
+  border: 1px solid var(--ASBorder, rgba(0, 0, 0, 0.08));
+  border-radius: 12px;
+  padding: 1rem;
+}
+.ASContainer {
+  display: grid;
+  gap: 0.5rem;
+}
+.ASProfileCard {
+  display: flex;
+  align-items: center;
+  overflow: visible;
+  gap: 1.5rem;
+  padding: 1.5rem 1.75rem;
+  background: #fff;
+  border-radius: 12px;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+}
+
+/* Gradient border accent */
+.ASProfileCard::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 6px;
+  border-radius: 12px 0 0 12px;
+}
+.ASProfileCard--brown::before {
+  background: var(--ASColor-primary);
+}
+.ASProfileCard--tan::before {
+  background: var(--ASColor-secondary);
+}
+.ASProfileCard--gold::before {
+  background: var(--ASColor-tertiary);
+}
+.ASProfileCard--amber::before {
+  background: var(--ASColor-quaternary);
+}
+
+/* Avatar */
+.ASProfileAvatar {
+  width: 64px;
+  height: 64px;
+  border-radius: 10px;
+  background: #f5f5f5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  font-size: 1rem;
+  color: #b8b3ae;
+  text-transform: uppercase;
+}
+
+/* Info */
+.ASProfileInfo {
+  position: relative;
+  z-index: 1;
+}
+.ASProfileInfo h4 {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--ASText);
+  margin: 0 0 0.25rem;
+}
+.ASTitle {
+  font-size: 0.875rem;
+  color: #717182;
+  margin: 0 0 0.75rem;
+}
+
+/* Contacts */
+.ASContact {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  font-size: 0.875rem;
+  color: #717182;
+  align-items: center;
+}
+.ASContactItem {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+.ASContactItem img {
+  width: 16px;
+  height: 16px;
+  opacity: 0.8;
+}
+
+/* Badges */
+.ASBadgeRow {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 0.6rem;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: flex-start;
+  position: relative;
+  z-index: 2;
+}
+.ASBadgeStatus {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.75rem;
+  padding: 0.4rem 1.8rem;
+  border-radius: 6px;
+  font-weight: 500;
+  line-height: 1.1;
+  white-space: nowrap;
+}
+.ASBadge--success {
+  background: var(--ASColor-success);
+}
+.ASBadge--info {
+  background: var(--ASColor-info);
+}
+.ASBadge--alert {
+  background: var(--ASColor-alert);
+}
+.ASBadge--tan {
+  background: var(--ASColor-secondary);
+}
+.ASBadge--neutral {
+  background: #fff;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  color: #717182;
+}

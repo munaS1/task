@@ -1,0 +1,950 @@
+/* ===================== Layout & Container Structure ========================== */
+
+   .ASNotificationGrid {
+    row-gap: 1.5rem;
+  }
+  
+  @media (min-width: 992px) {
+    .ASNotificationGrid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      column-gap: 1.25rem;
+    }
+  }
+  
+  .ASNotificationsBlock {
+    background: #fff;
+    border: 1px solid var(--ASBorder);
+    border-radius: 12px;
+    padding: 1rem;
+  }
+  
+  .ASNotificationsBlock h4 {
+    font-size: 1.05rem;
+    margin: 0 0 0.25rem;
+  }
+  
+  .ASNotificationsBlock p {
+    color: var(--ASTextMuted);
+    margin: 0 0 0.75rem;
+    font-size: 0.95rem;
+  }
+  .ASNotificationsBlock h5 {
+    color: var(--ASColor-greyFg);
+    margin: 0 0 0.75rem;
+    font-size: 0.75rem;
+  }
+  
+  .ASNotificationsRow {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    align-items: center;
+  }
+  
+  /* ===================== Notification Trigger Buttons ========================== */
+  
+  .ASPOTrigger {
+    width: 48px;
+    height: 48px;
+    border: none;
+    border-radius: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+  
+  .ASPOTrigger img {
+    width: 22px;
+    height: 22px;
+  }
+  
+  .ASPOTrigger:hover {
+    transform: translateY(-1px);
+    box-shadow: var(--ASShadowSm);
+  }
+  
+  /* --- Core Color Variants --- */
+  .ASPOTrigger--primary { background: var(--ASColor-primary); }
+  .ASPOTrigger--info { background: var(--ASColor-info); }
+  .ASPOTrigger--success { background: var(--ASColor-success); }
+  .ASPOTrigger--alert { background: var(--ASColor-alert); }
+  
+  .ASPOTrigger--primary:hover,
+  .ASPOTrigger--info:hover,
+  .ASPOTrigger--success:hover,
+  .ASPOTrigger--alert:hover {
+    box-shadow: var(--ASShadowSm);
+    transform: translateY(-1px);
+  }
+  
+ /* ===================== Badges & Dots ========================== */
+  
+  .ASBadge {
+    position: absolute;
+    top: -5px;
+    right: -6px;
+    background: var(--ASColor-error);
+    color: #fff;
+    font-size: 11px;
+    border-radius: 50%;
+    width: 18px;
+    height: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .ASDot {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--ASColor-error);
+  }
+  
+  /* ===================== Popover Panels ========================== */
+  
+  .ASPOPanel {
+    position: absolute;
+    inset-block-start: calc(100% + 8px);
+    inset-inline-end: 0;
+    inset-inline-start: auto;
+    width: 320px;
+    max-inline-size: min(320px, 90vw);
+    margin-inline: 0.75rem; /* add margin buffer */
+    background: var(--ASSurface);
+    color: var(--ASText);
+    border: 1px solid var(--ASBorder);
+    border-radius: var(--ASRadiusLg);
+    box-shadow: var(--ASShadowMd);
+    display: none;
+    opacity: 0;
+    transform: translateY(4px) scale(0.98);
+    transform-origin: top center;
+    transition: opacity 0.15s ease, transform 0.15s ease;
+    z-index: 2000;
+  }
+  
+  /* RTL flip */
+  [dir="rtl"] .ASPOPanel {
+    inset-inline-start: 0;
+    inset-inline-end: auto;
+  }
+  
+  
+  /* Flip automatically under RTL */
+  [dir="rtl"] .ASPOPanel {
+    inset-inline-start: 0;
+    inset-inline-end: auto;
+  }
+  
+  .ASPopover.is-open > .ASPOPanel {
+    display: block;
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+  
+  .ASPopover {
+    position: relative;
+    display: inline-block;
+  }
+  
+  .ASNotificationsRow,
+  .ASNotificationsBlock {
+    overflow: visible;
+  }
+  
+  /* --- Fade Animation --- */
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translate(-50%, -5px);
+    }
+    to {
+      opacity: 1;
+      transform: translate(-50%, 0);
+    }
+  }
+  
+  /* ===================== Popover Content ========================== */
+  
+  .ASPOHeader {
+    font-weight: 600;
+    padding: 0.75rem 1rem;
+    border-bottom: 1px solid var(--ASBorder);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .ASPOBody {
+    max-height: 300px;
+    overflow-y: auto;
+    padding: 0.5rem 0.75rem;
+  }
+  
+  .ASPOItem {
+    display: flex;
+    gap: 0.6rem;
+    padding: 0.55rem;
+    border-radius: 8px;
+    transition: background 0.2s ease;
+  }
+  
+  .ASPOItem:not(:last-child) {
+    margin-bottom: 0.6rem;
+  }
+  
+  .ASPOItem.unread {
+    background: rgba(0, 0, 0, 0.03);
+  }
+  
+  .ASPOItem:hover {
+    background: color-mix(in oklab, var(--ASColor-primary) 8%, #fff);
+  }
+  
+  .ASPOFooter {
+    border-top: 1px solid var(--ASBorder);
+    padding: 0.75rem;
+    text-align: center;
+  }
+  
+  .ASPOIcon {
+    width: 22px;
+    height: 22px;
+    margin-top: 0.25rem;
+  }
+  
+  .ASPOItem p {
+    color: var(--ASTextMuted);
+    font-size: 0.9rem;
+    margin: 0.15rem 0;
+  }
+  
+  .ASPOItem small {
+    color: var(--ASTextLight);
+  }
+  
+   /* ===================== Notification Panel Variations ========================== */
+  
+  .ASNotificationVariantsRow {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    align-items: center;
+    margin-top: 1rem;
+  }
+  
+  /* --- Base Button (Isolated) --- */
+  .ASNotifBtn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    border-radius: var(--ASRadiusLg);
+    font-weight: 700;
+    padding: 0.55rem 1.25rem;
+    cursor: pointer;
+    font-size: 0.95rem;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease, color 0.2s ease;
+  }
+  
+  .ASNotifBtn img.ASBtnIcon {
+    width: 16px;
+    height: 16px;
+  }
+  
+  /* --- Solid Buttons --- */
+  .ASNotifBtn--solid {
+    color: #fff;
+    border: none;
+  }
+  
+  .ASNotifBtn--solid:hover {
+    transform: translateY(-1px);
+    box-shadow: var(--ASShadowSm);
+  }
+  
+  /* --- Solid Color Variants --- */
+  .ASNotifBtn--brown {
+    background: var(--ASColor-brown, #5c3a27);
+    color: #fff;
+  }
+  
+  .ASNotifBtn--info {
+    background: var(--ASColor-info);
+    color: var(--ASColor-infoFg);
+  }
+  
+  .ASNotifBtn--success {
+    background: var(--ASColor-success);
+    color: var(--ASColor-successFg);
+  }
+  
+  /* --- Outline Buttons (Fully Isolated) --- */
+  .ASNotifBtn--outline {
+    background: transparent;
+    border: 2px solid currentColor;
+    font-weight: 700;
+    transition: background 0.15s ease, color 0.15s ease, transform 0.2s ease, box-shadow 0.2s ease;
+  }
+  
+  .ASNotifBtn--outline-brown {
+    color: var(--ASColor-brown, #5c3a27);
+  }
+  
+  .ASNotifBtn--outline-brown:hover {
+    background: var(--ASColor-brown, #5c3a27);
+    color: #fff;
+    transform: translateY(-1px);
+    box-shadow: var(--ASShadowSm);
+  }
+  
+  /* ===================== Notification Alert Banners ================================ */
+
+.ASNotifAlertsWrap {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    margin-top: 1rem;
+  }
+  
+  /* --- Base Alert Box --- */
+  .ASNotifAlert {
+    position: relative;
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+    padding: 0.55rem 1.25rem ;
+    border-radius: var(--ASRadiusSm);
+    color: #fff;
+    font-size: 0.95rem;
+    line-height: 1.4;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+  
+  .ASNotifAlert:hover {
+    transform: translateY(-1px);
+    box-shadow: var(--ASShadowSm);
+  }
+  
+  /* --- Icon --- */
+  .ASNotifAlertIcon {
+    width: 20px;
+    height: 20px;
+    flex-shrink: 0;
+  }
+  
+  /* --- Content --- */
+  .ASNotifAlertContent {
+    flex: 1;
+  }
+  
+  .ASNotifAlertContent strong {
+    display: block;
+    font-weight: 700;
+    margin-bottom: 0.25rem;
+  }
+  
+  /* --- Close Button --- */
+  .ASNotifAlertClose {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0.25rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: opacity 0.2s ease;
+  }
+  
+  .ASNotifAlertClose img {
+    width: 16px;
+    height: 16px;
+    opacity: 0.9;
+  }
+  
+  .ASNotifAlertClose:hover img {
+    opacity: 1;
+  }
+  
+  /* --- Variants --- */
+  .ASNotifAlert--success {
+    background: var(--ASColor-success);
+    color: var(--ASColor-successFg, #fff);
+  }
+  
+  .ASNotifAlert--error {
+    background: var(--ASColor-error);
+    color: var(--ASColor-errorFg, #fff);
+  }
+  
+  .ASNotifAlert--info {
+    background: var(--ASColor-info);
+    color: var(--ASColor-infoFg, #fff);
+  }
+  
+  .ASNotifAlert--alert {
+    background: var(--ASColor-alert);
+    color: var(--ASColor-alertFg, #fff);
+  }
+  
+  .ASNotifAlert--neutral {
+    background: var(--ASColor-brown, #5c3a27);
+    color: #fff;
+  }
+
+  /* ======================= Light Background Notifications ======================== */
+
+.ASNotifLightWrap {
+    display: flex;
+    flex-direction: column;
+    gap: 0.85rem;
+    margin-top: 1rem;
+  }
+  
+  /* --- Base Container --- */
+  .ASNotifLight {
+    position: relative;
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+    padding: 1rem 1.25rem;
+    border-radius: var(--ASRadiusLg);
+    background: #fff;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+    border-left: 4px solid transparent;
+    color: var(--ASText);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+  
+  .ASNotifLight:hover {
+    transform: translateY(-1px);
+    box-shadow: var(--ASShadowSm);
+  }
+  
+  /* --- Icon --- */
+  .ASNotifLightIcon {
+    width: 20px;
+    height: 20px;
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+  
+  /* --- Text Content --- */
+  .ASNotifLightContent {
+    flex: 1;
+  }
+  
+  .ASNotifLightContent strong {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 0.25rem;
+  }
+  
+  .ASNotifLightContent p {
+    margin: 0;
+    color: var(--ASTextMuted);
+    font-size: 0.95rem;
+    font-weight: 500;
+  }
+  
+  /* --- Close Button --- */
+  .ASNotifLightClose {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0.25rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .ASNotifLightClose img {
+    width: 16px;
+    height: 16px;
+    opacity: 0.6;
+    transition: opacity 0.2s ease;
+  }
+  
+  .ASNotifLightClose:hover img {
+    opacity: 1;
+  }
+  
+  /* --- Color Variants --- */
+  .ASNotifLight--success {
+    border-left-color: var(--ASColor-success);
+    color: var(--ASColor-success);
+  }
+  
+  .ASNotifLight--error {
+    border-left-color: var(--ASColor-error);
+    color: var(--ASColor-error);
+  }
+  
+  .ASNotifLight--info {
+    border-left-color: var(--ASColor-info);
+    color: var(--ASColor-info);
+  }
+  
+  .ASNotifLight--alert {
+    border-left-color: var(--ASColor-alert);
+    color: var(--ASColor-alert);
+  }
+  
+  /* =================== Subtle Background Notifications ====================== */
+
+.ASNotifSubtleWrap {
+    display: flex;
+    flex-direction: column;
+    gap: 0.85rem;
+    margin-top: 1rem;
+  }
+  
+  /* --- Base Container --- */
+  .ASNotifSubtle {
+    position: relative;
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+    padding: 1rem 1.25rem;
+    border-radius: var(--ASRadiusLg);
+    border: 1px solid transparent;
+    background: #fff;
+    color: var(--ASText);
+    transition: background 0.25s ease, box-shadow 0.2s ease, transform 0.2s ease;
+  }
+  
+  .ASNotifSubtle:hover {
+    transform: translateY(-1px);
+    box-shadow: var(--ASShadowXs);
+  }
+  
+  /* --- Icon --- */
+  .ASNotifSubtleIcon {
+    width: 20px;
+    height: 20px;
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+  
+  /* --- Content --- */
+  .ASNotifSubtleContent {
+    flex: 1;
+  }
+  
+  .ASNotifSubtleContent strong {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 0.25rem;
+  }
+  
+  .ASNotifSubtleContent p {
+    margin: 0;
+    color: var(--ASTextMuted);
+    font-size: 0.95rem;
+    font-weight: 500;
+  }
+  
+  /* --- Color Variants (tinted backgrounds) --- */
+  .ASNotifSubtle--success {
+    border-color: color-mix(in oklab, var(--ASColor-success) 35%, #fff);
+    background: color-mix(in oklab, var(--ASColor-success) 12%, #fff);
+    color: var(--ASColor-success);
+  }
+  .ASNotifSubtle--success:hover {
+    background: color-mix(in oklab, var(--ASColor-success) 18%, #fff);
+  }
+  
+  .ASNotifSubtle--error {
+    border-color: color-mix(in oklab, var(--ASColor-error) 35%, #fff);
+    background: color-mix(in oklab, var(--ASColor-error) 12%, #fff);
+    color: var(--ASColor-error);
+  }
+  .ASNotifSubtle--error:hover {
+    background: color-mix(in oklab, var(--ASColor-error) 18%, #fff);
+  }
+  
+  .ASNotifSubtle--info {
+    border-color: color-mix(in oklab, var(--ASColor-info) 35%, #fff);
+    background: color-mix(in oklab, var(--ASColor-info) 12%, #fff);
+    color: var(--ASColor-info);
+  }
+  .ASNotifSubtle--info:hover {
+    background: color-mix(in oklab, var(--ASColor-info) 18%, #fff);
+  }
+  
+  .ASNotifSubtle--alert {
+    border-color: color-mix(in oklab, var(--ASColor-alert) 35%, #fff);
+    background: color-mix(in oklab, var(--ASColor-alert) 12%, #fff);
+    color: var(--ASColor-alert);
+  }
+  .ASNotifSubtle--alert:hover {
+    background: color-mix(in oklab, var(--ASColor-alert) 18%, #fff);
+  }
+  
+  /* ======================== Notifications with Actions ========================== */
+
+.ASNotifActionWrap {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-top: 1rem;
+  }
+  
+  /* --- Base Container --- */
+  .ASNotifAction {
+    position: relative;
+    display: flex;
+    align-items: center; 
+    justify-content: space-between;
+    gap: 1rem;
+    padding: 1.25rem 1.5rem;
+    border-radius: var(--ASRadiusLg);
+    background: #fff;
+    border: 1px solid var(--ASBorder);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+  
+  .ASNotifAction:hover {
+    transform: translateY(-1px);
+    box-shadow: var(--ASShadowSm);
+  }
+  
+  /* --- Icon --- */
+  .ASNotifActionIcon {
+    width: 20px;
+    height: 20px;
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+  
+  /* --- Text --- */
+  .ASNotifActionContent {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  
+  .ASNotifActionContent strong {
+    display: block;
+    font-weight: 600;
+  }
+  
+  .ASNotifActionContent p {
+    margin: 0;
+    color: var(--ASTextMuted);
+    font-size: 0.95rem;
+    font-weight: 500;
+  }
+  
+  /* --- Button Group --- */
+  .ASNotifActionBtns {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    flex-shrink: 0;
+  }
+  
+  /* --- Button Styles (Reuse unified button system) --- */
+  .ASNotifBtn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.4rem 1rem;
+    border-radius: var(--ASRadiusMd);
+    font-weight: 600;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+  }
+  
+  /* Solid */
+  .ASNotifBtn--solid {
+    color: #fff;
+    border: none;
+  }
+  
+  .ASNotifBtn--solid:hover {
+    transform: translateY(-1px);
+    box-shadow: var(--ASShadowSm);
+  }
+  
+  /* Outline */
+  .ASNotifBtn--outline {
+    background: transparent;
+    border: 1px solid var(--ASBorder);
+    color: var(--ASText);
+  }
+  
+  .ASNotifBtn--outline:hover {
+    background: color-mix(in oklab, var(--ASText) 8%, #fff);
+  }
+  
+  /* Color Variants */
+  .ASNotifBtn--info {
+    background: var(--ASColor-info);
+    color: var(--ASColor-infoFg);
+  }
+  
+  .ASNotifBtn--success {
+    background: var(--ASColor-success);
+    color: var(--ASColor-successFg);
+  }
+  
+  .ASNotifBtn--error {
+    background: var(--ASColor-error);
+    color: var(--ASColor-errorFg);
+  }
+  
+  .ASNotifBtn--brown {
+    background: var(--ASColor-brown, #5c3a27);
+    color: #fff;
+  }
+  
+  /* --- Colored Headings (Per Type) --- */
+  .ASNotifAction--info strong { color: var(--ASColor-info); }
+  .ASNotifAction--success strong { color: var(--ASColor-success); }
+  .ASNotifAction--alert strong { color: var(--ASColor-alert); }
+  
+  /* ===================== Toast-Style Notifications ================================ */
+
+.ASToastWrap {
+    display: flex;
+    flex-direction: column;
+    gap: 0.9rem;
+    margin-top: 1rem;
+  }
+  
+  /* --- Base Toast --- */
+  .ASToast {
+    position: relative;
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+    background: #fff;
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    border-radius: var(--ASRadiusLg);
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.08),
+                0 4px 8px rgba(0, 0, 0, 0.04);
+    padding: 1rem 1.25rem;
+    transition: transform 0.2s ease, box-shadow 0.25s ease;
+  }
+  
+  .ASToast:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 10px 22px rgba(0, 0, 0, 0.1),
+                0 6px 12px rgba(0, 0, 0, 0.06);
+  }
+  
+  /* --- Icon --- */
+  .ASToastIcon {
+    width: 20px;
+    height: 20px;
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+  
+  /* --- Content --- */
+  .ASToastContent {
+    flex: 1;
+  }
+  
+  .ASToastContent strong {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 0.25rem;
+  }
+  
+  .ASToastContent p {
+    margin: 0;
+    color: var(--ASTextMuted);
+    font-size: 0.95rem;
+    font-weight: 500;
+  }
+  
+  /* --- Close Button --- */
+  .ASToastClose {
+    background: transparent;
+    border: none;
+    padding: 0.25rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .ASToastClose img {
+    width: 14px;
+    height: 14px;
+    opacity: 0.85;
+    transition: opacity 0.2s ease;
+  }
+  
+  .ASToastClose:hover img {
+    opacity: 1;
+  }
+  
+  /* --- Progress Bar --- */
+  .ASToastProgress {
+    width: 100%;
+    height: 6px;
+    background: var(--ASColor-borderLight, #ececf0);
+    border-radius: 4px;
+    overflow: hidden;
+    margin: 0.25rem 0 0.5rem;
+  }
+  
+  .ASToastProgressBar {
+    height: 6px;
+    background: linear-gradient(
+      90deg,
+      var(--ASColor-info) 0%,
+      color-mix(in srgb, var(--ASColor-info) 70%, white) 50%,
+      var(--ASColor-info) 100%
+    );
+    background-size: 200% 100%;
+    border-radius: 4px;
+    animation: progressMove 3s ease-in-out forwards, shimmer 2s linear infinite;
+  }
+  
+  @keyframes shimmer {
+    0% { background-position: 200% 0; }
+    100% { background-position: -200% 0; }
+  }
+
+  @keyframes progressMove {
+    0% {
+      width: 0%;
+    }
+    60% {
+      width: 75%;
+    }
+    100% {
+      width: 100%;
+    }
+  }
+  
+  /* --- Color Variants --- */
+  .ASNotif--success strong {
+    color: var(--ASColor-success);
+  }
+  
+  .ASNotif--info strong {
+    color: var(--ASColor-info);
+  }
+  
+  .ASNotif--error strong {
+    color: var(--ASColor-error);
+  }
+  
+  /* ===================== Status Notifications ============================ */
+
+.ASStatusWrap {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    margin-top: 1rem;
+  }
+  
+  /* --- Base Container --- */
+  .ASNotifStatus {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: var(--ASRadiusLg);
+    padding: 0.75rem 1rem;
+    border: 1px solid var(--ASBorder);
+    background: #fff;
+    font-size: 0.95rem;
+    transition: transform 0.15s ease, box-shadow 0.2s ease;
+  }
+  
+  .ASNotifStatus:hover {
+    transform: translateY(-1px);
+    box-shadow: var(--ASShadowSm);
+  }
+  
+  /* --- Left side --- */
+  .ASStatusLeft {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-weight: 600;
+  }
+  
+  /* --- Status Dot --- */
+  .ASStatusDot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+  
+  /* --- Status Text --- */
+  .ASStatusText {
+    letter-spacing: -0.3px;
+  }
+  
+  /* --- Right Icon --- */
+  .ASStatusIcon {
+    width: 18px;
+    height: 18px;
+    flex-shrink: 0;
+  }
+  
+  /* --- Connecting Dots --- */
+  .ASConnectingDots {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+  }
+  
+  .ASConnectingDots span {
+    width: 5px;
+    height: 5px;
+    background: var(--ASColor-alert);
+    border-radius: 50%;
+    opacity: 0.6;
+    animation: dotPulse 1.2s infinite ease-in-out;
+  }
+  
+  .ASConnectingDots span:nth-child(2) { animation-delay: 0.2s; }
+  .ASConnectingDots span:nth-child(3) { animation-delay: 0.4s; }
+  
+  @keyframes dotPulse {
+    0%, 80%, 100% { transform: scale(0.8); opacity: 0.5; }
+    40% { transform: scale(1); opacity: 1; }
+  }
+  
+  /* --- Variants --- */
+  .ASNotifStatus--online {
+    background: color-mix(in srgb, var(--ASColor-success) 8%, #fff);
+    border: 1px solid color-mix(in srgb, var(--ASColor-success) 30%, transparent);
+    color: var(--ASColor-success);
+  }
+  
+  .ASNotifStatus--offline {
+    background: color-mix(in srgb, var(--ASColor-error) 8%, #fff);
+    border: 1px solid color-mix(in srgb, var(--ASColor-error) 30%, transparent);
+    color: var(--ASColor-error);
+  }
+  
+  .ASNotifStatus--connecting {
+    background: color-mix(in srgb, var(--ASColor-alert) 8%, #fff);
+    border: 1px solid color-mix(in srgb, var(--ASColor-alert) 30%, transparent);
+    color: var(--ASColor-alert);
+  }
+  
+  /* --- Colored Dots --- */
+  .ASNotifStatus--online .ASStatusDot { background: var(--ASColor-success); }
+  .ASNotifStatus--offline .ASStatusDot { background: var(--ASColor-error); }
+  .ASNotifStatus--connecting .ASStatusDot { background: var(--ASColor-alert); }
+  

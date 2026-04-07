@@ -1,0 +1,510 @@
+<section class="ASSection">
+    <header class="mb-3">
+      <h2>Notification Collection</h2>
+      <p class="text-muted">
+        Comprehensive notification components for government website applications.
+      </p>
+    </header>
+  
+    <div class="ASNotificationGrid">
+      <section class="ASNotificationsBlock">
+        <h4>Interactive Notification Panels</h4>
+        <p class="ASCardsBlock__sub">Click on icons to view notification panels</p>
+  
+        <div class="ASNotificationsRow">
+          <!-- Notifications -->
+          <div class="ASPopover" data-as="popover" data-variant="success">
+            <button class="ASPOTrigger ASPOTrigger--success" data-as="po-trigger" aria-label="Notifications">
+              <img src="assets/icons/NotificationsIcon.svg" alt="Notifications" />
+              <span class="ASBadge ASBadge--error">3</span>
+            </button>
+            <div class="ASPOPanel" data-as="po-panel">
+              <div class="ASPOBody">
+                <div class="ASPOItem unread">
+                  <img src="assets/icons/SuccessIcon.svg" class="ASPOIcon" />
+                  <div>
+                    <strong>Application Approved</strong>
+                    <p>Your application has been successfully approved.</p>
+                    <small>2 hours ago</small>
+                  </div>
+                </div>
+                <div class="ASPOItem unread">
+                  <img src="assets/icons/DocumentIcon.svg" class="ASPOIcon" />
+                  <div>
+                    <strong>New Document Available</strong>
+                    <p>Your monthly report is ready to view.</p>
+                    <small>5 hours ago</small>
+                  </div>
+                </div>
+              </div>
+              <div class="ASPOFooter">
+                <button class="ASBtn ASBtn--success">Mark All as Read</button>
+              </div>
+            </div>
+          </div>
+  
+          <!-- Messages -->
+          <div class="ASPopover" data-as="popover" data-variant="info">
+            <button class="ASPOTrigger ASPOTrigger--info" data-as="po-trigger" aria-label="Messages">
+              <img src="assets/icons/MailIcon.svg" alt="Messages" />
+              <span class="ASBadge ASBadge--info">5</span>
+            </button>
+            <div class="ASPOPanel" data-as="po-panel">
+              <div class="ASPOBody">
+                <div class="ASPOItem unread">
+                  <img src="assets/icons/UserIcon.svg" class="ASPOIcon" />
+                  <div>
+                    <strong>John Doe</strong>
+                    <p>New message about your submission.</p>
+                    <small>1 hour ago</small>
+                  </div>
+                </div>
+                <div class="ASPOItem">
+                  <img src="assets/icons/UserIcon.svg" class="ASPOIcon" />
+                  <div>
+                    <strong>Jane Smith</strong>
+                    <p>Your feedback is ready.</p>
+                    <small>3 hours ago</small>
+                  </div>
+                </div>
+              </div>
+              <div class="ASPOFooter">
+                <button class="ASBtn ASBtn--info">View All Messages</button>
+              </div>
+            </div>
+          </div>
+  
+          <!-- Alerts -->
+          <div class="ASPopover" data-as="popover" data-variant="alert">
+            <button class="ASPOTrigger ASPOTrigger--alert" data-as="po-trigger" aria-label="Alerts">
+              <img src="assets/icons/ShieldAlert.svg" alt="Alerts" />
+              <span class="ASDot"></span>
+            </button>
+            <div class="ASPOPanel" data-as="po-panel">
+              <div class="ASPOBody">
+                <div class="ASPOItem unread">
+                  <img src="assets/icons/AlertIcon.svg" class="ASPOIcon" />
+                  <div>
+                    <strong>Payment Failed</strong>
+                    <p>Your last transaction could not be processed.</p>
+                    <small>1 hour ago</small>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+  
+          <!-- Activity -->
+          <div class="ASPopover" data-as="popover" data-variant="primary">
+            <button class="ASPOTrigger ASNotifBtn--outline ASNotifBtn--outline-brown" data-as="po-trigger" aria-label="Activity">
+              <img src="assets/icons/BrownIcon.svg" alt="Activity" />
+            </button>
+            <div class="ASPOPanel" data-as="po-panel">
+              <div class="ASPOHeader">Recent Activity</div>
+              <div class="ASPOBody">
+                <div class="ASPOItem">
+                  <img src="assets/icons/UploadIcon.svg" class="ASPOIcon" />
+                  <div>
+                    <strong>File Uploaded</strong>
+                    <p>report_2025.pdf</p>
+                    <small>10 minutes ago</small>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+        <!-- === Notification Panel Variations === -->
+        <section class="ASNotificationsBlock mt-4">
+            <h4>Notification Panel Variations</h4>
+            <p class="ASCardsBlock__sub">Different styles of notification panels</p>
+        
+            <div class="ASNotificationVariantsRow">
+            <!-- Compact Panel -->
+            <button class="ASNotifBtn ASNotifBtn--solid ASNotifBtn--brown">
+                Compact Panel
+                <img src="assets/icons/NotificationsIcon2.svg" alt="" class="ASBtnIcon" />
+            </button>
+        
+            <!-- With Actions -->
+            <button class="ASNotifBtn ASNotifBtn--solid ASNotifBtn--info">
+                With Actions
+                <img src="assets/icons/MailIcon.svg" alt="" class="ASBtnIcon" />
+            </button>
+        
+            <!-- Timeline Style -->
+            <button class="ASNotifBtn ASNotifBtn--solid ASNotifBtn--success">
+                Timeline Style
+                <img src="assets/icons/hourIcon.svg" alt="" class="ASBtnIcon" />
+            </button>
+        
+            <!-- Grouped Panel (Outline) -->
+            <button class="ASNotifBtn ASNotifBtn--outline ASNotifBtn--outline-brown">
+                Grouped Panel
+                <img src="assets/icons/BrownIcon.svg" alt="" class="ASBtnIcon" />
+            </button>
+            </div>
+        </section>
+
+        <!-- === Notification Alert Banners === -->
+        <section class="ASNotificationsBlock mt-4">
+            <h4>Notification Alert Banners</h4>
+            <p class="ASCardsBlock__sub">Different alert styles for system feedback messages</p>
+        
+            <div class="ASNotifAlertsWrap">
+            <!-- Success -->
+            <div class="ASNotifAlert ASNotifAlert--success">
+                <img src="assets/icons/SuccessIconWhite.svg" alt="Success" class="ASNotifAlertIcon" />
+                <div class="ASNotifAlertContent">
+                <strong>Success! Your changes have been saved.</strong>
+                <h5>All data has been successfully updated in the system.</h5>
+                </div>
+                <button class="ASNotifAlertClose" aria-label="Dismiss">
+                <img src="assets/icons/CloseIcon.svg" alt="Close" />
+                </button>
+            </div>
+        
+            <!-- Error -->
+            <div class="ASNotifAlert ASNotifAlert--error">
+                <img src="assets/icons/InfoIconWhite.svg" alt="Error" class="ASNotifAlertIcon" />
+                <div class="ASNotifAlertContent">
+                <strong>Error! There was a problem with your request.</strong>
+                <h5>Please check your input and try again.</h5>
+                </div>
+                <button class="ASNotifAlertClose" aria-label="Dismiss">
+                <img src="assets/icons/CloseIcon.svg" alt="Close" />
+                </button>
+            </div>
+        
+            <!-- Info -->
+            <div class="ASNotifAlert ASNotifAlert--info">
+                <img src="assets/icons/infoIcon.svg" alt="Info" class="ASNotifAlertIcon" />
+                <div class="ASNotifAlertContent">
+                <strong>New update available!</strong>
+                <h5>Version 2.0 is now available with new features.</h5>
+                </div>
+                <button class="ASNotifAlertClose" aria-label="Dismiss">
+                <img src="assets/icons/CloseIcon.svg" alt="Close" />
+                </button>
+            </div>
+        
+            <!-- Alert -->
+            <div class="ASNotifAlert ASNotifAlert--alert">
+                <img src="assets/icons/AlertIconWhite.svg" alt="Alert" class="ASNotifAlertIcon" />
+                <div class="ASNotifAlertContent">
+                <strong>Warning! Your session will expire soon.</strong>
+                <h5>Please save your work to avoid losing any data.</h5>
+                </div>
+                <button class="ASNotifAlertClose" aria-label="Dismiss">
+                <img src="assets/icons/CloseIcon.svg" alt="Close" />
+                </button>
+            </div>
+        
+            <!-- General Notification -->
+            <div class="ASNotifAlert ASNotifAlert--neutral">
+                <img src="assets/icons/NotificationsIcon.svg" alt="Notification" class="ASNotifAlertIcon" />
+                <div class="ASNotifAlertContent">
+                <strong>New notification received</strong>
+                <h5>You have a new message from the administrator.</h5>
+                </div>
+                <button class="ASNotifAlertClose" aria-label="Dismiss">
+                <img src="assets/icons/CloseIcon.svg" alt="Close" />
+                </button>
+            </div>
+            </div>
+        </section>
+
+        <!-- === Rounded Notifications === -->
+        <section class="ASNotificationsBlock mt-4">
+            <h4>Rounded Notifications</h4>
+            <p class="ASCardsBlock__sub">Fully rounded notification style</p>
+        
+            <div class="ASNotifAlertsWrap">
+            <!-- Success -->
+            <div class="ASNotifAlert ASNotifAlert--success">
+                <img src="assets/icons/SuccessIconWhite.svg" alt="Success" class="ASNotifAlertIcon" />
+                <div class="ASNotifAlertContent">
+                <strong>Success! Your changes have been saved.</strong>
+                </div>
+                <button class="ASNotifAlertClose" aria-label="Dismiss">
+                <img src="assets/icons/CloseIcon.svg" alt="Close" />
+                </button>
+            </div>
+        
+            <!-- Error -->
+            <div class="ASNotifAlert ASNotifAlert--error">
+                <img src="assets/icons/InfoIconWhite.svg" alt="Error" class="ASNotifAlertIcon" />
+                <div class="ASNotifAlertContent">
+                <strong>Error! There was a problem with your request.</strong>
+                </div>
+                <button class="ASNotifAlertClose" aria-label="Dismiss">
+                <img src="assets/icons/CloseIcon.svg" alt="Close" />
+                </button>
+            </div>
+        
+            <!-- Info -->
+            <div class="ASNotifAlert ASNotifAlert--info">
+                <img src="assets/icons/infoIcon.svg" alt="Info" class="ASNotifAlertIcon" />
+                <div class="ASNotifAlertContent">
+                <strong>New update available!</strong>
+                </div>
+                <button class="ASNotifAlertClose" aria-label="Dismiss">
+                <img src="assets/icons/CloseIcon.svg" alt="Close" />
+                </button>
+            </div>
+        
+            <!-- Alert -->
+            <div class="ASNotifAlert ASNotifAlert--alert">
+                <img src="assets/icons/AlertIconWhite.svg" alt="Alert" class="ASNotifAlertIcon" />
+                <div class="ASNotifAlertContent">
+                <strong>Warning! Your session will expire soon.</strong>
+                </div>
+                <button class="ASNotifAlertClose" aria-label="Dismiss">
+                <img src="assets/icons/CloseIcon.svg" alt="Close" />
+                </button>
+            </div>
+        
+            <!-- General Notification -->
+            <div class="ASNotifAlert ASNotifAlert--neutral">
+                <img src="assets/icons/NotificationsIcon.svg" alt="Notification" class="ASNotifAlertIcon" />
+                <div class="ASNotifAlertContent">
+                <strong>New notification received</strong>
+                </div>
+                <button class="ASNotifAlertClose" aria-label="Dismiss">
+                <img src="assets/icons/CloseIcon.svg" alt="Close" />
+                </button>
+            </div>
+            </div>
+        </section>
+
+    <!-- === Light Background Notifications === -->
+    <section class="ASNotificationsBlock mt-4">
+        <h4>Light Background Notifications</h4>
+        <p class="ASCardsBlock__sub">White background with colored borders and icons</p>
+    
+        <div class="ASNotifLightWrap">
+        <!-- Success -->
+        <div class="ASNotifLight ASNotifLight--success">
+            <img src="assets/icons/SuccessIcon.svg" alt="Success" class="ASNotifLightIcon" />
+            <div class="ASNotifLightContent">
+            <strong>Success! Your changes have been saved.</strong>
+            <p>All data has been successfully updated in the system.</p>
+            </div>
+            <button class="ASNotifLightClose" aria-label="Dismiss">
+            <img src="assets/icons/CloseIconDark.svg" alt="Close" />
+            </button>
+        </div>
+    
+        <!-- Error -->
+        <div class="ASNotifLight ASNotifLight--error">
+            <img src="assets/icons/ErrorIcon.svg" alt="Error" class="ASNotifLightIcon" />
+            <div class="ASNotifLightContent">
+            <strong>Error! There was a problem with your request.</strong>
+            <p>Please check your input and try again.</p>
+            </div>
+            <button class="ASNotifLightClose" aria-label="Dismiss">
+            <img src="assets/icons/CloseIconDark.svg" alt="Close" />
+            </button>
+        </div>
+    
+        <!-- Info -->
+        <div class="ASNotifLight ASNotifLight--info">
+            <img src="assets/icons/InfoIconBlue.svg" alt="Info" class="ASNotifLightIcon" />
+            <div class="ASNotifLightContent">
+            <strong>New update available!</strong>
+            <p>Version 2.0 is now available with new features.</p>
+            </div>
+            <button class="ASNotifLightClose" aria-label="Dismiss">
+            <img src="assets/icons/CloseIconDark.svg" alt="Close" />
+            </button>
+        </div>
+    
+        <!-- Alert -->
+        <div class="ASNotifLight ASNotifLight--alert">
+            <img src="assets/icons/AlertIcon.svg" alt="Alert" class="ASNotifLightIcon" />
+            <div class="ASNotifLightContent">
+            <strong>Warning! Your session will expire soon.</strong>
+            <p>Please save your work to avoid losing any data.</p>
+            </div>
+            <button class="ASNotifLightClose" aria-label="Dismiss">
+            <img src="assets/icons/CloseIconDark.svg" alt="Close" />
+            </button>
+        </div>
+        </div>
+    </section>
+
+    <!-- === Subtle Background Notifications === -->
+    <section class="ASNotificationsBlock mt-4">
+        <h4>Subtle Background Notifications</h4>
+        <p class="ASCardsBlock__sub">Light tinted backgrounds with colored text</p>
+    
+        <div class="ASNotifSubtleWrap">
+        <!-- Success -->
+        <div class="ASNotifSubtle ASNotifSubtle--success">
+            <img src="assets/icons/SuccessIcon.svg" alt="Success" class="ASNotifSubtleIcon" />
+            <div class="ASNotifSubtleContent">
+            <strong>Success! Your application has been submitted.</strong>
+            <p>You will receive a confirmation email shortly.</p>
+            </div>
+        </div>
+    
+        <!-- Error -->
+        <div class="ASNotifSubtle ASNotifSubtle--error">
+            <img src="assets/icons/ErrorIcon.svg" alt="Error" class="ASNotifSubtleIcon" />
+            <div class="ASNotifSubtleContent">
+            <strong>Error! Failed to upload document.</strong>
+            <p>The file size exceeds the maximum allowed limit.</p>
+            </div>
+        </div>
+    
+        <!-- Info -->
+        <div class="ASNotifSubtle ASNotifSubtle--info">
+            <img src="assets/icons/InfoIconBlue.svg" alt="Info" class="ASNotifSubtleIcon" />
+            <div class="ASNotifSubtleContent">
+            <strong>System maintenance scheduled</strong>
+            <p>The system will be offline on Sunday, 2 AM – 4 AM.</p>
+            </div>
+        </div>
+    
+        <!-- Alert -->
+        <div class="ASNotifSubtle ASNotifSubtle--alert">
+            <img src="assets/icons/AlertIcon.svg" alt="Alert" class="ASNotifSubtleIcon" />
+            <div class="ASNotifSubtleContent">
+            <strong>Incomplete profile information</strong>
+            <p>Please complete your profile to access all features.</p>
+            </div>
+        </div>
+        </div>
+    </section>
+
+    <!-- === Notifications with Actions === -->
+    <section class="ASNotificationsBlock mt-4">
+        <h4>Notifications with Actions</h4>
+        <p class="ASCardsBlock__sub">Notifications with action buttons</p>
+    
+        <div class="ASNotifActionWrap">
+        <!-- Report Notification -->
+        <div class="ASNotifAction ASNotifAction--info">
+            <img src="assets/icons/DownloadIcon.svg" alt="Download" class="ASNotifActionIcon" />
+            <div class="ASNotifActionContent">
+            <strong>New report available</strong>
+            <p>Your monthly analytics report is ready to download.</p>
+            </div>
+            <div class="ASNotifActionBtns">
+            <button class="ASNotifBtn ASNotifBtn--solid ASNotifBtn--info">Download</button>
+            <button class="ASNotifBtn ASNotifBtn--outline">View Online</button>
+            </div>
+        </div>
+    
+        <!-- Team Request -->
+        <div class="ASNotifAction ASNotifAction--success">
+            <img src="assets/icons/UserIcon.svg" alt="User" class="ASNotifActionIcon" />
+            <div class="ASNotifActionContent">
+            <strong>New team member request</strong>
+            <p>John Doe wants to join your team.</p>
+            </div>
+            <div class="ASNotifActionBtns">
+            <button class="ASNotifBtn ASNotifBtn--solid ASNotifBtn--success">Accept</button>
+            <button class="ASNotifBtn ASNotifBtn--solid ASNotifBtn--error">Decline</button>
+            </div>
+        </div>
+    
+        <!-- Security Settings -->
+        <div class="ASNotifAction ASNotifAction--alert">
+            <img src="assets/icons/SettingIcon.svg" alt="Settings" class="ASNotifActionIcon" />
+            <div class="ASNotifActionContent">
+            <strong>Security settings update</strong>
+            <p>We recommend enabling two-factor authentication for your account.</p>
+            </div>
+            <div class="ASNotifActionBtns">
+            <button class="ASNotifBtn ASNotifBtn--solid ASNotifBtn--brown">Enable Now</button>
+            <button class="ASNotifBtn ASNotifBtn--outline">Later</button>
+            </div>
+        </div>
+        </div>
+    </section>
+
+    <!-- === Toast-Style Notifications === -->
+    <section class="ASNotificationsBlock mt-4">
+        <h4>Toast-Style Notifications</h4>
+        <p class="ASCardsBlock__sub">
+        Elevated notifications with shadow for toast displays
+        </p>
+    
+        <div class="ASToastWrap">
+        <!-- Success Toast -->
+        <div class="ASToast ASNotif--success">
+            <img src="assets/icons/SuccessIcon.svg" alt="Success" class="ASToastIcon" />
+            <div class="ASToastContent">
+            <strong>Successfully saved</strong>
+            <p>Your changes have been saved.</p>
+            </div>
+            <button class="ASToastClose">
+            <img src="assets/icons/CloseIconDark.svg" alt="Close" />
+            </button>
+        </div>
+    
+        <!-- Upload Progress Toast -->
+        <div class="ASToast ASNotif--info">
+            <img src="assets/icons/InfoIconBlue.svg" alt="Info" class="ASToastIcon" />
+            <div class="ASToastContent">
+            <strong>Upload in progress</strong>
+            <div class="ASToastProgress">
+                <div class="ASToastProgressBar"></div>
+            </div>
+            <p>0% complete</p>
+            </div>
+        </div>
+    
+        <!-- Connection Lost Toast -->
+        <div class="ASToast ASNotif--error">
+            <img src="assets/icons/NoWifiIcon.svg" alt="Connection lost" class="ASToastIcon" />
+            <div class="ASToastContent">
+            <strong>Connection lost</strong>
+            <p>Attempting to reconnect...</p>
+            </div>
+        </div>
+        </div>
+    </section>
+
+    <!-- === Status Notifications === -->
+    <section class="ASNotificationsBlock mt-4">
+        <h4>Status Notifications</h4>
+        <p class="ASCardsBlock__sub">System status and connection notifications</p>
+    
+        <div class="ASStatusWrap">
+        <!-- Online -->
+        <div class="ASNotifStatus ASNotifStatus--online">
+            <div class="ASStatusLeft">
+            <span class="ASStatusDot"></span>
+            <span class="ASStatusText">Online</span>
+            </div>
+            <img src="assets/icons/WifiIcon.svg" alt="Online" class="ASStatusIcon" />
+        </div>
+    
+        <!-- Offline -->
+        <div class="ASNotifStatus ASNotifStatus--offline">
+            <div class="ASStatusLeft">
+            <span class="ASStatusDot"></span>
+            <span class="ASStatusText">Offline</span>
+            </div>
+            <img src="assets/icons/NoWifiIcon.svg" alt="Offline" class="ASStatusIcon" />
+        </div>
+    
+        <!-- Connecting -->
+        <div class="ASNotifStatus ASNotifStatus--connecting">
+            <div class="ASStatusLeft">
+            <span class="ASStatusDot"></span>
+            <span class="ASStatusText">Connecting...</span>
+            </div>
+            <div class="ASConnectingDots">
+            <span></span><span></span><span></span>
+            </div>
+        </div>
+        </div>
+    </section>
+    </div>
+  </section>
+  

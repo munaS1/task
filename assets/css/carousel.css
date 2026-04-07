@@ -1,0 +1,215 @@
+/* ==========================================
+   AS Carousel Component
+   File: carousel.css
+   ========================================== */
+
+/* ===== Grid & Block Layout (Catalog style) ===== */
+
+.ASCarouselGrid {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+.ASCarouselBlock h3 {
+  margin-bottom: .5rem;
+}
+
+/* ===== Base Carousel Shell ===== */
+
+.ASCarousel {
+  position: relative;
+  border-radius: var(--ASRadiusLg);
+  overflow: hidden;
+  border: 1px solid var(--ASBorder);
+  background: var(--ASSurface);
+  box-shadow: var(--ASShadowSm);
+}
+
+.ASCarouselViewport {
+  overflow: hidden;
+}
+
+.ASCarouselTrack {
+  display: flex;
+  transition: transform .45s ease;
+  will-change: transform;
+}
+
+.ASCarouselItem {
+  position: relative;
+  min-width: 100%;
+  flex: 0 0 100%;
+}
+
+/* Images */
+
+.ASCarouselItem img {
+  width: 100%;
+  height: 420px;
+  object-fit: cover;
+  display: block;
+}
+
+/* ===== Navigation Buttons ===== */
+
+.ASCarouselNav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  inline-size: 44px;
+  block-size: 44px;
+  border-radius: 50%;
+  border: 1px solid var(--ASBorder);
+  background: var(--ASSurface);
+  cursor: pointer;
+  box-shadow: var(--ASShadowSm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all .2s ease;
+  z-index: 5;
+}
+
+.ASCarouselNav:hover {
+  background: var(--ASPrimary);
+  color: #fff;
+}
+
+.ASCarouselNav--prev {
+  inset-inline-start: 1rem;
+}
+
+.ASCarouselNav--next {
+  inset-inline-end: 1rem;
+}
+
+/* Optional arrow symbol */
+
+.ASCarouselNav::before {
+  content: "›";
+  font-size: 1.2rem;
+}
+
+.ASCarouselNav--prev::before {
+  content: "‹";
+}
+
+/* ===== Hero Overlay ===== */
+
+.ASCarouselOverlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: .75rem;
+  padding: 2rem;
+  background: linear-gradient(to top, rgba(0,0,0,.55), rgba(0,0,0,.2), transparent);
+  color: #fff;
+}
+
+.ASCarouselOverlay h4 {
+  margin: 0;
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.ASCarouselOverlay p {
+  margin: 0;
+  opacity: .9;
+}
+
+/* ===== Fade Variant ===== */
+
+.ASCarousel--fade .ASCarouselTrack {
+  display: block;
+  position: relative;
+}
+
+.ASCarousel--fade .ASCarouselItem {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transition: opacity .5s ease;
+}
+
+.ASCarousel--fade .ASCarouselItem.is-active {
+  opacity: 1;
+  position: relative;
+}
+
+/* ===== Multi Item Variant ===== */
+
+.ASCarousel--multi .ASCarouselTrack {
+  display: flex;
+}
+
+.ASCarousel--multi .ASCarouselItem {
+  min-width: 33.333%;
+  flex: 0 0 33.333%;
+  padding: .75rem;
+}
+
+.ASCarousel--multi .ASCard {
+  height: 100%;
+}
+
+/* ===== Thumbnail Variant ===== */
+
+.ASCarouselThumbs {
+  display: flex;
+  gap: .5rem;
+  margin-top: .75rem;
+  justify-content: center;
+}
+
+.ASCarouselThumb {
+  inline-size: 80px;
+  block-size: 60px;
+  border-radius: 8px;
+  overflow: hidden;
+  cursor: pointer;
+  opacity: .6;
+  border: 2px solid transparent;
+  transition: all .2s ease;
+}
+
+.ASCarouselThumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.ASCarouselThumb.is-active {
+  opacity: 1;
+  border-color: var(--ASPrimary);
+}
+
+/* ===== Responsive Enhancements ===== */
+
+@media (max-width: 992px) {
+
+  .ASCarouselItem img {
+    height: 300px;
+  }
+
+  .ASCarousel--multi .ASCarouselItem {
+    min-width: 50%;
+    flex: 0 0 50%;
+  }
+
+}
+
+@media (max-width: 576px) {
+
+  .ASCarouselItem img {
+    height: 240px;
+  }
+
+  .ASCarousel--multi .ASCarouselItem {
+    min-width: 100%;
+    flex: 0 0 100%;
+  }
+
+}

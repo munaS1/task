@@ -1,0 +1,400 @@
+<section class="ASSection">
+    <div class="ASContainer">
+      <header class="mb-3">
+        <h2>Counter Collection</h2>
+        <p class="text-muted">Comprehensive counter components based on our design system.</p>
+      </header>
+  
+      <div class="ASCountersGrid">
+        <!-- ============== Countdown Timers ==================== -->
+        <section class="ASCountersBlock">
+          <h3>Countdown Timers</h3>
+          <p>Time-based countdown displays</p>
+  
+          <div class="ASCountersRow ASCountersRow--2">
+            <!-- Timer 1 (Primary / Teal) -->
+            <article class="ASCounterCard is-teal">
+              <header class="ASCounterHeader">
+                <img class="ASCounterIcon" src="assets/icons/HourIconWhite.svg" alt="" />
+                <h4 class="ASCounterTitle">Time Counting From 0</h4>
+              </header>
+  
+              <div class="ASCounterBody">
+                <div class="ASCounterTime"
+                     data-countdown
+                     data-days="9" data-hours="23" data-minutes="45" data-seconds="30">
+                  <span class="num" data-days>09</span>
+                  <span class="lbl">Day</span>
+                  <span class="sep">:</span>
+                  <span class="num" data-hours>23</span>
+                  <span class="sep">:</span>
+                  <span class="num" data-minutes>45</span>
+                </div>
+  
+                <div class="ASCounterAside">
+                  <div class="lbl">Until End</div>
+                  <div class="val">$1000</div>
+                </div>
+              </div>
+            </article>
+  
+            <!-- Timer 2 (Info / Blue) -->
+            <article class="ASCounterCard is-blue">
+              <header class="ASCounterHeader">
+                <img class="ASCounterIcon" src="assets/icons/CalendarIconWhite.svg" alt="" />
+                <h4 class="ASCounterTitle">Time Counting From 60 to 20</h4>
+              </header>
+  
+              <div class="ASCounterBody">
+                <div class="ASCounterTime"
+                     data-countdown
+                     data-days="9" data-hours="23" data-minutes="45" data-seconds="30">
+                  <span class="num" data-days>09</span>
+                  <span class="lbl">Day</span>
+                  <span class="sep">:</span>
+                  <span class="num" data-hours>23</span>
+                  <span class="sep">:</span>
+                  <span class="num" data-minutes>45</span>
+                </div>
+  
+                <div class="ASCounterAside">
+                  <div class="lbl">With Limit</div>
+                  <div class="val">$1000</div>
+                </div>
+              </div>
+            </article>
+  
+            <!-- Timer 3 (Alert / Orange) -->
+            <article class="ASCounterCard is-orange">
+              <header class="ASCounterHeader">
+                <img class="ASCounterIcon" src="assets/icons/HourIconWhite.svg" alt="" />
+                <h4 class="ASCounterTitle">Time in Minutes Counter</h4>
+              </header>
+  
+              <div class="ASCounterBody">
+                <div class="ASCounterTime"
+                     data-countdown
+                     data-days="9" data-hours="23" data-minutes="45" data-seconds="30">
+                  <span class="num" data-days>09</span>
+                  <span class="lbl">Day</span>
+                  <span class="sep">:</span>
+                  <span class="num" data-hours>23</span>
+                  <span class="sep">:</span>
+                  <span class="num" data-minutes>45</span>
+                </div>
+  
+                <div class="ASCounterAside">
+                  <div class="lbl">Remaining</div>
+                  <div class="val">$1000</div>
+                </div>
+              </div>
+            </article>
+  
+            <!-- Timer 4 (Outlined / Blue) -->
+            <article class="ASCounterCard is-outline-blue">
+              <header class="ASCounterHeader">
+                <img class="ASCounterIcon" src="assets/icons/CalendarIconWhite.svg" alt="" />
+                <h4 class="ASCounterTitle">Time Counting Days Limit</h4>
+              </header>
+  
+              <div class="ASCounterPanel">
+                <div class="ASCounterPanelHead">
+                  <img src="assets/icons/CalendarIconBlue.svg" alt="" />
+                  <span>Days Until the Deadline</span>
+                </div>
+                <div class="ASCounterPanelVal"
+                     id="ASCounterFull"
+                     data-countdown-extended
+                     data-days="9" data-hours="23" data-minutes="45" data-seconds="20">
+                  09 Days 23 Hours 45 Minutes 20 Seconds
+                </div>
+              </div>
+            </article>
+          </div>
+        </section>
+  
+        <!-- ===============  Number Counters ===================== -->
+        <section class="ASCountersBlock">
+          <h3>Number Counters</h3>
+          <p>Animated number displays with icons</p>
+  
+          <div class="ASCountersRow ASCountersRow--3">
+            <!-- Visitors -->
+            <article class="ASCounterNumber is-teal">
+              <div class="ASCounterNumberIcon">
+                <img src="assets/icons/UserIconGreen.svg" alt="" />
+              </div>
+              <div class="ASCounterNumberLabel">Total Visitors</div>
+              <div class="ASCounterNumberVal"
+                   data-countup
+                   data-target="861" data-step="17" data-interval="50">0</div>
+            </article>
+  
+            <!-- Applications -->
+            <article class="ASCounterNumber is-brown">
+              <div class="ASCounterNumberIcon">
+                <img src="assets/icons/DocumentIconBrown.svg" alt="" />
+              </div>
+              <div class="ASCounterNumberLabel">Total Applications</div>
+              <div class="ASCounterNumberVal"
+                   data-countup
+                   data-target="86091" data-step="1500" data-interval="50">0</div>
+            </article>
+  
+            <!-- Rate -->
+            <article class="ASCounterNumber is-red">
+              <div class="ASCounterNumberIcon">
+                <img src="assets/icons/ArrowIconRed.svg" alt="" />
+              </div>
+              <div class="ASCounterNumberLabel">Success Rate</div>
+              <div class="ASCounterNumberVal"
+                   data-countup-float
+                   data-target="0.3014" data-step="0.006" data-interval="50">0</div>
+            </article>
+          </div>
+        </section>
+  
+        <!-- ============= Statistics Counters ==================== -->
+        <section class="ASCountersBlock">
+          <h3>Statistics Counters</h3>
+          <p>Statistical displays with progress indicators</p>
+  
+          <div class="ASCountersRow ASCountersRow--4">
+            <article class="ASCounterStat is-success">
+              <div class="ASCounterStatTop">
+                <img src="assets/icons/SuccessIcon.svg" alt="" />
+                <span class="ASCounterBadge">+12%</span>
+              </div>
+              <strong class="ASCounterStatVal">4,567</strong>
+              <div class="ASCounterStatLabel">Approved</div>
+            </article>
+  
+            <article class="ASCounterStat is-info">
+              <div class="ASCounterStatTop">
+                <img src="assets/icons/EyeIconBlue.svg" alt="" />
+                <span class="ASCounterBadge">+8%</span>
+              </div>
+              <strong class="ASCounterStatVal">12,345</strong>
+              <div class="ASCounterStatLabel">Page Views</div>
+            </article>
+  
+            <article class="ASCounterStat is-alert">
+              <div class="ASCounterStatTop">
+                <img src="assets/icons/HourIconOrange.svg" alt="" />
+                <span class="ASCounterBadge">+5%</span>
+              </div>
+              <strong class="ASCounterStatVal">234</strong>
+              <div class="ASCounterStatLabel">Pending</div>
+            </article>
+  
+            <article class="ASCounterStat is-error">
+              <div class="ASCounterStatTop">
+                <img src="assets/icons/TagIconRed.svg" alt="" />
+                <span class="ASCounterBadge">-2%</span>
+              </div>
+              <strong class="ASCounterStatVal">89</strong>
+              <div class="ASCounterStatLabel">Rejected</div>
+            </article>
+          </div>
+        </section>
+
+     <!-- ============= Progress Counters ==================== -->
+    <section class="ASCountersBlock">
+        <h3>Progress Counters</h3>
+        <p>Horizontal progress bar style counters</p>
+    
+        <div class="ASCountersRow ASCountersRow--4">
+        <article class="ASProgressCounter is-brown">
+            <div class="ASProgressVal" data-countup data-target="35" data-step="1" data-interval="40">0</div>
+            <div class="ASProgressLabel">Days</div>
+        </article>
+    
+        <article class="ASProgressCounter is-green">
+            <div class="ASProgressVal" data-countup data-target="17" data-step="1" data-interval="60">0</div>
+            <div class="ASProgressLabel">Items</div>
+        </article>
+    
+        <article class="ASProgressCounter is-orange">
+            <div class="ASProgressVal" data-countup data-target="59" data-step="1" data-interval="40">0</div>
+            <div class="ASProgressLabel">Records</div>
+        </article>
+    
+        <article class="ASProgressCounter is-blue">
+            <div class="ASProgressVal" data-countup data-target="59" data-step="1" data-interval="40">0</div>
+            <div class="ASProgressLabel">Months</div>
+        </article>
+        </div>
+    </section>
+    
+    <!-- ============= Badge Counters ==================== -->
+    <section class="ASCountersBlock">
+        <h3>Badge Counters</h3>
+        <p>Compact inline counter badges</p>
+    
+        <div class="ASBadgeCounters">
+        <span class="ASBadgeCounter is-green">
+            <img src="assets/icons/UserIconGreen.svg" alt="Users" />
+            <span data-countup data-target="2456" data-step="43" data-interval="40">0</span> Users
+        </span>
+    
+        <span class="ASBadgeCounter is-teal">
+            <img src="assets/icons/FileIconGreen.svg" alt="Completed" />
+            <span data-countup data-target="1234" data-step="50" data-interval="50">0</span> Completed
+        </span>
+    
+        <span class="ASBadgeCounter is-blue">
+            <img src="assets/icons/MassageIconBlue.svg" alt="Messages" />
+            <span data-countup data-target="567" data-step="10" data-interval="60">0</span> Messages
+        </span>
+    
+        <span class="ASBadgeCounter is-orange">
+            <img src="assets/icons/DownloadIconOrange.svg" alt="Downloads" />
+            <span data-countup data-target="8901" data-step="125" data-interval="40">0</span> Downloads
+        </span>
+    
+        <span class="ASBadgeCounter is-red">
+            <img src="assets/icons/OfficeIconRed.svg" alt="Offices" />
+            <span data-countup data-target="45" data-step="1" data-interval="70">0</span> Offices
+        </span>
+        </div>
+    </section>
+    
+    <!-- ============= Minimal Counters ==================== -->
+    <section class="ASCountersBlock">
+        <h3>Minimal Counters</h3>
+        <p>Clean, simple counter displays</p>
+    
+        <div class="ASCountersRow ASCountersRow--4">
+        <article class="ASMinimalCounter is-teal">
+            <div class="ASMinimalVal" data-countup data-target="2500" data-step="25" data-interval="20">0</div>
+            <div class="ASMinimalLabel">Citizens Served</div>
+        </article>
+    
+        <article class="ASMinimalCounter is-green">
+            <div class="ASMinimalVal" data-countup data-target="98" data-step="1" data-interval="40">0</div>
+            <div class="ASMinimalLabel">Satisfaction Rate</div>
+        </article>
+    
+        <article class="ASMinimalCounter is-blue">
+            <div class="ASMinimalVal">24/7</div>
+            <div class="ASMinimalLabel">Support Available</div>
+        </article>
+    
+        <article class="ASMinimalCounter is-orange">
+            <div class="ASMinimalVal" data-countup data-target="15" data-step="1" data-interval="70">0</div>
+            <div class="ASMinimalLabel">Years Experience</div>
+        </article>
+        </div>
+    </section>
+
+    <!-- ============= Card Summary Counters ==================== -->
+    <section class="ASCountersBlock">
+        <h3>Card Summary Counters</h3>
+        <p>Informational cards with icons and percentage change indicators</p>
+      
+        <div class="ASCountersRow ASCountersRow--2">
+          
+          <!-- Registered Users -->
+          <article class="ASCardCounter">
+            <div class="ASCardLeft">
+              <div class="ASCardIcon">
+                <img src="assets/icons/UserIconGreen.svg" alt="Users" />
+              </div>
+              <div class="ASCardText">
+                <h4>Registered Users</h4>
+                <div class="ASCardValue" data-countup data-target="24567" data-step="125" data-interval="40">0</div>
+              </div>
+            </div>
+            <div class="ASCardDelta is-up">+12%</div>
+          </article>
+      
+          <!-- Active Documents -->
+          <article class="ASCardCounter">
+            <div class="ASCardLeft">
+              <div class="ASCardIcon">
+                <img src="assets/icons/DocumentIcon.svg" alt="Documents" />
+              </div>
+              <div class="ASCardText">
+                <h4>Active Documents</h4>
+                <div class="ASCardValue" data-countup data-target="8432" data-step="75" data-interval="40">0</div>
+              </div>
+            </div>
+            <div class="ASCardDelta is-up">+8%</div>
+          </article>
+      
+          <!-- Completed Tasks -->
+          <article class="ASCardCounter">
+            <div class="ASCardLeft">
+              <div class="ASCardIcon">
+                <img src="assets/icons/SuccessIcon.svg" alt="Completed" />
+              </div>
+              <div class="ASCardText">
+                <h4>Completed Tasks</h4>
+                <div class="ASCardValue" data-countup data-target="15234" data-step="90" data-interval="40">0</div>
+              </div>
+            </div>
+            <div class="ASCardDelta is-up">+15%</div>
+          </article>
+      
+          <!-- Pending Reviews -->
+          <article class="ASCardCounter">
+            <div class="ASCardLeft">
+              <div class="ASCardIcon">
+                <img src="assets/icons/HourIconOrange.svg" alt="Pending" />
+              </div>
+              <div class="ASCardText">
+                <h4>Pending Reviews</h4>
+                <div class="ASCardValue" data-countup data-target="432" data-step="8" data-interval="40">0</div>
+              </div>
+            </div>
+            <div class="ASCardDelta is-down">-5%</div>
+          </article>
+          
+        </div>
+      </section>
+      
+    
+    <!-- ============= Icon Overview Counters ==================== -->
+    <section class="ASCountersBlock">
+        <h3>Icon Overview Counters</h3>
+        <p>Compact summary boxes with large icons</p>
+    
+        <div class="ASCountersRow ASCountersRow--5">
+        <article class="ASIconCounter is-teal">
+            <img src="assets/icons/UserIconGreen.svg" alt="Users" />
+            <div class="ASIconValue" data-countup data-target="2500" data-step="50" data-interval="30">0</div>
+            <div class="ASIconLabel">Users</div>
+        </article>
+    
+        <article class="ASIconCounter is-blue">
+            <img src="assets/icons/DocumentIcon.svg" alt="Documents" />
+            <div class="ASIconValue" data-countup data-target="1800" data-step="45" data-interval="30">0</div>
+            <div class="ASIconLabel">Documents</div>
+        </article>
+    
+        <article class="ASIconCounter is-green">
+            <img src="assets/icons/SuccessIcon.svg" alt="Completed" />
+            <div class="ASIconValue" data-countup data-target="3200" data-step="75" data-interval="30">0</div>
+            <div class="ASIconLabel">Completed</div>
+        </article>
+    
+        <article class="ASIconCounter is-orange">
+            <img src="assets/icons/OfficeIconOrange.svg" alt="Branches" />
+            <div class="ASIconValue" data-countup data-target="48" data-step="1" data-interval="50">0</div>
+            <div class="ASIconLabel">Branches</div>
+        </article>
+    
+        <article class="ASIconCounter is-brown">
+            <img src="assets/icons/QualityIconBrown.svg" alt="Quality" />
+            <div class="ASIconValue" data-countup data-target="95" data-step="1" data-interval="50">0</div>
+            <div class="ASIconLabel">Quality</div>
+        </article>
+        </div>
+    </section>
+  
+  
+  
+      </div>
+    </div>
+  </section>
+  

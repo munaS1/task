@@ -1,0 +1,103 @@
+<section class="ASSection">
+
+  <!-- ============================== -->
+  <!-- Page Header -->
+  <!-- ============================== -->
+  <header class="mb-4">
+    <h2 class="h5 mb-1">Editor Table</h2>
+    <p class="u-muted mb-0">
+      Editable table with inline update, save, cancel, and row removal.
+    </p>
+  </header>
+
+  <div class="ASTablesGrid">
+
+    <!-- ============================== -->
+    <!-- Editable Table -->
+    <!-- ============================== -->
+    <section class="ASTablesBlock">
+      <h3>Inline Editable Table</h3>
+      <p class="u-muted">Edit row content directly inside the table</p>
+
+      <div class="ASCard">
+        <div class="ASCardHeader">
+          <div class="ASEditTableBar">
+            <button class="ASBtn ASBtn--primary" type="button" data-as-table-add>
+              Add Row
+            </button>
+          </div>
+        </div>
+
+        <div class="ASCardBody">
+          <div class="ASTableWrap">
+            <table class="ASTable ASEditTable" id="ASEditTable">
+              <thead class="ASTableHead">
+                <tr>
+                  <th>#</th>
+                  <th>Name</th>
+                  <th>Department</th>
+                  <th>Status</th>
+                  <th class="ASTableActionsCol">Actions</th>
+                </tr>
+              </thead>
+
+              <tbody>
+                <tr>
+                  <td data-col="id">1</td>
+                  <td data-col="name">Ahmed Khalid</td>
+                  <td data-col="department">IT</td>
+                  <td data-col="status">
+                    <span class="ASTableStatus is-success">Active</span>
+                  </td>
+                  <td class="ASTableActions">
+                    <div class="ASTableActionGroup">
+                      <button class="ASBtn ASBtnLight--primary" type="button" data-action="edit">Edit</button>
+                      <button class="ASBtn ASBtnLight--success" type="button" data-action="save" hidden>Save</button>
+                      <button class="ASBtn ASBtnLight--grey" type="button" data-action="cancel" hidden>Cancel</button>
+                      <button class="ASBtn ASBtnLight--Error" type="button" data-action="delete">Delete</button>
+                    </div>
+                  </td>
+                </tr>
+
+                <tr>
+                  <td data-col="id">2</td>
+                  <td data-col="name">Sarah Ali</td>
+                  <td data-col="department">HR</td>
+                  <td data-col="status">
+                    <span class="ASTableStatus is-warning">Pending</span>
+                  </td>
+                  <td class="ASTableActions">
+                    <div class="ASTableActionGroup">
+                      <button class="ASBtn ASBtnLight--primary" type="button" data-action="edit">Edit</button>
+                      <button class="ASBtn ASBtnLight--success" type="button" data-action="save" hidden>Save</button>
+                      <button class="ASBtn ASBtnLight--grey" type="button" data-action="cancel" hidden>Cancel</button>
+                      <button class="ASBtn ASBtnLight--Error" type="button" data-action="delete">Delete</button>
+                    </div>
+                  </td>
+                </tr>
+
+                <tr>
+                  <td data-col="id">3</td>
+                  <td data-col="name">Mohammed Saleh</td>
+                  <td data-col="department">Finance</td>
+                  <td data-col="status">
+                    <span class="ASTableStatus is-error">Inactive</span>
+                  </td>
+                  <td class="ASTableActions">
+                    <div class="ASTableActionGroup">
+                      <button class="ASBtn ASBtnLight--primary" type="button" data-action="edit">Edit</button>
+                      <button class="ASBtn ASBtnLight--success" type="button" data-action="save" hidden>Save</button>
+                      <button class="ASBtn ASBtnLight--grey" type="button" data-action="cancel" hidden>Cancel</button>
+                      <button class="ASBtn ASBtnLight--Error" type="button" data-action="delete">Delete</button>
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </div>
+</section>

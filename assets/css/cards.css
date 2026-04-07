@@ -1,0 +1,454 @@
+/**
+ * File: cards.css
+ * Purpose: AS Card components (portable + token-driven)
+ */
+
+/* ===== Base Card ===== */
+.ASCard {
+  background: var(--ASSurface);
+  color: var(--ASText);
+  border: 1px solid var(--ASBorder);
+  border-radius: var(--ASRadiusLg);
+  box-shadow: var(--ASShadowSm);
+  overflow: hidden;
+}
+.ASCardHeader {
+  padding: 0.875rem 1rem;
+  border-block-end: 1px solid var(--ASBorder);
+}
+.ASCardTitle {
+  font-weight: 700;
+  font-size: 1.05rem;
+  margin: 0;
+}
+.ASCardDescription {
+  color: var(--ASSubText);
+  margin: 0.25rem 0 0;
+  font-size: 0.95rem;
+}
+.ASCardBody {
+  padding: 1rem;
+}
+.ASCardFooter {
+  padding: 0.875rem 1rem;
+  border-block-start: 1px solid var(--ASBorder);
+}
+
+/* subtle hover (for interactive tiles) */
+.ASCard.is-hoverable {
+  transition: box-shadow 0.25s ease, transform 0.2s ease;
+}
+.ASCard.is-hoverable:hover {
+  box-shadow: var(--ASShadowMd);
+  transform: translateY(-2px);
+}
+
+/* ===== Transparent (tint) variants ===== */
+.ASCard--tint {
+  border-color: color-mix(in oklab, currentColor 20%, transparent);
+}
+.ASCard--tint-primary {
+  background: color-mix(in oklab, var(--ASColor-primary) 10%, #fff);
+  color: var(--ASColor-primary);
+}
+.ASCard--tint-secondary {
+  background: color-mix(in oklab, var(--ASColor-secondary) 10%, #fff);
+  color: var(--ASColor-secondary);
+}
+.ASCard--tint-success {
+  background: color-mix(in oklab, var(--ASColor-success) 10%, #fff);
+  color: var(--ASColor-success);
+}
+.ASCard--tint-error {
+  background: color-mix(in oklab, var(--ASColor-error) 10%, #fff);
+  color: var(--ASColor-error);
+}
+.ASCard--tint-info {
+  background: color-mix(in oklab, var(--ASColor-info) 10%, #fff);
+  color: var(--ASColor-info);
+}
+.ASCard--tint-alert {
+  background: color-mix(in oklab, var(--ASColor-alert) 10%, #fff);
+  color: var(--ASColor-alert);
+}
+
+/* ===== Colored Header / Footer ===== */
+.ASCardHeader--primary {
+  background: var(--ASColor-primary);
+  color: var(--ASColor-primaryFg);
+}
+.ASCardHeader--secondary {
+  background: var(--ASColor-secondary);
+  color: var(--ASColor-secondaryFg);
+}
+.ASCardHeader--success {
+  background: var(--ASColor-success);
+  color: var(--ASColor-successFg);
+}
+.ASCardHeader--info {
+  background: var(--ASColor-info);
+  color: var(--ASColor-infoFg);
+}
+.ASCardHeader--alert {
+  background: var(--ASColor-alert);
+  color: var(--ASColor-alertFg);
+}
+.ASCardHeader--error {
+  background: var(--ASColor-error);
+  color: var(--ASColor-errorFg);
+}
+
+.ASCardFooter--success {
+  background: var(--ASColor-success);
+  color: var(--ASColor-successFg);
+}
+.ASCardFooter--info {
+  background: var(--ASColor-info);
+  color: var(--ASColor-infoFg);
+}
+.ASCardFooter--alert {
+  background: var(--ASColor-alert);
+  color: var(--ASColor-alertFg);
+}
+.ASCardFooter--error {
+  background: var(--ASColor-error);
+  color: var(--ASColor-errorFg);
+}
+
+/* ===== Stat card helpers ===== */
+.ASStat {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+}
+.ASStatLabel {
+  color: var(--ASSubText);
+}
+.ASStatValue {
+  font-size: 1.35rem;
+  font-weight: 800;
+  line-height: 1.2;
+  margin-top: 0.25rem;
+}
+.ASStatIcon {
+  inline-size: 48px;
+  block-size: 48px;
+  border-radius: 12px;
+  display: grid;
+  place-items: center;
+  font-size: 1.25rem;
+}
+
+/* color helpers for icons */
+.ASbg--primary-10 {
+  background: color-mix(in oklab, var(--ASColor-primary) 12%, transparent);
+}
+.ASbg--info-10 {
+  background: color-mix(in oklab, var(--ASColor-info) 12%, transparent);
+}
+.ASbg--success-10 {
+  background: color-mix(in oklab, var(--ASColor-success) 12%, transparent);
+}
+.ASbg--tertiary-10 {
+  background: color-mix(in oklab, var(--ASColor-tertiary) 12%, transparent);
+}
+
+/* ===== Alerts inside cards ===== */
+.ASAlertCard {
+  border-width: 1px;
+}
+.ASAlert--success {
+  border-color: color-mix(in oklab, var(--ASColor-success) 50%, transparent);
+  background: color-mix(in oklab, var(--ASColor-success) 5%, #fff);
+}
+.ASAlert--error {
+  border-color: color-mix(in oklab, var(--ASColor-error) 50%, transparent);
+  background: color-mix(in oklab, var(--ASColor-error) 5%, #fff);
+}
+.ASAlert--warn {
+  border-color: color-mix(in oklab, var(--ASColor-alert) 50%, transparent);
+  background: color-mix(in oklab, var(--ASColor-alert) 5%, #fff);
+}
+.ASAlert--info {
+  border-color: color-mix(in oklab, var(--ASColor-info) 50%, transparent);
+  background: color-mix(in oklab, var(--ASColor-info) 5%, #fff);
+}
+
+/* ===== Media cards (no inner dividers, rounded media, spacing like Figma) ===== */
+.ASCard--media .ASCardHeader,
+.ASCard--media .ASCardFooter {
+  border: 0;
+}
+.ASCard .ASCardHeader {
+  border: 0;
+}
+.ASCard--media .ASCardHeader {
+  padding: 1rem 1rem 0.25rem;
+}
+.ASCard--media .ASCardBody {
+  padding: 0.75rem 1rem 1rem;
+}
+.ASCard--media .ASCardFooter {
+  padding: 1rem;
+}
+
+/* media with rounded top corners + gentle zoom on hover */
+.ASMedia {
+  aspect-ratio: 16/9;
+  overflow: hidden;
+}
+.ASCard--media .ASMedia {
+  border-start-start-radius: var(--ASRadiusLg);
+  border-start-end-radius: var(--ASRadiusLg);
+}
+.ASMedia img {
+  inline-size: 100%;
+  block-size: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+.ASCard.is-hoverable:hover .ASMedia img {
+  transform: scale(1.03);
+}
+
+/* ===== Horizontal media layout ===== */
+.ASMediaRow {
+  display: flex;
+  flex-direction: row;
+}
+@media (min-width: 768px) {
+  .ASMediaRow {
+    flex-direction: row;
+  }
+}
+.ASMediaRow .ASMedia {
+  inline-size: 100%;
+  block-size: auto;
+}
+@media (min-width: 768px) {
+  .ASMediaRow .ASMedia {
+    inline-size: 33.333%;
+  }
+}
+.ASMediaRow .ASMediaBody {
+  flex: 1;
+  padding: 1rem;
+}
+
+/* ===== Flip cards (3D) ===== */
+.ASFlip {
+  perspective: 1000px;
+  inline-size: 100%;
+  block-size: 20rem;
+}
+.ASFlipInner {
+  position: relative;
+  inline-size: 100%;
+  block-size: 100%;
+  transform-style: preserve-3d;
+  transition: transform 0.7s ease;
+}
+.ASFlip.is-hover .ASFlipInner:hover,
+.ASFlip.is-flipped .ASFlipInner {
+  transform: rotateY(180deg);
+}
+.ASFlipFace {
+  position: absolute;
+  inset: 0;
+  backface-visibility: hidden;
+  border-radius: var(--ASRadiusLg);
+  overflow: hidden;
+}
+.ASFlipBack {
+  transform: rotateY(180deg);
+}
+
+/* ===== Profile / Avatar cards ===== */
+.ASAvatar {
+  inline-size: 5rem;
+  block-size: 5rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-inline: auto;
+  box-shadow: var(--ASShadowSm);
+}
+
+.ASCardActions {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+/* ===== Contact Cards ===== */
+.ASContactCard {
+  text-align: center;
+}
+
+.ASAvatar--primary {
+  background: var(--ASColor-primary);
+  color: var(--ASColor-primaryFg);
+}
+.ASAvatar--secondary {
+  background: var(--ASColor-secondary);
+  color: var(--ASColor-secondaryFg);
+}
+.ASAvatar--tertiary {
+  background: var(--ASColor-tertiary);
+  color: var(--ASColor-tertiaryFg);
+}
+
+.ASContactActions {
+  display: flex;
+  justify-content: center;
+  gap: 0.75rem;
+  margin-top: 1rem;
+}
+
+.ASContactBtn {
+  inline-size: 2.5rem;
+  block-size: 2.5rem;
+  border-radius: 50%;
+  background: color-mix(in oklab, var(--ASColor-info) 8%, #fff);
+  border: none;
+  font-size: 1.25rem;
+  display: grid;
+  place-items: center;
+  color: var(--ASColor-info);
+  transition: background 0.25s ease, color 0.25s ease, transform 0.2s ease;
+  cursor: pointer;
+}
+
+.ASContactBtn:hover {
+  background: color-mix(in oklab, var(--ASColor-info) 20%, #fff);
+  color: color-mix(in oklab, var(--ASColor-info) 70%, #000);
+  transform: translateY(-2px);
+}
+
+/* ===== Event & Announcement Cards ===== */
+.ASEventCard {
+  position: relative;
+}
+.ASEventHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 1rem;
+}
+.ASEventInfo h4 {
+  font-weight: 700;
+  font-size: 1.05rem;
+  margin: 0;
+}
+.ASEventSubtitle {
+  color: var(--ASSubText);
+  margin: 0.25rem 0 0;
+  font-size: 0.95rem;
+}
+.ASEventBadge {
+  border-radius: 8px;
+  font-size: 0.75rem;
+  font-weight: 500;
+  padding: 0.15rem 0.6rem;
+  line-height: 1.3;
+}
+.ASEventBadge--primary {
+  background: var(--ASColor-primary);
+  color: var(--ASColor-primaryFg);
+}
+.ASEventBadge--alert {
+  background: var(--ASColor-alert);
+  color: var(--ASColor-alertFg);
+}
+.ASEventDetails {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 1rem;
+  color: var(--ASSubText);
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.ASEventDetails i {
+  margin-inline-end: 0.5rem;
+  color: var(--ASSubText);
+}
+.ASEventNote {
+  line-height: 1.4;
+}
+.ASEventAction,
+.ASEventActionRow {
+  margin-top: 1rem;
+  display: flex;
+  gap: 0.75rem;
+}
+.ASEventAction .ASBtn,
+.ASEventActionRow .ASBtn,
+.ASEventActionRow .ASBtnLight {
+  flex: 1;
+  justify-content: center;
+}
+.w-100 {
+  inline-size: 100%;
+}
+.w-50 {
+  inline-size: 50%;
+}
+
+/* ===== Showcase grid like Buttons (2 columns on lg+) ===== */
+.ASCardsGrid {
+  row-gap: 1.5rem;
+}
+@media (min-width: 992px) {
+  .ASCardsGrid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 1.25rem;
+  }
+}
+
+.ASCardsBlock {
+  background: #fff;
+  border: 1px solid var(--ASBorder);
+  border-radius: 12px;
+  padding: 1rem;
+}
+.ASCardsBlock--stage {
+  background: color-mix(in oklab, #fff 80%, var(--ASBg));
+  border-color: color-mix(in oklab, var(--ASBorder) 70%, transparent);
+  padding: var(--ASSpaceLg);
+  border-radius: var(--ASRadiusLg);
+}
+.ASCardsBlock h3 {
+  font-size: 1.05rem;
+  margin: 0 0 0.25rem;
+}
+.ASCardsBlock p {
+  color: var(--ASTextMuted);
+  margin: 0 0 0.75rem;
+  font-size: 0.95rem;
+}
+
+/* grid of cards */
+.ASCardsRow {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.75rem;
+}
+@media (min-width: 768px) {
+  .ASCardsRow {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (min-width: 1200px) {
+  .ASCardsRow--3 {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+

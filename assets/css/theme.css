@@ -1,0 +1,131 @@
+/**
+ File: theme.css
+ Purpose: AS Design System tokens (colors, type, spacing, radii, shadows)
+ Version: 1.0
+*/
+:root {
+  /* --- Layout sizing tokens --- */
+  --ASHeaderH: 76px; /* header height */
+  --ASStripH: 25px; /* BrandStrip img height */
+  --ASChromeH: calc(var(--ASHeaderH) + var(--ASStripH));
+
+  /* Brand */
+  --ASPrimary: #007b69;
+  --ASSecondary: #a37956;
+  --ASAccent: #ec7f21;
+  --ASFocus: 0 0 0 3px rgba(0, 123, 105, 0.25);
+  --ASFocusColor: #1b8354;
+
+  /* Status */
+  --ASSuccess: #1b8354;
+  --ASInfo: #4797d0;
+  --ASWarning: #dc6803;
+  --ASDanger: #b42318;
+
+  /* Neutrals */
+  --ASBg: #f9efe9;
+  --ASSurface: #ffffff;
+  --ASBorder: #e8e3df;
+  --ASSubBorder: #392015;
+  --ASText: #392015;
+  --ASSubText: #918b88;
+  --ASTextMuted: #a88a72;
+
+  /* Type */
+  --ASFontPrimary: "Tajawal", "Cairo", system-ui, -apple-system, Segoe UI, Arial,
+    sans-serif;
+  --ASFontSize: 16px;
+  --ASLineHeight: 1.6;
+
+  /* Radii */
+  --ASRadiusSm: 8px;
+  --ASRadiusMd: 12px;
+  --ASRadiusLg: 16px;
+
+  /* Spacing */
+  --ASSpaceXs: 0.25rem;
+  --ASSpaceSm: 0.5rem;
+  --ASSpaceMd: 1rem;
+  --ASSpaceLg: 1.5rem;
+  --ASSpaceXl: 2rem;
+
+  /* Shadows */
+  --ASShadowSm: 0 2px 8px rgba(0, 0, 0, 0.05);
+  --ASShadowMd: 0 6px 20px rgba(0, 0, 0, 0.08);
+
+  /* Focus */
+  --ASFocus: 0 0 0 3px rgba(0, 123, 105, 0.25);
+
+  /* ===== Status (brand-agnostic) ===== */
+  --ASSuccess: #1b8354;
+  --ASInfo: #4797d0;
+  --ASWarning: #dc6803;
+  --ASDanger: #b42318;
+
+  /* ===== Component color aliases (unified for buttons/cards/alerts) ===== */
+  /* base colors */
+  --ASColor-success: var(--ASSuccess);
+  --ASColor-info: var(--ASInfo);
+  --ASColor-alert: var(--ASWarning);
+  --ASColor-error: var(--ASDanger);
+
+  /* readable foregrounds ON those colors (for colored headers/footers, badges) */
+  --ASColor-successFg: #ffffff;
+  --ASColor-infoFg: #ffffff;
+  --ASColor-alertFg: #ffffff;
+  --ASColor-errorFg: #ffffff;
+
+  /* existing palette */
+  --ASColor-primary: #643c2a;
+  --ASColor-primaryFg: #f9efe9;
+  --ASColor-secondary: #d4af91;
+  --ASColor-secondaryFg: #f9efe9;
+  --ASColor-tertiary: #b8936d;
+  --ASColor-tertiaryFg: #ffffff;
+  --ASColor-quaternary: #876245;
+  --ASColor-quaternaryFg: #ffffff;
+  --ASColor-grey: #9ca3af;
+  --ASColor-greyFg: #ffffff;
+
+  /* Shared button metrics */
+  --ASBtn-r: 0.425rem;
+  --ASBtn-padY: 0.5rem;
+  --ASBtn-padX: 1rem;
+  --ASBtn-bw: 2px;
+  --ASBtn-tr: 0.2s ease;
+
+  /* Responsive layout edge padding for safe display zones */
+  --ASSafePadInline: calc(1rem + env(safe-area-inset-left));
+  --ASSafePadInlineEnd: calc(1rem + env(safe-area-inset-right));
+
+  /* === Global logical padding (RTL + LTR safe) === */
+  --ASLayoutPadSm: 1rem; /* phones & narrow */
+  --ASLayoutPadMd: 2rem; /* tablets */
+  --ASLayoutPadLg: 3rem; /* desktops */
+
+  /* === Combined with safe-area environment === */
+  --ASPadInlineStart: calc(var(--ASLayoutPadSm) + env(safe-area-inset-left));
+  --ASPadInlineEnd: calc(var(--ASLayoutPadSm) + env(safe-area-inset-right));
+
+  /* Large screens version */
+  @media (min-width: 768px) {
+    :root {
+      --ASPadInlineStart: calc(
+        var(--ASLayoutPadMd) + env(safe-area-inset-left)
+      );
+      --ASPadInlineEnd: calc(var(--ASLayoutPadMd) + env(safe-area-inset-right));
+    }
+  }
+
+  @media (min-width: 1200px) {
+    :root {
+      --ASPadInlineStart: calc(
+        var(--ASLayoutPadLg) + env(safe-area-inset-left)
+      );
+      --ASPadInlineEnd: calc(var(--ASLayoutPadLg) + env(safe-area-inset-right));
+    }
+  }
+
+  /* === Vertical rhythm === */
+  --ASLayoutPadBlock: 1.5rem;
+}

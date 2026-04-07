@@ -1,0 +1,348 @@
+/* =====================================
+   AS NAVIGATION SYSTEM – FULL
+   ===================================== */
+
+
+/* =================================================
+   TABS NAVIGATION (KEEP AS IS – IMPROVED SLIGHTLY)
+================================================= */
+
+.ASNavTabs {
+  display: flex;
+  gap: 1rem;
+  border-bottom: 1px solid var(--ASBorder);
+  padding-bottom: .5rem;
+  margin-bottom: 1.5rem;
+}
+
+.ASNavTab {
+  background: transparent;
+  border: none;
+  padding: .6rem 1.2rem;
+  font-size: .9rem;
+  font-weight: 500;
+  color: var(--ASSubText);
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: .5rem;
+  border-bottom: 3px solid transparent;
+  transition: all .2s ease;
+}
+
+.ASNavTab:hover {
+  color: var(--ASText);
+}
+
+.ASNavTab.is-active {
+  color: var(--ASPrimary);
+  border-bottom: 3px solid var(--ASPrimary);
+}
+
+/* Tab content */
+
+.ASTabPane {
+  display: none;
+  animation: fadeIn .2s ease;
+}
+
+.ASTabPane.is-active {
+  display: block;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(5px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+
+/* =================================================
+   BASIC NAV (PROFESSIONAL PANEL STYLE)
+================================================= */
+
+.ASNav--tabs {
+  display: flex;
+  gap: .75rem;
+  padding: .75rem;
+  background: var(--ASSurfaceAlt);
+  border-radius: var(--ASRadiusLg);
+}
+
+.ASNav--tabs .ASNavLink {
+  background: transparent;
+  border: 1px solid transparent;
+  padding: .55rem 1.1rem;
+  font-size: .875rem;
+  font-weight: 500;
+  border-radius: var(--ASRadiusMd);
+  color: var(--ASSubText);
+  transition: all .2s ease;
+  cursor: pointer;
+}
+
+.ASNav--tabs .ASNavLink:hover {
+  background: var(--ASSurface);
+  border-color: var(--ASBorder);
+  color: var(--ASText);
+}
+
+.ASNav--tabs .ASNavLink.is-active {
+  background: var(--ASPrimary);
+  color: #fff;
+  border-color: var(--ASPrimary);
+  box-shadow: 0 6px 18px rgba(0,0,0,.06);
+}
+
+.ASNav--tabs .ASNavLink.is-disabled {
+  opacity: .4;
+  pointer-events: none;
+}
+
+
+/* =================================================
+   VERTICAL NAV
+================================================= */
+
+.ASNav--verticalTabs {
+  display: flex;
+  flex-direction: column;
+  gap: .35rem;
+  padding: .75rem;
+  background: var(--ASSurfaceAlt);
+  border-radius: var(--ASRadiusLg);
+  max-width: 260px;
+}
+
+.ASNav--verticalTabs .ASNavLink {
+  width: 100%;
+  text-align: start;
+  background: transparent;
+  border: 1px solid transparent;
+  padding: .65rem 1rem;
+  border-radius: var(--ASRadiusMd);
+  color: var(--ASSubText);
+  transition: all .2s ease;
+}
+
+.ASNav--verticalTabs .ASNavLink:hover {
+  background: var(--ASSurface);
+  border-color: var(--ASBorder);
+  color: var(--ASText);
+}
+
+.ASNav--verticalTabs .ASNavLink.is-active {
+  background: var(--ASPrimary);
+  color: #fff;
+  border-color: var(--ASPrimary);
+}
+
+
+/* =================================================
+   UNDERLINE NAV (PREMIUM CLEAN)
+================================================= */
+
+.ASNav--underline {
+  display: flex;
+  gap: 1.5rem;
+  border-bottom: 1px solid var(--ASBorder);
+  padding-bottom: .5rem;
+}
+
+.ASNav--underline .ASNavLink {
+  background: transparent;
+  border: none;
+  padding: .6rem 0;
+  font-size: .9rem;
+  font-weight: 500;
+  color: var(--ASSubText);
+  position: relative;
+}
+
+.ASNav--underline .ASNavLink::after {
+  content: "";
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  height: 2px;
+  width: 0;
+  background: var(--ASPrimary);
+  transition: width .25s ease;
+}
+
+.ASNav--underline .ASNavLink:hover::after {
+  width: 100%;
+}
+
+.ASNav--underline .ASNavLink.is-active {
+  color: var(--ASPrimary);
+}
+
+.ASNav--underline .ASNavLink.is-active::after {
+  width: 100%;
+}
+
+
+/* =================================================
+   PILLS NAV (MODERN SaaS STYLE)
+================================================= */
+
+.ASNav--pills {
+  display: flex;
+  gap: .5rem;
+  padding: .5rem;
+  background: var(--ASSurfaceAlt);
+  border-radius: var(--ASRadiusLg);
+}
+
+.ASNav--pills .ASNavLink {
+  border-radius: 999px;
+  border: none;
+  padding: .55rem 1.1rem;
+  background: transparent;
+  color: var(--ASSubText);
+  transition: all .2s ease;
+}
+
+.ASNav--pills .ASNavLink:hover {
+  background: var(--ASSurface);
+}
+
+.ASNav--pills .ASNavLink.is-active {
+  background: var(--ASPrimary);
+  color: #fff;
+}
+
+
+/* =================================================
+   ICON NAVIGATION
+================================================= */
+
+.ASNav--icon {
+  display: flex;
+  gap: 1rem;
+}
+
+.ASNavIcon {
+  display: inline-flex;
+  align-items: center;
+  gap: .6rem;
+  padding: .6rem 1.2rem;
+  border-radius: var(--ASRadiusMd);
+  background: var(--ASSurfaceAlt);
+  border: 1px solid var(--ASBorder);
+  color: var(--ASSubText);
+  transition: all .2s ease;
+}
+
+.ASNavIcon:hover {
+  background: var(--ASSurface);
+  border-color: var(--ASPrimary);
+  color: var(--ASPrimary);
+}
+
+.ASNavIcon.is-active {
+  background: var(--ASPrimary);
+  color: #fff;
+  border-color: var(--ASPrimary);
+}
+
+
+/* =================================================
+   ICON ONLY NAV
+================================================= */
+
+.ASNav--iconOnly {
+  display: flex;
+  gap: .75rem;
+}
+
+.ASNavCircle {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: 1px solid var(--ASBorder);
+  background: var(--ASSurfaceAlt);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--ASSubText);
+  transition: all .2s ease;
+}
+
+.ASNavCircle:hover {
+  background: var(--ASSurface);
+  border-color: var(--ASPrimary);
+  color: var(--ASPrimary);
+}
+
+.ASNavCircle.is-active {
+  background: var(--ASPrimary);
+  color: #fff;
+  border-color: var(--ASPrimary);
+}
+
+
+/* =================================================
+   BACKGROUND VARIANTS
+================================================= */
+
+
+.ASNav--bg {
+  display: flex;
+  gap: .75rem;
+  padding: .75rem 1.25rem;
+  border-radius: var(--ASRadiusLg);
+  width: fit-content;
+  min-width: 520px;
+  align-items: center;
+}
+
+/* Nav Links */
+.ASNav--bg .ASNavLink {
+  background: transparent;
+  border: none;
+  padding: .55rem 1rem;
+  border-radius: var(--ASRadiusMd);
+  font-size: .875rem;
+  font-weight: 500;
+  color: #fff;
+  transition: all .2s ease;
+}
+
+/* Hover */
+.ASNav--bg .ASNavLink:hover {
+  background: rgba(255,255,255,.15);
+}
+
+/* Active */
+.ASNav--bg .ASNavLink.is-active {
+  background: rgba(255,255,255,.25);
+  backdrop-filter: blur(4px);
+}
+
+/* Disabled */
+.ASNav--bg .ASNavLink.is-disabled {
+  opacity: .5;
+  pointer-events: none;
+}
+
+/* Color Variants */
+.ASNav--primary {
+  background: var(--ASPrimary);
+}
+
+.ASNav--success {
+  background: var(--ASSuccess);
+}
+
+.ASNav--danger {
+  background: var(--ASDanger);
+}
+
+.ASNav--info {
+  background: var(--ASInfo);
+}
+
+.ASNav--warning {
+  background: var(--ASWarning);
+}
