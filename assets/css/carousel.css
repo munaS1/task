@@ -675,3 +675,434 @@
     line-height: 1.7;
   }
 }
+/* =========================================
+   AS LAYERED DEPTH CAROUSEL
+   ========================================= */
+
+.ASDepthCarousel {
+  position: relative;
+  padding-block: 1rem 0;
+}
+
+.ASDepthStage {
+  position: relative;
+  min-block-size: 540px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ASDepthCard {
+  position: absolute;
+  inline-size: min(100%, 780px);
+  block-size: 500px;
+  border-radius: 28px;
+  overflow: hidden;
+  background: var(--ASSurface);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.18);
+  transition:
+    transform .45s ease,
+    opacity .45s ease,
+    inline-size .45s ease,
+    box-shadow .45s ease;
+}
+
+.ASDepthCard img {
+  inline-size: 100%;
+  block-size: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.ASDepthCard::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0.08) 0%,
+    rgba(0, 0, 0, 0.22) 48%,
+    rgba(0, 0, 0, 0.62) 100%
+  );
+}
+
+.ASDepthCard.is-active {
+  z-index: 3;
+  transform: translateX(0) scale(1);
+  opacity: 1;
+}
+
+.ASDepthCard.is-prev {
+  z-index: 2;
+  inline-size: min(100%, 620px);
+  transform: translateX(-34%) scale(.88);
+  opacity: .52;
+}
+
+.ASDepthCard.is-next {
+  z-index: 2;
+  inline-size: min(100%, 620px);
+  transform: translateX(34%) scale(.88);
+  opacity: .52;
+}
+
+.ASDepthOverlay {
+  position: absolute;
+  inset-inline-start: 2.5rem;
+  inset-inline-end: 2.5rem;
+  inset-block-end: 2.5rem;
+  z-index: 2;
+  color: #fff;
+  max-inline-size: 540px;
+}
+
+.ASDepthEyebrow {
+  display: inline-flex;
+  align-items: center;
+  padding: .45rem .8rem;
+  margin-bottom: 1rem;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.14);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  font-size: .82rem;
+  font-weight: 600;
+  color: #fff;
+}
+
+.ASDepthTitle {
+  margin: 0 0 .8rem;
+  color: #fff;
+  font-size: 2rem;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.ASDepthText {
+  margin: 0 0 1.2rem;
+  color: rgba(255, 255, 255, 0.94);
+  font-size: 1rem;
+  line-height: 1.8;
+}
+
+.ASDepthActions {
+  display: flex;
+  align-items: center;
+  gap: .75rem;
+  flex-wrap: wrap;
+}
+
+.ASDepthNav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 1.25rem;
+}
+
+.ASDepthArrow {
+  position: relative;
+  inline-size: 42px;
+  block-size: 42px;
+  border: 1px solid var(--ASBorder);
+  border-radius: 50%;
+  background: var(--ASSurface);
+  box-shadow: var(--ASShadowSm);
+}
+
+.ASDepthArrow::before {
+  content: "";
+  position: absolute;
+  inset-block-start: 50%;
+  inset-inline-start: 50%;
+  inline-size: 10px;
+  block-size: 10px;
+  border-top: 2px solid var(--ASText);
+  border-inline-end: 2px solid var(--ASText);
+}
+
+.ASDepthArrow--prev::before {
+  transform: translate(-35%, -50%) rotate(225deg);
+}
+
+.ASDepthArrow--next::before {
+  transform: translate(-65%, -50%) rotate(45deg);
+}
+
+.ASDepthDots {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: .55rem;
+}
+
+.ASDepthDot {
+  inline-size: 10px;
+  block-size: 10px;
+  border: 0;
+  border-radius: 999px;
+  background: rgba(0, 123, 105, 0.22);
+  transition: inline-size .25s ease, background-color .25s ease;
+}
+
+.ASDepthDot.is-active {
+  inline-size: 28px;
+  background: var(--ASPrimary);
+}
+
+@media (max-width: 992px) {
+  .ASDepthStage {
+    min-block-size: 430px;
+  }
+
+  .ASDepthCard {
+    block-size: 390px;
+  }
+
+  .ASDepthCard.is-prev {
+    transform: translateX(-18%) scale(.9);
+  }
+
+  .ASDepthCard.is-next {
+    transform: translateX(18%) scale(.9);
+  }
+
+  .ASDepthOverlay {
+    inset-inline-start: 1.25rem;
+    inset-inline-end: 1.25rem;
+    inset-block-end: 1.25rem;
+  }
+
+  .ASDepthTitle {
+    font-size: 1.45rem;
+  }
+
+  .ASDepthText {
+    font-size: .95rem;
+    line-height: 1.7;
+  }
+}
+
+@media (max-width: 768px) {
+  .ASDepthCard.is-prev,
+  .ASDepthCard.is-next {
+    opacity: .22;
+  }
+
+  .ASDepthArrow {
+    inline-size: 38px;
+    block-size: 38px;
+  }
+}
+/* =========================================
+   AS LAYERED DEPTH CAROUSEL – MOTION
+   ========================================= */
+
+.ASDepthStage {
+  position: relative;
+  min-block-size: 540px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.ASDepthCard {
+  position: absolute;
+  inline-size: min(100%, 780px);
+  block-size: 500px;
+  border-radius: 28px;
+  overflow: hidden;
+  background: var(--ASSurface);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.18);
+  transition:
+    transform .5s ease,
+    opacity .5s ease,
+    filter .5s ease,
+    box-shadow .5s ease;
+  will-change: transform, opacity;
+}
+
+.ASDepthCard img {
+  inline-size: 100%;
+  block-size: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.ASDepthCard::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0.08) 0%,
+    rgba(0, 0, 0, 0.22) 48%,
+    rgba(0, 0, 0, 0.62) 100%
+  );
+}
+
+.ASDepthCard.is-active {
+  z-index: 4;
+  opacity: 1;
+  transform: translateX(0) scale(1);
+  filter: blur(0);
+}
+
+.ASDepthCard.is-prev {
+  z-index: 3;
+  opacity: .55;
+  transform: translateX(-34%) scale(.88);
+  filter: blur(1px);
+}
+
+.ASDepthCard.is-next {
+  z-index: 3;
+  opacity: .55;
+  transform: translateX(34%) scale(.88);
+  filter: blur(1px);
+}
+
+.ASDepthCard.is-hidden-left {
+  z-index: 1;
+  opacity: 0;
+  transform: translateX(-60%) scale(.78);
+  pointer-events: none;
+}
+
+.ASDepthCard.is-hidden-right {
+  z-index: 1;
+  opacity: 0;
+  transform: translateX(60%) scale(.78);
+  pointer-events: none;
+}
+
+.ASDepthOverlay {
+  position: absolute;
+  inset-inline-start: 2.5rem;
+  inset-inline-end: 2.5rem;
+  inset-block-end: 2.5rem;
+  z-index: 2;
+  color: #fff;
+  max-inline-size: 540px;
+  transition: opacity .35s ease, transform .35s ease;
+}
+
+.ASDepthCard:not(.is-active) .ASDepthOverlay {
+  opacity: 0;
+  transform: translateY(16px);
+  pointer-events: none;
+}
+
+.ASDepthCard.is-active .ASDepthOverlay {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.ASDepthDot {
+  inline-size: 10px;
+  block-size: 10px;
+  border: 0;
+  border-radius: 999px;
+  background: rgba(0, 123, 105, 0.22);
+  transition:
+    inline-size .25s ease,
+    background-color .25s ease,
+    transform .25s ease;
+}
+
+.ASDepthDot.is-active {
+  inline-size: 28px;
+  background: var(--ASPrimary);
+  transform: scale(1.02);
+}
+
+@media (max-width: 992px) {
+  .ASDepthStage {
+    min-block-size: 430px;
+  }
+
+  .ASDepthCard {
+    block-size: 390px;
+  }
+
+  .ASDepthCard.is-prev {
+    transform: translateX(-18%) scale(.9);
+  }
+
+  .ASDepthCard.is-next {
+    transform: translateX(18%) scale(.9);
+  }
+
+  .ASDepthCard.is-hidden-left {
+    transform: translateX(-30%) scale(.82);
+  }
+
+  .ASDepthCard.is-hidden-right {
+    transform: translateX(30%) scale(.82);
+  }
+
+  .ASDepthOverlay {
+    inset-inline-start: 1.25rem;
+    inset-inline-end: 1.25rem;
+    inset-block-end: 1.25rem;
+  }
+}
+/* =========================================
+   FADE CAROUSEL OVERLAY CONTENT
+   ========================================= */
+
+.ASCarouselOverlay--fade {
+  justify-content: flex-end;
+  align-items: flex-start;
+  padding: 2rem;
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0.08) 0%,
+    rgba(0, 0, 0, 0.20) 45%,
+    rgba(0, 0, 0, 0.62) 100%
+  );
+}
+
+.ASCarouselOverlay--fade h4 {
+  margin: 0 0 .5rem;
+  color: #fff;
+  font-size: 1.75rem;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.ASCarouselOverlay--fade p {
+  margin: 0;
+  max-inline-size: 560px;
+  color: rgba(255, 255, 255, 0.94);
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 1.7;
+}
+
+.ASCarousel--fade .ASCarouselItem .ASCarouselOverlay--fade {
+  opacity: 0;
+  transform: translateY(18px);
+  transition: opacity .45s ease, transform .45s ease;
+}
+
+.ASCarousel--fade .ASCarouselItem.is-active .ASCarouselOverlay--fade {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (max-width: 768px) {
+  .ASCarouselOverlay--fade {
+    padding: 1.25rem;
+  }
+
+  .ASCarouselOverlay--fade h4 {
+    font-size: 1.35rem;
+  }
+
+  .ASCarouselOverlay--fade p {
+    font-size: .95rem;
+    line-height: 1.6;
+  }
+}

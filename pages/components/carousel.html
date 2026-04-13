@@ -48,27 +48,55 @@
     </section>
 
 
-    <!-- ========================================= -->
-    <!-- FADE CAROUSEL -->
-    <!-- ========================================= -->
-    <section class="ASCarouselBlock">
-      <h3>Fade Carousel</h3>
-      <p>Smooth fade transition</p>
+   <!-- ========================================= -->
+<!-- FADE CAROUSEL -->
+<!-- ========================================= -->
+<section class="ASCarouselBlock">
+  <h3>Fade Carousel</h3>
+  <p>Smooth fade transition</p>
 
-      <div class="ASCarousel ASCarousel--fade" data-as="carousel">
-        <div class="ASCarouselTrack">
+  <div class="ASCarousel ASCarousel--fade" data-as="carousel" data-auto="3000">
+    <div class="ASCarouselTrack">
 
-          <div class="ASCarouselItem is-active">
-            <img src="https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?q=80&w=1400">
-          </div>
-
-          <div class="ASCarouselItem">
-            <img src="https://images.unsplash.com/photo-1520975922284-9c4b7c1a9b70?q=80&w=1400">
-          </div>
-
+      <!-- Slide 1 -->
+      <div class="ASCarouselItem is-active">
+        <img src="https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?q=80&w=1400" alt="Mountain destination">
+        <div class="ASCarouselOverlay ASCarouselOverlay--fade">
+          <h4>Mountain Destination</h4>
+          <p>Natural experiences designed to reflect Aseer identity and tourism potential.</p>
         </div>
       </div>
-    </section>
+
+      <!-- Slide 2 -->
+      <div class="ASCarouselItem">
+        <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?q=80&w=1400" alt="Urban development">
+        <div class="ASCarouselOverlay ASCarouselOverlay--fade">
+          <h4>Urban Development</h4>
+          <p>Smarter districts with modern public spaces and connected municipal services.</p>
+        </div>
+      </div>
+
+      <!-- Slide 3 -->
+      <div class="ASCarouselItem">
+        <img src="https://images.unsplash.com/photo-1470770903676-69b98201ea1c?q=80&w=1400" alt="Green escape">
+        <div class="ASCarouselOverlay ASCarouselOverlay--fade">
+          <h4>Green Escape</h4>
+          <p>Sustainable destinations that preserve nature while improving visitor experience.</p>
+        </div>
+      </div>
+
+      <!-- Slide 4 -->
+      <div class="ASCarouselItem">
+        <img src="https://images.unsplash.com/photo-1494526585095-c41746248156?q=80&w=1400" alt="Digital future">
+        <div class="ASCarouselOverlay ASCarouselOverlay--fade">
+          <h4>Digital Future</h4>
+          <p>Future-ready services powered by transformation, data, and integrated platforms.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
 
 
     <!-- ========================================= -->
@@ -240,5 +268,51 @@
         <button class="ASBtn ASBtnLight--primary">Learn More</button>
       </div>
     </article>
+  </div>
+</section>
+<!-- ========================================= -->
+<!-- LAYERED DEPTH CAROUSEL -->
+<!-- ========================================= -->
+<section class="ASCarouselBlock">
+  <h3>Layered Depth Carousel</h3>
+  <p>Centered showcase with layered side previews</p>
+
+  <div class="ASDepthCarousel" data-as="depth-carousel">
+    <div class="ASDepthStage">
+
+      <article class="ASDepthCard is-prev">
+        <img src="https://images.unsplash.com/photo-1470770903676-69b98201ea1c?q=80&w=1400&auto=format&fit=crop" alt="Nature destination">
+      </article>
+
+      <article class="ASDepthCard is-active">
+        <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?q=80&w=1400&auto=format&fit=crop" alt="Mountain road">
+        <div class="ASDepthOverlay">
+          <span class="ASDepthEyebrow">Featured Project</span>
+          <h4 class="ASDepthTitle">Aseer Scenic Route</h4>
+          <p class="ASDepthText">
+            A modern destination experience that highlights natural identity, smooth access, and visual appeal.
+          </p>
+          <div class="ASDepthActions">
+            <button class="ASBtn ASBtn--primary">Explore</button>
+            <button class="ASBtn ASBtnOutline ASBtnOutline--primary">Details</button>
+          </div>
+        </div>
+      </article>
+
+      <article class="ASDepthCard is-next">
+        <img src="https://images.unsplash.com/photo-1494526585095-c41746248156?q=80&w=1400&auto=format&fit=crop" alt="Urban scene">
+      </article>
+
+    </div>
+
+    <div class="ASDepthNav">
+      <button class="ASDepthArrow ASDepthArrow--prev" type="button" aria-label="Previous slide"></button>
+      <div class="ASDepthDots">
+        <button class="ASDepthDot is-active" type="button" aria-label="Go to slide 1"></button>
+        <button class="ASDepthDot" type="button" aria-label="Go to slide 2"></button>
+        <button class="ASDepthDot" type="button" aria-label="Go to slide 3"></button>
+      </div>
+      <button class="ASDepthArrow ASDepthArrow--next" type="button" aria-label="Next slide"></button>
+    </div>
   </div>
 </section>

@@ -3,6 +3,12 @@
  * Purpose: Sidebar interactions + dynamic view loader for UI catalog
  */
 import { qs, qsa } from './utils.js';
+import {
+  initCarousel,
+  initExpandingShowcase,
+  initDepthCarousel,
+  initCoverflowCarousel
+} from './carousel.js';
 
 export function initAccordion(){
   document.addEventListener('click', (e) => {
@@ -55,11 +61,16 @@ async function loadView(url){
 
     host.innerHTML = html;
 
-    requestAnimationFrame(() => {
-      document.dispatchEvent(
-        new CustomEvent("ASViewLoaded", { detail: { view: url } })
-      );
-    });
+initCarousel(host);
+initExpandingShowcase(host);
+initDepthCarousel(host);
+initCoverflowCarousel(host);
+
+requestAnimationFrame(() => {
+  document.dispatchEvent(
+    new CustomEvent("ASViewLoaded", { detail: { view: url } })
+  );
+});
 
   } catch (e) {
     host.innerHTML = `<section class="ASSection"><div class="ASContainer">Error loading: ${url}</div></section>`;
