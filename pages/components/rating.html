@@ -4,7 +4,7 @@
     <header class="ASPageHead mb-3">
       <div>
         <h2 class="h5 mb-1">Rating Collection</h2>
-        <p class="u-muted mb-0">Premium rating patterns in AS tokens (stars / half / NPS / distribution / sentiment).</p>
+        <p class="u-muted mb-0">Premium rating patterns designed for trusted public service experiences.</p>
       </div>
     </header>
 
@@ -17,8 +17,7 @@
 
       <div class="ASCardsRow ASCardsRow--3">
 
-        <!-- Star (Half) -->
-        <article class="ASCard">
+        <article class="ASCard ASCard--ratingFeatured">
           <header class="ASCardHeader">
             <h4 class="ASCardTitle">Star (Half Step)</h4>
           </header>
@@ -54,7 +53,6 @@
               </div>
             </div>
 
-            <!-- Distribution -->
             <div class="ASDist">
               <div class="ASDistRow">
                 <span class="ASDistLabel">5</span>
@@ -95,7 +93,6 @@
           </div>
         </article>
 
-        <!-- Heart -->
         <article class="ASCard">
           <header class="ASCardHeader">
             <h4 class="ASCardTitle">Heart Rating</h4>
@@ -138,7 +135,6 @@
           </div>
         </article>
 
-        <!-- Emoji Sentiment -->
         <article class="ASCard">
           <header class="ASCardHeader">
             <h4 class="ASCardTitle">Sentiment (Emoji)</h4>
@@ -177,7 +173,7 @@
     </section>
 
     <!-- ===================================== -->
-    <!-- Block: NPS (0–10) -->
+    <!-- Block: NPS -->
     <!-- ===================================== -->
     <section class="ASCardsBlock">
       <h3>NPS Score</h3>
@@ -257,6 +253,314 @@
                 <div class="ASScoreFill ASScoreFill--secondary" style="width:68%"></div>
               </div>
               <span class="ASScoreNum">68%</span>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- ===================================== -->
+    <!-- Block: Gamified Rating -->
+    <!-- ===================================== -->
+    <section class="ASCardsBlock">
+      <h3>Gamified Rating</h3>
+      <p class="ASCardsBlock__sub u-muted">Motivating rating patterns with progress, trust, rewards and reactions</p>
+
+      <div class="ASCardsRow ASCardsRow--2">
+
+        <article class="ASCard ASCard--ratingHero">
+          <header class="ASCardHeader">
+            <h4 class="ASCardTitle">Level Progress Rating</h4>
+          </header>
+
+          <div class="ASCardBody">
+            <div class="ASGameHead">
+              <div class="ASGameMeta">
+                <div class="ASGameMeta__title">Service Experience</div>
+                <div class="u-muted">Rate to level up</div>
+              </div>
+              <span class="ASBadgeLite ASBadgeLite--info" data-as="level-badge">Level 3</span>
+            </div>
+
+            <div
+              class="ASRating ASRating--lg"
+              data-as="rating"
+              data-icon="star"
+              data-color="alert"
+              data-max="5"
+              data-step="1"
+              data-value="4"
+              data-game-level="true"
+              aria-label="Level progress rating"
+            ></div>
+
+            <div class="ASLevelTrack" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="80">
+              <div class="ASLevelFill" data-as="level-fill" style="width:80%"></div>
+            </div>
+
+            <div class="ASInlineMeta">
+              <span class="ASInlineMeta__value"><span data-as="rating-kpi">4</span>/5</span>
+              <span class="u-muted" data-as="level-text">80 XP to next level</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="ASCard">
+          <header class="ASCardHeader">
+            <h4 class="ASCardTitle">Badge Unlock Rating</h4>
+          </header>
+
+          <div class="ASCardBody">
+            <div class="ASGameHead">
+              <div class="ASGameMeta">
+                <div class="ASGameMeta__title">Reward the Experience</div>
+                <div class="u-muted">High ratings unlock achievement</div>
+              </div>
+              <span class="ASBadgeLite">Achievement</span>
+            </div>
+
+            <div
+              class="ASRating"
+              data-as="rating"
+              data-icon="heart"
+              data-color="error"
+              data-max="5"
+              data-step="1"
+              data-value="5"
+              data-game-badge="true"
+              aria-label="Badge unlock rating"
+            ></div>
+
+            <div class="ASBadgeUnlock is-unlocked" data-as="badge-unlock">
+              <div class="ASBadgeUnlock__icon"><i class="fa-solid fa-award"></i></div>
+              <div>
+                <div class="ASBadgeUnlock__title">Golden Feedback Badge</div>
+                <div class="u-muted">Unlocked for excellent rating</div>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <article class="ASCard">
+          <header class="ASCardHeader">
+            <h4 class="ASCardTitle">Trust Shield Rating</h4>
+          </header>
+
+          <div class="ASCardBody">
+            <div class="ASGameHead">
+              <div class="ASGameMeta">
+                <div class="ASGameMeta__title">Trust in the Service</div>
+                <div class="u-muted">A calm, official trust-based interaction</div>
+              </div>
+              <span class="ASBadgeLite" data-as="trust-label">Trusted</span>
+            </div>
+
+            <div
+              class="ASRating ASRating--lg"
+              data-as="rating"
+              data-icon="shield"
+              data-color="primary"
+              data-max="5"
+              data-step="1"
+              data-value="4"
+              data-game-trust="true"
+              aria-label="Trust shield rating"
+            ></div>
+
+            <div class="ASTrustMeter">
+              <div class="ASTrustMeter__fill" data-as="trust-fill" style="width:80%"></div>
+            </div>
+
+            <div class="ASInlineMeta">
+              <span class="ASInlineMeta__value">Trust Score</span>
+              <span class="u-muted" data-as="trust-sub">Strong confidence</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="ASCard">
+          <header class="ASCardHeader">
+            <h4 class="ASCardTitle">Service Journey Rating</h4>
+          </header>
+
+          <div class="ASCardBody">
+            <div class="ASGameHead">
+              <div class="ASGameMeta">
+                <div class="ASGameMeta__title">Journey Satisfaction</div>
+                <div class="u-muted">From request to completion</div>
+              </div>
+              <span class="ASBadgeLite ASBadgeLite--info" data-as="journey-stage">Completed</span>
+            </div>
+
+            <div
+              class="ASRating"
+              data-as="rating"
+              data-icon="circle"
+              data-color="success"
+              data-max="5"
+              data-step="1"
+              data-value="4"
+              data-game-journey="true"
+              aria-label="Service journey rating"
+            ></div>
+
+            <div class="ASJourneyTrack">
+              <div class="ASJourneyFill" data-as="journey-fill" style="width:80%"></div>
+            </div>
+
+            <div class="ASJourneySteps">
+              <span class="ASJourneyStep is-active">Request</span>
+              <span class="ASJourneyStep is-active">Review</span>
+              <span class="ASJourneyStep is-active">Process</span>
+              <span class="ASJourneyStep is-active">Complete</span>
+              <span class="ASJourneyStep">Improve</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="ASCard">
+          <header class="ASCardHeader">
+            <h4 class="ASCardTitle">Streak Rating</h4>
+          </header>
+
+          <div class="ASCardBody">
+            <div class="ASGameHead">
+              <div class="ASGameMeta">
+                <div class="ASGameMeta__title">Daily Rating Streak</div>
+                <div class="u-muted">Keep giving feedback daily</div>
+              </div>
+              <span class="ASBadgeLite ASBadgeLite--info" data-as="streak-count">3 Days</span>
+            </div>
+
+            <div
+              class="ASRating"
+              data-as="rating"
+              data-icon="circle"
+              data-color="success"
+              data-max="5"
+              data-step="1"
+              data-value="3"
+              data-game-streak="true"
+              aria-label="Streak rating"
+            ></div>
+
+            <div class="ASStreakRow">
+              <span class="ASStreakFlame is-active"><i class="fa-solid fa-fire"></i></span>
+              <span class="ASStreakFlame is-active"><i class="fa-solid fa-fire"></i></span>
+              <span class="ASStreakFlame is-active"><i class="fa-solid fa-fire"></i></span>
+              <span class="ASStreakFlame"><i class="fa-solid fa-fire"></i></span>
+              <span class="ASStreakFlame"><i class="fa-solid fa-fire"></i></span>
+            </div>
+          </div>
+        </article>
+
+        <article class="ASCard">
+          <header class="ASCardHeader">
+            <h4 class="ASCardTitle">Reaction Meter</h4>
+          </header>
+
+          <div class="ASCardBody">
+            <div class="ASGameHead">
+              <div class="ASGameMeta">
+                <div class="ASGameMeta__title">Instant Reaction</div>
+                <div class="u-muted">Emotional meter with visual feedback</div>
+              </div>
+              <span class="ASBadgeLite" data-as="reaction-label">Very Good</span>
+            </div>
+
+            <div
+              class="ASRating ASRating--emoji"
+              data-as="rating"
+              data-icon="emoji"
+              data-color="secondary"
+              data-max="5"
+              data-step="1"
+              data-value="4"
+              data-game-reaction="true"
+              aria-label="Reaction meter"
+            ></div>
+
+            <div class="ASReactionMeter">
+              <div class="ASReactionMeter__fill" data-as="reaction-fill" style="width:80%"></div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Celebration Rating -->
+        <article class="ASCard ASCard--ratingHero">
+          <header class="ASCardHeader">
+            <h4 class="ASCardTitle">Celebration Rating</h4>
+          </header>
+
+          <div class="ASCardBody">
+            <div class="ASGameHead">
+              <div class="ASGameMeta">
+                <div class="ASGameMeta__title">Celebrate Great Service</div>
+                <div class="u-muted">Delightful interactive feedback</div>
+              </div>
+              <span class="ASBadgeLite" data-as="celebrate-label">Wonderful</span>
+            </div>
+
+            <div
+              class="ASRating ASRating--lg ASRating--celebrate"
+              data-as="rating"
+              data-icon="emoji"
+              data-color="alert"
+              data-max="5"
+              data-step="1"
+              data-value="5"
+              data-game-celebrate="true"
+              aria-label="Celebration rating"
+            ></div>
+
+            <div class="ASCelebrateBox" data-as="celebrate-box">
+              <div class="ASCelebrateEmoji" data-as="celebrate-emoji">🎉</div>
+              <div class="ASCelebrateText">
+                <div class="ASCelebrateTitle">Excellent Experience</div>
+                <div class="u-muted" data-as="celebrate-text">Your feedback helps improve public services.</div>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Mood Meter Rating -->
+        <article class="ASCard">
+          <header class="ASCardHeader">
+            <h4 class="ASCardTitle">Mood Meter Rating</h4>
+          </header>
+
+          <div class="ASCardBody">
+            <div class="ASGameHead">
+              <div class="ASGameMeta">
+                <div class="ASGameMeta__title">Mood Meter</div>
+                <div class="u-muted">Quick emotional interaction</div>
+              </div>
+              <span class="ASBadgeLite" data-as="mood-label">Satisfied</span>
+            </div>
+
+            <div
+              class="ASRating ASRating--emoji"
+              data-as="rating"
+              data-icon="emoji"
+              data-color="secondary"
+              data-max="5"
+              data-step="1"
+              data-value="4"
+              data-game-mood="true"
+              aria-label="Mood meter rating"
+            ></div>
+
+            <div class="ASMoodTrack">
+              <div class="ASMoodTrack__fill" data-as="mood-fill" style="width:80%"></div>
+            </div>
+
+            <div class="ASMoodFaces">
+              <span>😡</span>
+              <span>😕</span>
+              <span>😐</span>
+              <span>🙂</span>
+              <span>🤩</span>
             </div>
           </div>
         </article>
