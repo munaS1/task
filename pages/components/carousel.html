@@ -33,9 +33,12 @@
               <div class="ASCarouselOverlay">
                 <h4>Smart City Initiatives</h4>
                 <p>Building sustainable future</p>
+                <div class="ASCarouselHoverBox">
+                 <span class="ASCarouselHoverText">Learn More</span>
+              </div>
               </div>
             </div>
-
+            
           </div>
         </div>
 
@@ -106,40 +109,136 @@
           </div>
         </div>
 
-        <button class="ASCarouselNav ASCarouselNav--prev"></button>
-        <button class="ASCarouselNav ASCarouselNav--next"></button>
+        <button class="ASCarouselNav ASCarouselNav--prev" aria-label="Previous slide"></button>
+        <button class="ASCarouselNav ASCarouselNav--next" aria-label="Next slide"></button>
       </div>
     </section>
 
 
     <!-- ========================================= -->
-    <!-- THUMBNAIL CAROUSEL -->
-    <!-- ========================================= -->
-    <section class="ASCarouselBlock">
-      <h3>Thumbnail Carousel</h3>
-      <p>With selectable thumbnails</p>
+<!-- THUMBNAIL CAROUSEL -->
+<!-- ========================================= -->
+<section class="ASCarouselBlock">
+  <h3>Thumbnail Carousel</h3>
+  <p>With selectable thumbnails</p>
 
-      <div class="ASCarousel" data-as="carousel">
-        <div class="ASCarouselViewport">
-          <div class="ASCarouselTrack">
+  <div class="ASCarousel ASCarousel--thumbnailDots" data-as="carousel">
+    <div class="ASCarouselViewport">
+      <div class="ASCarouselTrack">
 
-            <div class="ASCarouselItem is-active">
-              <img src="../../assets/img/aseer-5.webp" >
-            </div>
-
-            <div class="ASCarouselItem">
-              <img src="../../assets/img/aseer-4.jpg">
-            </div>
-
-          </div>
+        <div class="ASCarouselItem is-active">
+          <img src="../../assets/img/aseer-5.webp" alt="Aseer view 1">
         </div>
 
-        <div class="ASCarouselThumbs">
-          <div class="ASCarouselThumb is-active"></div>
-          <div class="ASCarouselThumb"></div>
+        <div class="ASCarouselItem">
+          <img src="../../assets/img/aseer-4.jpg" alt="Aseer view 2">
         </div>
+
       </div>
-    </section>
+    </div>
 
+    <div class="ASCarouselThumbs" aria-label="Thumbnail Carousel Pagination">
+      <button type="button" class="ASCarouselThumb is-active" aria-label="Go to slide 1"></button>
+      <button type="button" class="ASCarouselThumb" aria-label="Go to slide 2"></button>
+    </div>
+  </div>
+</section>
+<!-- ========================================= -->
+<!-- AS EXPANDING PANELS SHOWCASE -->
+<!-- ========================================= -->
+<section class="ASCarouselBlock">
+  <h3>Expanding Projects Showcase</h3>
+  <p>Interactive expanding panels similar to municipality project spotlight</p>
+
+  <div class="ASExpandingShowcase" data-as="expanding-showcase">
+    <article
+      class="ASExpandingPanel
+      tabindex="0"
+      style="background-image: url('https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?q=80&w=1600&auto=format&fit=crop');"
+      aria-label="Mountain destination">
+      <div class="ASExpandingPanelOverlay"></div>
+      <div class="ASExpandingPanelContent">
+        <h4 class="ASExpandingPanelTitle">Mountain Destination</h4>
+        <p class="ASExpandingPanelText">
+          A major regional destination focused on tourism growth, public experience, and environmental identity.
+        </p>
+        <button class="ASBtn ASBtnLight--primary">Learn More</button>
+      </div>
+    </article>
+
+    <article
+      class="ASExpandingPanel"
+      tabindex="0"
+      style="background-image: url('https://images.unsplash.com/photo-1494526585095-c41746248156?q=80&w=1600&auto=format&fit=crop');"
+      aria-label="Urban district">
+      <div class="ASExpandingPanelOverlay"></div>
+      <div class="ASExpandingPanelContent">
+        <h4 class="ASExpandingPanelTitle">Urban District</h4>
+        <p class="ASExpandingPanelText">
+          Enhancing public spaces and municipal connectivity through smart urban design and integrated planning.
+        </p>
+        <button class="ASBtn ASBtnLight--primary">Learn More</button>
+      </div>
+    </article>
+
+    <article
+      class="ASExpandingPanel"
+      tabindex="0"
+      style="background-image: url('https://images.unsplash.com/photo-1512453979798-5ea266f8880c?q=80&w=1600&auto=format&fit=crop');"
+      aria-label="Transport development">
+      <div class="ASExpandingPanelOverlay"></div>
+      <div class="ASExpandingPanelContent">
+        <h4 class="ASExpandingPanelTitle">Transport Development</h4>
+        <p class="ASExpandingPanelText">
+          Supporting mobility and better movement across the city with modern transport and connected access.
+        </p>
+        <button class="ASBtn ASBtnLight--primary">Learn More</button>
+      </div>
+    </article>
+
+    <article
+      class="ASExpandingPanel"
+      tabindex="0"
+      style="background-image: url('https://images.unsplash.com/photo-1470770903676-69b98201ea1c?q=80&w=1600&auto=format&fit=crop');"
+      aria-label="Natural reserve">
+      <div class="ASExpandingPanelOverlay"></div>
+      <div class="ASExpandingPanelContent">
+        <h4 class="ASExpandingPanelTitle">Natural Reserve</h4>
+        <p class="ASExpandingPanelText">
+          Preserving natural assets while creating welcoming outdoor environments for residents and visitors.
+        </p>
+        <button class="ASBtn ASBtnLight--primary">Learn More</button>
+      </div>
+    </article>
+
+    <article
+      class="ASExpandingPanel"
+      tabindex="0"
+      style="background-image: url('https://images.unsplash.com/photo-1467269204594-9661b134dd2b?q=80&w=1600&auto=format&fit=crop');"
+      aria-label="Digital transformation">
+      <div class="ASExpandingPanelOverlay"></div>
+      <div class="ASExpandingPanelContent">
+        <h4 class="ASExpandingPanelTitle">Digital Transformation</h4>
+        <p class="ASExpandingPanelText">
+          Enabling future-ready services through digital systems, operational integration, and smarter platforms.
+        </p>
+        <button class="ASBtn ASBtnLight--primary">Learn More</button>
+      </div>
+    </article>
+
+    <article
+      class="ASExpandingPanel"
+      tabindex="0"
+      style="background-image: url('https://images.unsplash.com/photo-1501594907352-04cda38ebc29?q=80&w=1600&auto=format&fit=crop');"
+      aria-label="Community project">
+      <div class="ASExpandingPanelOverlay"></div>
+      <div class="ASExpandingPanelContent">
+        <h4 class="ASExpandingPanelTitle">Community Project</h4>
+        <p class="ASExpandingPanelText">
+          Building stronger community experience with better landscapes, amenities, and accessible public zones.
+        </p>
+        <button class="ASBtn ASBtnLight--primary">Learn More</button>
+      </div>
+    </article>
   </div>
 </section>

@@ -1,0 +1,567 @@
+/**
+ File: charts.css
+ Purpose: Charts layout, chart cards, legends, stats and responsive chart blocks
+*/
+
+
+/* =====================================
+   Charts Section
+   ===================================== */
+
+.ASChartsGrid {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.ASChartsBlock {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.ASChartsBlock > h3 {
+  margin: 0;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--ASText);
+}
+
+.ASChartsBlock > p {
+  margin: 0;
+  color: var(--ASTextMuted);
+  font-size: 0.95rem;
+}
+
+
+/* =====================================
+   Rows
+   ===================================== */
+
+.ASChartsRow {
+  display: grid;
+  gap: 1rem;
+}
+
+.ASChartsRow--2 {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.ASChartsRow--3 {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.ASChartsRow--4 {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+
+/* =====================================
+   Chart Card
+   ===================================== */
+
+.ASChartCard {
+  background: var(--ASSurface);
+  border: 1px solid var(--ASBorder);
+  border-radius: var(--ASRadiusLg);
+  box-shadow: var(--ASShadowSm);
+  overflow: hidden;
+  min-inline-size: 0;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.ASChartCard:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--ASShadowMd, 0 10px 24px rgba(0, 0, 0, 0.08));
+}
+
+.ASChartCardHeader {
+  padding: 1rem 1rem 0.75rem;
+  border-block-end: 1px solid var(--ASBorder);
+  background: var(--ASSurface);
+}
+
+.ASChartCardTitle {
+  margin: 0;
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--ASText);
+}
+
+.ASChartCardSubTitle {
+  margin: 0.35rem 0 0;
+  font-size: 0.88rem;
+  color: var(--ASTextMuted);
+}
+
+.ASChartCardBody {
+  padding: 1rem;
+}
+
+.ASChartCardFooter {
+  padding: 0.875rem 1rem 1rem;
+  border-block-start: 1px solid var(--ASBorder);
+  background: rgba(0, 0, 0, 0.01);
+}
+
+
+/* =====================================
+   Chart Canvas Area
+   ===================================== */
+
+.ASChartArea {
+  position: relative;
+  inline-size: 100%;
+  min-inline-size: 0;
+}
+
+.ASChartArea--sm {
+  block-size: 220px;
+}
+
+.ASChartArea--md {
+  block-size: 280px;
+}
+
+.ASChartArea--lg {
+  block-size: 340px;
+}
+
+.ASChartArea canvas {
+  inline-size: 100% !important;
+  block-size: 100% !important;
+  display: block;
+}
+
+
+/* =====================================
+   Centered Circular Charts
+   ===================================== */
+
+.ASChartCard--center .ASChartCardBody {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.ASChartArea--circle {
+  inline-size: min(100%, 320px);
+  block-size: 320px;
+  margin-inline: auto;
+}
+
+
+/* =====================================
+   Chart Toolbar / Meta
+   ===================================== */
+
+.ASChartMeta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  margin-block-end: 1rem;
+}
+
+.ASChartMetaTitle {
+  margin: 0;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--ASText);
+}
+
+.ASChartMetaSub {
+  margin: 0.2rem 0 0;
+  font-size: 0.85rem;
+  color: var(--ASTextMuted);
+}
+
+.ASChartActions {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+
+/* =====================================
+   Legend
+   ===================================== */
+
+.ASChartLegend {
+  display: grid;
+  gap: 0.65rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.ASChartLegend--2 {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.ASChartLegendItem {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  padding: 0.75rem 0.85rem;
+  border: 1px solid var(--ASBorder);
+  border-radius: 12px;
+  background: #fff;
+}
+
+.ASChartLegendItemInfo {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  min-inline-size: 0;
+}
+
+.ASChartLegendDot {
+  inline-size: 0.75rem;
+  block-size: 0.75rem;
+  border-radius: 50%;
+  flex: 0 0 auto;
+}
+
+.ASChartLegendLabel {
+  color: var(--ASText);
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.ASChartLegendValue {
+  color: var(--ASTextMuted);
+  font-size: 0.88rem;
+  white-space: nowrap;
+}
+
+
+/* =====================================
+   Donut Center Value
+   ===================================== */
+
+.ASChartCenterValue {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  margin-block-start: -12.5rem;
+  pointer-events: none;
+}
+
+.ASChartCenterValue strong {
+  display: block;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--ASText);
+}
+
+.ASChartCenterValue span {
+  display: block;
+  margin-top: 0.2rem;
+  font-size: 0.85rem;
+  color: var(--ASTextMuted);
+}
+
+
+/* =====================================
+   Statistics Cards Above / Beside Charts
+   ===================================== */
+
+.ASChartStatGrid {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.ASChartStatCard {
+  background: var(--ASSurface);
+  border: 1px solid var(--ASBorder);
+  border-radius: var(--ASRadiusLg);
+  box-shadow: var(--ASShadowSm);
+  padding: 1rem;
+}
+
+.ASChartStatLabel {
+  margin: 0;
+  font-size: 0.85rem;
+  color: var(--ASTextMuted);
+}
+
+.ASChartStatValue {
+  margin: 0.45rem 0 0;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--ASText);
+}
+
+.ASChartStatHint {
+  margin: 0.45rem 0 0;
+  font-size: 0.85rem;
+  color: var(--ASTextMuted);
+}
+
+.ASChartStatHint strong {
+  font-weight: 700;
+}
+
+
+/* =====================================
+   Dashboard Mini Cards
+   ===================================== */
+
+.ASChartMiniGrid {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.ASChartMiniCard {
+  background: var(--ASSurface);
+  border: 1px solid var(--ASBorder);
+  border-radius: var(--ASRadiusLg);
+  box-shadow: var(--ASShadowSm);
+  overflow: hidden;
+}
+
+.ASChartMiniCardHeader {
+  padding: 1rem 1rem 0.5rem;
+}
+
+.ASChartMiniCardTitle {
+  margin: 0;
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--ASText);
+}
+
+.ASChartMiniCardSubTitle {
+  margin: 0.25rem 0 0;
+  font-size: 0.82rem;
+  color: var(--ASTextMuted);
+}
+
+.ASChartMiniCardBody {
+  padding: 0.5rem 1rem 1rem;
+}
+
+.ASChartArea--mini {
+  block-size: 160px;
+}
+
+
+/* =====================================
+   Comparison / Split Layout
+   ===================================== */
+
+.ASChartSplit {
+  display: grid;
+  grid-template-columns: minmax(0, 1.3fr) minmax(280px, 0.7fr);
+  gap: 1rem;
+  align-items: start;
+}
+
+.ASChartSidePanel {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.ASChartInfoCard {
+  background: rgba(0, 0, 0, 0.02);
+  border: 1px solid var(--ASBorder);
+  border-radius: 14px;
+  padding: 0.9rem 1rem;
+}
+
+.ASChartInfoCard h5 {
+  margin: 0;
+  font-size: 0.92rem;
+  font-weight: 700;
+  color: var(--ASText);
+}
+
+.ASChartInfoCard p {
+  margin: 0.35rem 0 0;
+  font-size: 0.85rem;
+  color: var(--ASTextMuted);
+}
+
+
+/* =====================================
+   Table-like Summary Under Charts
+   ===================================== */
+
+.ASChartSummary {
+  display: grid;
+  gap: 0.75rem;
+}
+
+.ASChartSummaryRow {
+  display: grid;
+  grid-template-columns: minmax(0, 1.5fr) minmax(90px, 0.5fr) minmax(100px, 0.6fr);
+  gap: 0.75rem;
+  align-items: center;
+  padding: 0.8rem 0.9rem;
+  border: 1px solid var(--ASBorder);
+  border-radius: 12px;
+  background: #fff;
+}
+
+.ASChartSummaryLabel {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  min-inline-size: 0;
+  color: var(--ASText);
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.ASChartSummaryValue,
+.ASChartSummaryPercent {
+  text-align: end;
+  font-size: 0.88rem;
+  color: var(--ASTextMuted);
+  white-space: nowrap;
+}
+
+
+/* =====================================
+   Palette Helpers
+   ===================================== */
+
+.ASChartColor--primary {
+  background: var(--ASPrimary);
+}
+
+.ASChartColor--secondary {
+  background: var(--ASSecondary);
+}
+
+.ASChartColor--accent {
+  background: var(--ASAccent);
+}
+
+.ASChartColor--success {
+  background: var(--ASSuccess, #22c55e);
+}
+
+.ASChartColor--error {
+  background: var(--ASDanger, #ef4444);
+}
+
+.ASChartColor--info {
+  background: var(--ASInfo, #06b6d4);
+}
+
+.ASChartColor--alert {
+  background: var(--ASWarning, #f59e0b);
+}
+
+.ASChartColor--muted {
+  background: #cbd5e1;
+}
+
+
+/* =====================================
+   Empty / Placeholder State
+   ===================================== */
+
+.ASChartEmpty {
+  min-block-size: 240px;
+  border: 1px dashed var(--ASBorder);
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 1.25rem;
+  color: var(--ASTextMuted);
+  background: rgba(0, 0, 0, 0.015);
+}
+
+
+/* =====================================
+   Responsive
+   ===================================== */
+
+@media (max-width: 1200px) {
+  .ASChartStatGrid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .ASChartMiniGrid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .ASChartsRow--3,
+  .ASChartsRow--4 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 992px) {
+  .ASChartsRow--2,
+  .ASChartsRow--3,
+  .ASChartsRow--4,
+  .ASChartMiniGrid,
+  .ASChartStatGrid,
+  .ASChartSplit,
+  .ASChartLegend--2 {
+    grid-template-columns: 1fr;
+  }
+
+  .ASChartArea--circle {
+    inline-size: 100%;
+    max-inline-size: 300px;
+    block-size: 300px;
+  }
+
+  .ASChartSummaryRow {
+    grid-template-columns: 1fr;
+    text-align: start;
+  }
+
+  .ASChartSummaryValue,
+  .ASChartSummaryPercent {
+    text-align: start;
+  }
+}
+
+@media (max-width: 576px) {
+  .ASChartCardHeader,
+  .ASChartCardBody,
+  .ASChartCardFooter,
+  .ASChartMiniCardHeader,
+  .ASChartMiniCardBody,
+  .ASChartStatCard {
+    padding-inline: 0.875rem;
+  }
+
+  .ASChartArea--sm {
+    block-size: 200px;
+  }
+
+  .ASChartArea--md {
+    block-size: 240px;
+  }
+
+  .ASChartArea--lg {
+    block-size: 300px;
+  }
+
+  .ASChartArea--mini {
+    block-size: 140px;
+  }
+
+  .ASChartArea--circle {
+    max-inline-size: 260px;
+    block-size: 260px;
+  }
+}

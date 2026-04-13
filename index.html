@@ -28,6 +28,7 @@
   <link href="assets/css/tooltip.css" rel="stylesheet" />
   <link href="assets/css/popover.css" rel="stylesheet" />
   <link href="assets/css/tables.css" rel="stylesheet" />
+  <link href="assets/css/charts.css" rel="stylesheet" />
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet" />
   <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;600;700&family=Cairo:wght@400;700&display=swap" rel="stylesheet" />
 </head>
@@ -166,10 +167,32 @@
   <script src="assets/js/tooltip.js" type="module"></script>
   <script src="assets/js/popover.js" type="module"></script>
   <script src="assets/js/tables.js" type="module"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="assets/js/charts.js"></script>
   <script type="module">
-    import { initViewLoader, initAccordion } from './assets/js/components.js';
-    initAccordion();
-    initViewLoader('pages/components/dropdowns.html'); 
-  </script>
+  import { initViewLoader, initAccordion } from './assets/js/components.js';
+
+  initAccordion();
+  initViewLoader('pages/components/dropdowns.html');
+
+  const content = document.getElementById('ASContent');
+
+  if (content) {
+    const observer = new MutationObserver(() => {
+      const chartsGrid = content.querySelector('.ASChartsGrid');
+
+      if (chartsGrid && window.initASCharts) {
+        setTimeout(() => {
+          window.initASCharts();
+        }, 50);
+      }
+    });
+
+    observer.observe(content, {
+      childList: true,
+      subtree: true
+    });
+  }
+</script>
 </body>
 </html>

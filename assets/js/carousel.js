@@ -5,28 +5,46 @@
 
 export function initCarousel(scope = document) {
 
-  scope.querySelectorAll('[data-as="carousel"]').forEach(carousel => {
+  scope.querySelectorAll('[data-as="carousel"]').forEach((carousel) => {
 
     const track = carousel.querySelector('.ASCarouselTrack');
-    const items = carousel.querySelectorAll('.ASCarouselItem');
+    const items = Array.from(carousel.querySelectorAll('.ASCarouselItem'));
     const nextBtn = carousel.querySelector('.ASCarouselNav--next');
     const prevBtn = carousel.querySelector('.ASCarouselNav--prev');
+    const dots = Array.from(
+      carousel.querySelectorAll('.ASCarouselThumb, .ASCarouselDot')
+    );
 
     if (!track || items.length === 0) return;
 
-    let index = 0;
-
     const isFade = carousel.classList.contains('ASCarousel--fade');
     const isMulti = carousel.classList.contains('ASCarousel--multi');
-
     const rtl = document.documentElement.dir === 'rtl';
     const total = items.length;
+
+    let index = items.findIndex((item) => item.classList.contains('is-active'));
+    if (index < 0) index = 0;
+
+    function updateDots() {
+      if (!dots.length) return;
+
+      dots.forEach((dot, i) => {
+        dot.classList.toggle('is-active', i === index);
+        dot.setAttribute('aria-current', i === index ? 'true' : 'false');
+      });
+    }
+
+    function updateItems() {
+      items.forEach((item, i) => {
+        item.classList.toggle('is-active', i === index);
+      });
+    }
 
     function update() {
 
       if (isFade) {
-        items.forEach(item => item.classList.remove('is-active'));
-        items[index].classList.add('is-active');
+        updateItems();
+        updateDots();
         return;
       }
 
@@ -37,8 +55,10 @@ export function initCarousel(scope = document) {
       }
 
       const direction = rtl ? 1 : -1;
-      track.style.transform =
-        `translateX(${direction * index * slidePercent}%)`;
+      track.style.transform = `translateX(${direction * index * slidePercent}%)`;
+
+      updateItems();
+      updateDots();
     }
 
     function next() {
@@ -53,6 +73,13 @@ export function initCarousel(scope = document) {
 
     nextBtn?.addEventListener('click', next);
     prevBtn?.addEventListener('click', prev);
+
+    dots.forEach((dot, i) => {
+      dot.addEventListener('click', () => {
+        index = i;
+        update();
+      });
+    });
 
     /* ===== Optional Auto Play ===== */
 
@@ -73,11 +100,11 @@ export function initCarousel(scope = document) {
 
     let startX = 0;
 
-    track.addEventListener('touchstart', e => {
+    track.addEventListener('touchstart', (e) => {
       startX = e.touches[0].clientX;
     });
 
-    track.addEventListener('touchend', e => {
+    track.addEventListener('touchend', (e) => {
       const endX = e.changedTouches[0].clientX;
       const diff = endX - startX;
 
@@ -92,5 +119,58 @@ export function initCarousel(scope = document) {
 
     update();
 
+  });
+}
+/* ==========================================
+   AS Expanding Showcase
+   File: carousel.js
+   ========================================== */
+
+export function initExpandingShowcase(scope = document) {
+  scope.querySelectorAll('[data-as="expanding-showcase"]').forEach((showcase) => {
+    const panels = Array.from(showcase.querySelectorAll('.ASExpandingPanel'));
+
+    if (!panels.length) return;
+
+    function setActive(panel) {
+      panels.forEach((item) => {
+        item.classList.toggle('is-active', item === panel);
+      });
+    }
+
+    panels.forEach((panel, index) => {
+      panel.addEventListener('mouseenter', () => {
+        setActive(panel);
+      });
+
+      panel.addEventListener('focus', () => {
+        setActive(panel);
+      });
+
+      panel.addEventListener('click', () => {
+        setActive(panel);
+      });
+
+      panel.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          setActive(panel);
+        }
+
+        if (e.key === 'ArrowRight' || e.key === 'ArrowDown') {
+          e.preventDefault();
+          const nextPanel = panels[(index + 1) % panels.length];
+          nextPanel.focus();
+          setActive(nextPanel);
+        }
+
+        if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') {
+          e.preventDefault();
+          const prevPanel = panels[(index - 1 + panels.length) % panels.length];
+          prevPanel.focus();
+          setActive(prevPanel);
+        }
+      });
+    });
   });
 }

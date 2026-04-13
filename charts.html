@@ -1,0 +1,356 @@
+<section class="ASSection">
+  <div class="ASContainer">
+    <header class="mb-3">
+      <h2>Charts Collection</h2>
+      <p class="text-muted">Comprehensive chart styles based on our custom palette.</p>
+    </header>
+
+    <div class="ASChartsGrid">
+
+      <!-- ================================================= -->
+      <!-- Block 1: Overview Statistics -->
+      <!-- ================================================= -->
+      <section class="ASChartsBlock">
+        <h3>Chart Statistics Overview</h3>
+        <p>Quick summary cards for dashboard analytics and indicators</p>
+
+        <div class="ASChartStatGrid">
+          <article class="ASChartStatCard">
+            <p class="ASChartStatLabel">Total Reports</p>
+            <h4 class="ASChartStatValue">2,485</h4>
+            <p class="ASChartStatHint"><strong style="color: var(--ASPrimary);">+12.4%</strong> from last month</p>
+          </article>
+
+          <article class="ASChartStatCard">
+            <p class="ASChartStatLabel">Completed Tasks</p>
+            <h4 class="ASChartStatValue">1,820</h4>
+            <p class="ASChartStatHint"><strong style="color: var(--ASSuccess);">+8.6%</strong> improvement</p>
+          </article>
+
+          <article class="ASChartStatCard">
+            <p class="ASChartStatLabel">Pending Requests</p>
+            <h4 class="ASChartStatValue">356</h4>
+            <p class="ASChartStatHint"><strong style="color: var(--ASAccent);">+3.1%</strong> this week</p>
+          </article>
+
+          <article class="ASChartStatCard">
+            <p class="ASChartStatLabel">Service Coverage</p>
+            <h4 class="ASChartStatValue">89%</h4>
+            <p class="ASChartStatHint"><strong style="color: var(--ASSecondary);">Stable</strong> across departments</p>
+          </article>
+        </div>
+      </section>
+
+      <!-- ================================================= -->
+      <!-- Block 2: Pie & Donut Charts -->
+      <!-- ================================================= -->
+      <section class="ASChartsBlock">
+        <h3>Pie & Donut Charts</h3>
+        <p>Distribution and category share visualizations</p>
+
+        <div class="ASChartsRow ASChartsRow--2">
+          <article class="ASChartCard">
+            <header class="ASChartCardHeader">
+              <h4 class="ASChartCardTitle">Traffic Sources</h4>
+              <p class="ASChartCardSubTitle">Pie chart for source distribution</p>
+            </header>
+
+            <div class="ASChartCardBody">
+              <div class="ASChartArea ASChartArea--lg">
+                <canvas id="asPieChart"></canvas>
+              </div>
+            </div>
+          </article>
+
+          <article class="ASChartCard ASChartCard--center">
+            <header class="ASChartCardHeader">
+              <h4 class="ASChartCardTitle">Revenue Split</h4>
+              <p class="ASChartCardSubTitle">Donut chart for service categories</p>
+            </header>
+
+            <div class="ASChartCardBody">
+              <div class="ASChartArea ASChartArea--circle">
+                <canvas id="asDonutChart"></canvas>
+              </div>
+
+              <div class="ASChartLegend ASChartLegend--2">
+                <div class="ASChartLegendItem">
+                  <div class="ASChartLegendItemInfo">
+                    <span class="ASChartLegendDot ASChartColor--primary"></span>
+                    <span class="ASChartLegendLabel">Urban Services</span>
+                  </div>
+                  <span class="ASChartLegendValue">35%</span>
+                </div>
+
+                <div class="ASChartLegendItem">
+                  <div class="ASChartLegendItemInfo">
+                    <span class="ASChartLegendDot ASChartColor--secondary"></span>
+                    <span class="ASChartLegendLabel">Infrastructure</span>
+                  </div>
+                  <span class="ASChartLegendValue">22%</span>
+                </div>
+
+                <div class="ASChartLegendItem">
+                  <div class="ASChartLegendItemInfo">
+                    <span class="ASChartLegendDot ASChartColor--accent"></span>
+                    <span class="ASChartLegendLabel">Public Health</span>
+                  </div>
+                  <span class="ASChartLegendValue">18%</span>
+                </div>
+
+                <div class="ASChartLegendItem">
+                  <div class="ASChartLegendItemInfo">
+                    <span class="ASChartLegendDot ASChartColor--info"></span>
+                    <span class="ASChartLegendLabel">Other Services</span>
+                  </div>
+                  <span class="ASChartLegendValue">25%</span>
+                </div>
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- ================================================= -->
+      <!-- Block 3: Vertical Bar Charts -->
+      <!-- ================================================= -->
+      <section class="ASChartsBlock">
+        <h3>Vertical Bar Charts</h3>
+        <p>Column charts for monthly and yearly comparisons</p>
+
+        <div class="ASChartsRow ASChartsRow--2">
+          <article class="ASChartCard">
+            <header class="ASChartCardHeader">
+              <h4 class="ASChartCardTitle">Monthly Performance</h4>
+              <p class="ASChartCardSubTitle">Single dataset vertical chart</p>
+            </header>
+
+            <div class="ASChartCardBody">
+              <div class="ASChartArea ASChartArea--md">
+                <canvas id="asBarChart"></canvas>
+              </div>
+            </div>
+          </article>
+
+          <article class="ASChartCard">
+            <header class="ASChartCardHeader">
+              <h4 class="ASChartCardTitle">Year Comparison</h4>
+              <p class="ASChartCardSubTitle">Grouped bar chart with two datasets</p>
+            </header>
+
+            <div class="ASChartCardBody">
+              <div class="ASChartArea ASChartArea--md">
+                <canvas id="asGroupedBarChart"></canvas>
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- ================================================= -->
+      <!-- Block 4: Horizontal Bar Charts -->
+      <!-- ================================================= -->
+      <section class="ASChartsBlock">
+        <h3>Horizontal Bar Charts</h3>
+        <p>Ranked visual comparisons and category performance</p>
+
+        <div class="ASChartsRow ASChartsRow--2">
+          <article class="ASChartCard">
+            <header class="ASChartCardHeader">
+              <h4 class="ASChartCardTitle">Preferred Services</h4>
+              <p class="ASChartCardSubTitle">Single dataset horizontal chart</p>
+            </header>
+
+            <div class="ASChartCardBody">
+              <div class="ASChartArea ASChartArea--md">
+                <canvas id="asHorizontalBarChart"></canvas>
+              </div>
+            </div>
+          </article>
+
+          <article class="ASChartCard">
+            <header class="ASChartCardHeader">
+              <h4 class="ASChartCardTitle">Department Comparison</h4>
+              <p class="ASChartCardSubTitle">Dual dataset horizontal chart</p>
+            </header>
+
+            <div class="ASChartCardBody">
+              <div class="ASChartArea ASChartArea--md">
+                <canvas id="asHorizontalCompareChart"></canvas>
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- ================================================= -->
+      <!-- Block 5: Line Charts -->
+      <!-- ================================================= -->
+      <section class="ASChartsBlock">
+        <h3>Line Charts</h3>
+        <p>Trend charts for time-based performance and movement</p>
+
+        <div class="ASChartsRow ASChartsRow--2">
+          <article class="ASChartCard">
+            <header class="ASChartCardHeader">
+              <h4 class="ASChartCardTitle">Monthly Growth</h4>
+              <p class="ASChartCardSubTitle">Simple line chart</p>
+            </header>
+
+            <div class="ASChartCardBody">
+              <div class="ASChartArea ASChartArea--md">
+                <canvas id="asLineChart"></canvas>
+              </div>
+            </div>
+          </article>
+
+          <article class="ASChartCard">
+            <header class="ASChartCardHeader">
+              <h4 class="ASChartCardTitle">Department Trends</h4>
+              <p class="ASChartCardSubTitle">Comparison line chart</p>
+            </header>
+
+            <div class="ASChartCardBody">
+              <div class="ASChartArea ASChartArea--md">
+                <canvas id="asMultiLineChart"></canvas>
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- ================================================= -->
+      <!-- Block 6: Split Chart + Summary -->
+      <!-- ================================================= -->
+      <section class="ASChartsBlock">
+        <h3>Chart with Detailed Summary</h3>
+        <p>Combined chart and side information layout</p>
+
+        <article class="ASChartCard">
+          <header class="ASChartCardHeader">
+            <h4 class="ASChartCardTitle">Service Performance Analysis</h4>
+            <p class="ASChartCardSubTitle">Visual overview with supporting summary panel</p>
+          </header>
+
+          <div class="ASChartCardBody">
+            <div class="ASChartSplit">
+              <div class="ASChartArea ASChartArea--lg">
+                <canvas id="asAnalysisChart"></canvas>
+              </div>
+
+              <div class="ASChartSidePanel">
+                <div class="ASChartInfoCard">
+                  <h5>Top Performing Service</h5>
+                  <p>Municipal inspection services recorded the highest completion rate this quarter.</p>
+                </div>
+
+                <div class="ASChartInfoCard">
+                  <h5>Lowest Category</h5>
+                  <p>Archived requests remained the lowest segment compared with active departments.</p>
+                </div>
+
+                <div class="ASChartInfoCard">
+                  <h5>Recommendation</h5>
+                  <p>Increase follow-up capacity in medium-demand services to improve balanced delivery.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </article>
+      </section>
+
+      <!-- ================================================= -->
+      <!-- Block 7: Summary Rows -->
+      <!-- ================================================= -->
+      <section class="ASChartsBlock">
+        <h3>Chart Summary Details</h3>
+        <p>Structured value list matching chart categories</p>
+
+        <div class="ASChartSummary">
+          <div class="ASChartSummaryRow">
+            <div class="ASChartSummaryLabel">
+              <span class="ASChartLegendDot ASChartColor--primary"></span>
+              Urban Services
+            </div>
+            <div class="ASChartSummaryValue">1,240</div>
+            <div class="ASChartSummaryPercent">35%</div>
+          </div>
+
+          <div class="ASChartSummaryRow">
+            <div class="ASChartSummaryLabel">
+              <span class="ASChartLegendDot ASChartColor--secondary"></span>
+              Infrastructure
+            </div>
+            <div class="ASChartSummaryValue">780</div>
+            <div class="ASChartSummaryPercent">22%</div>
+          </div>
+
+          <div class="ASChartSummaryRow">
+            <div class="ASChartSummaryLabel">
+              <span class="ASChartLegendDot ASChartColor--accent"></span>
+              Public Health
+            </div>
+            <div class="ASChartSummaryValue">640</div>
+            <div class="ASChartSummaryPercent">18%</div>
+          </div>
+
+          <div class="ASChartSummaryRow">
+            <div class="ASChartSummaryLabel">
+              <span class="ASChartLegendDot ASChartColor--info"></span>
+              Other Services
+            </div>
+            <div class="ASChartSummaryValue">885</div>
+            <div class="ASChartSummaryPercent">25%</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================================================= -->
+      <!-- Block 8: Mini Dashboard Charts -->
+      <!-- ================================================= -->
+      <section class="ASChartsBlock">
+        <h3>Mini Dashboard Charts</h3>
+        <p>Small chart cards for compact dashboard modules</p>
+
+        <div class="ASChartMiniGrid">
+          <article class="ASChartMiniCard">
+            <header class="ASChartMiniCardHeader">
+              <h4 class="ASChartMiniCardTitle">Visitors</h4>
+              <p class="ASChartMiniCardSubTitle">Weekly overview</p>
+            </header>
+            <div class="ASChartMiniCardBody">
+              <div class="ASChartArea ASChartArea--mini">
+                <canvas id="asMiniAreaChart"></canvas>
+              </div>
+            </div>
+          </article>
+
+          <article class="ASChartMiniCard">
+            <header class="ASChartMiniCardHeader">
+              <h4 class="ASChartMiniCardTitle">Requests</h4>
+              <p class="ASChartMiniCardSubTitle">Monthly activity</p>
+            </header>
+            <div class="ASChartMiniCardBody">
+              <div class="ASChartArea ASChartArea--mini">
+                <canvas id="asMiniBarChart"></canvas>
+              </div>
+            </div>
+          </article>
+
+          <article class="ASChartMiniCard">
+            <header class="ASChartMiniCardHeader">
+              <h4 class="ASChartMiniCardTitle">Completion</h4>
+              <p class="ASChartMiniCardSubTitle">Progress split</p>
+            </header>
+            <div class="ASChartMiniCardBody">
+              <div class="ASChartArea ASChartArea--mini">
+                <canvas id="asMiniDonutChart"></canvas>
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+    </div>
+  </div>
+</section>
