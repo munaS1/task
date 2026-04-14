@@ -101,3 +101,291 @@
 
   </div>
 </section>
+<section class="ASSection">
+  <header class="mb-3">
+    <h2>Advanced Editable Tables</h2>
+    <p class="text-muted">Editable table patterns with refined AS interactions.</p>
+  </header>
+
+  <div class="ASCardsGrid">
+
+    <!-- ========================================= -->
+    <!-- INLINE EDIT TABLE -->
+    <!-- ========================================= -->
+    <section class="ASCardsBlock">
+      <h3>Inline Edit Table</h3>
+      <p>Editable rows with soft focus states and action controls</p>
+
+      <div class="ASCard ASTableCard">
+        <div class="ASTableWrap">
+          <table class="ASTable ASTable--editable">
+            <thead>
+              <tr>
+                <th>الاسم</th>
+                <th>القسم</th>
+                <th>الوظيفة</th>
+                <th>الحالة</th>
+                <th>الإجراء</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td contenteditable="true">أحمد خالد</td>
+                <td contenteditable="true">تقنية المعلومات</td>
+                <td contenteditable="true">محلل نظم</td>
+                <td><span class="ASTableBadge ASTableBadge--success">نشط</span></td>
+                <td>
+                  <div class="ASTableActions">
+                    <button class="ASBtn ASBtnLight--primary ASBtn--sm">حفظ</button>
+                    <button class="ASBtn ASBtnLight--grey ASBtn--sm">إلغاء</button>
+                  </div>
+                </td>
+              </tr>
+
+              <tr>
+                <td contenteditable="true">سارة محمد</td>
+                <td contenteditable="true">الموارد البشرية</td>
+                <td contenteditable="true">منسقة</td>
+                <td><span class="ASTableBadge ASTableBadge--alert">مراجعة</span></td>
+                <td>
+                  <div class="ASTableActions">
+                    <button class="ASBtn ASBtnLight--primary ASBtn--sm">حفظ</button>
+                    <button class="ASBtn ASBtnLight--grey ASBtn--sm">إلغاء</button>
+                  </div>
+                </td>
+              </tr>
+
+              <tr>
+                <td contenteditable="true">ريم علي</td>
+                <td contenteditable="true">إدارة المشاريع</td>
+                <td contenteditable="true">متابعة مبادرات</td>
+                <td><span class="ASTableBadge ASTableBadge--info">محدث</span></td>
+                <td>
+                  <div class="ASTableActions">
+                    <button class="ASBtn ASBtnLight--primary ASBtn--sm">حفظ</button>
+                    <button class="ASBtn ASBtnLight--grey ASBtn--sm">إلغاء</button>
+                  </div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================= -->
+<!-- ROW EDITOR TABLE -->
+<!-- ========================================= -->
+<section class="ASCardsBlock">
+  <h3>Editor Row Table</h3>
+  <p>Rows styled with clear dividers, zebra striping, and stronger table readability</p>
+
+  <div class="ASCard ASTableCard">
+    <div class="ASTableWrap">
+      <table class="ASTable ASTable--row-editor">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>المبادرة</th>
+            <th>المالك</th>
+            <th>النسبة</th>
+            <th>الحالة</th>
+            <th class="ASTableActionsCol">تعديل</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <tr>
+            <td>01</td>
+            <td>تحسين تجربة المستفيد</td>
+            <td>إدارة التحول</td>
+            <td>78%</td>
+            <td>
+              <span class="ASEditorStatus ASEditorStatus--success">
+                <span class="ASEditorStatusDot"></span>
+                <span class="ASEditorStatusText">مستمر</span>
+              </span>
+            </td>
+            <td class="ASTableActions">
+              <div class="ASTableActionGroup ASTableActionGroup--quad">
+                <button class="ASBtn ASBtnLight--primary ASBtn--sm" type="button">تحرير</button>
+                <button class="ASBtn ASBtnLight--success ASBtn--sm" type="button">حفظ</button>
+                <button class="ASBtn ASBtnLight--grey ASBtn--sm" type="button">إلغاء</button>
+                <button class="ASBtn ASBtnLight--Error ASBtn--sm" type="button">حذف</button>
+              </div>
+            </td>
+          </tr>
+
+          <tr>
+            <td>02</td>
+            <td>أتمتة النماذج الداخلية</td>
+            <td>تقنية المعلومات</td>
+            <td>52%</td>
+            <td>
+              <span class="ASEditorStatus ASEditorStatus--warning">
+                <span class="ASEditorStatusDot"></span>
+                <span class="ASEditorStatusText">متابعة</span>
+              </span>
+            </td>
+            <td class="ASTableActions">
+              <div class="ASTableActionGroup ASTableActionGroup--quad">
+                <button class="ASBtn ASBtnLight--primary ASBtn--sm" type="button">تحرير</button>
+                <button class="ASBtn ASBtnLight--success ASBtn--sm" type="button">حفظ</button>
+                <button class="ASBtn ASBtnLight--grey ASBtn--sm" type="button">إلغاء</button>
+                <button class="ASBtn ASBtnLight--Error ASBtn--sm" type="button">حذف</button>
+              </div>
+            </td>
+          </tr>
+
+          <tr>
+            <td>03</td>
+            <td>لوحة قياس الأداء</td>
+            <td>PMO</td>
+            <td>91%</td>
+            <td>
+              <span class="ASEditorStatus ASEditorStatus--info">
+                <span class="ASEditorStatusDot"></span>
+                <span class="ASEditorStatusText">منجز جزئيًا</span>
+              </span>
+            </td>
+            <td class="ASTableActions">
+              <div class="ASTableActionGroup ASTableActionGroup--quad">
+                <button class="ASBtn ASBtnLight--primary ASBtn--sm" type="button">تحرير</button>
+                <button class="ASBtn ASBtnLight--success ASBtn--sm" type="button">حفظ</button>
+                <button class="ASBtn ASBtnLight--grey ASBtn--sm" type="button">إلغاء</button>
+                <button class="ASBtn ASBtnLight--Error ASBtn--sm" type="button">حذف</button>
+              </div>
+            </td>
+          </tr>
+
+          <tr>
+            <td>04</td>
+            <td>ربط التقارير التشغيلية</td>
+            <td>إدارة التشغيل</td>
+            <td>64%</td>
+            <td>
+              <span class="ASEditorStatus ASEditorStatus--success">
+                <span class="ASEditorStatusDot"></span>
+                <span class="ASEditorStatusText">مستمر</span>
+              </span>
+            </td>
+            <td class="ASTableActions">
+              <div class="ASTableActionGroup ASTableActionGroup--quad">
+                <button class="ASBtn ASBtnLight--primary ASBtn--sm" type="button">تحرير</button>
+                <button class="ASBtn ASBtnLight--success ASBtn--sm" type="button">حفظ</button>
+                <button class="ASBtn ASBtnLight--grey ASBtn--sm" type="button">إلغاء</button>
+                <button class="ASBtn ASBtnLight--Error ASBtn--sm" type="button">حذف</button>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+    <!-- ========================================= -->
+    <!-- COMPACT EDITABLE TABLE -->
+    <!-- ========================================= -->
+    <section class="ASCardsBlock">
+      <h3>Compact Editable Table</h3>
+      <p>Dense layout with clean editable fields for admin workflows</p>
+
+      <div class="ASCard ASTableCard">
+        <div class="ASTableWrap">
+          <table class="ASTable ASTable--compact-edit">
+            <thead>
+              <tr>
+                <th>الموظف</th>
+                <th>البريد</th>
+                <th>الهاتف</th>
+                <th>آخر تحديث</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td contenteditable="true">محمد القحطاني</td>
+                <td contenteditable="true">m.alqahtani@as.gov.sa</td>
+                <td contenteditable="true">0500000001</td>
+                <td>اليوم</td>
+              </tr>
+              <tr>
+                <td contenteditable="true">نورة عبدالله</td>
+                <td contenteditable="true">n.abdullah@as.gov.sa</td>
+                <td contenteditable="true">0500000002</td>
+                <td>أمس</td>
+              </tr>
+              <tr>
+                <td contenteditable="true">خالد يحيى</td>
+                <td contenteditable="true">k.yahya@as.gov.sa</td>
+                <td contenteditable="true">0500000003</td>
+                <td>منذ 3 أيام</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================= -->
+    <!-- APPROVAL STYLE TABLE -->
+    <!-- ========================================= -->
+    <section class="ASCardsBlock">
+      <h3>Approval Workflow Table</h3>
+      <p>Approval-focused layout with emphasized decisions</p>
+
+      <div class="ASCard ASTableCard">
+        <div class="ASTableWrap">
+          <table class="ASTable ASTable--approval">
+            <thead>
+              <tr>
+                <th>الطلب</th>
+                <th>المستفيد</th>
+                <th>الأولوية</th>
+                <th>الحالة</th>
+                <th>اعتماد</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>طلب اعتماد تقرير</td>
+                <td>إدارة المشاريع</td>
+                <td><span class="ASTableBadge ASTableBadge--error">عالية</span></td>
+                <td><span class="ASTableBadge ASTableBadge--alert">قيد الانتظار</span></td>
+                <td>
+                  <div class="ASTableActions">
+                    <button class="ASBtn ASBtn--primary ASBtn--sm">اعتماد</button>
+                    <button class="ASBtn ASBtnOutline ASBtnOutline--Error ASBtn--sm">رفض</button>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td>مراجعة بيانات موظف</td>
+                <td>الموارد البشرية</td>
+                <td><span class="ASTableBadge ASTableBadge--info">متوسطة</span></td>
+                <td><span class="ASTableBadge ASTableBadge--success">مكتمل</span></td>
+                <td>
+                  <div class="ASTableActions">
+                    <button class="ASBtn ASBtnLight--grey ASBtn--sm">عرض</button>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td>تحديث سجل تشغيلي</td>
+                <td>إدارة التشغيل</td>
+                <td><span class="ASTableBadge ASTableBadge--secondary">عادية</span></td>
+                <td><span class="ASTableBadge ASTableBadge--info">جارٍ التنفيذ</span></td>
+                <td>
+                  <div class="ASTableActions">
+                    <button class="ASBtn ASBtnLight--primary ASBtn--sm">متابعة</button>
+                  </div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+  </div>
+</section>

@@ -240,3 +240,273 @@
 
   </div>
 </section>
+<section class="ASSection">
+  <header class="mb-3">
+    <h2>Advanced Extension Tables</h2>
+    <p class="text-muted">Creative extension patterns designed in the AS system style.</p>
+  </header>
+
+  <div class="ASCardsGrid">
+
+    <!-- ========================================= -->
+    <!-- FILTER TABLE -->
+    <!-- ========================================= -->
+    <section class="ASCardsBlock">
+      <h3>Filter Action Table</h3>
+      <p>Top control bar with filters and clean bordered layout</p>
+
+      <div class="ASCard ASTableCard">
+        <div class="ASTableToolbar">
+          <div class="ASTableToolbarGroup">
+            <input class="ASInput" type="text" placeholder="بحث في الجدول..." />
+          </div>
+          <div class="ASTableToolbarGroup">
+            <select class="ASSelect">
+              <option>كل الأقسام</option>
+              <option>تقنية المعلومات</option>
+              <option>الموارد البشرية</option>
+              <option>إدارة المشاريع</option>
+            </select>
+            <select class="ASSelect">
+              <option>كل الحالات</option>
+              <option>نشط</option>
+              <option>قيد المراجعة</option>
+              <option>مكتمل</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="ASTableWrap">
+          <table class="ASTable ASTable--soft-lines">
+            <thead>
+              <tr>
+                <th>الاسم</th>
+                <th>القسم</th>
+                <th>المهام</th>
+                <th>الحالة</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>أروى سعد</td>
+                <td>تقنية المعلومات</td>
+                <td>12</td>
+                <td><span class="ASTableBadge ASTableBadge--success">نشط</span></td>
+              </tr>
+              <tr>
+                <td>فيصل الشهراني</td>
+                <td>PMO</td>
+                <td>8</td>
+                <td><span class="ASTableBadge ASTableBadge--alert">مراجعة</span></td>
+              </tr>
+              <tr>
+                <td>رنا علي</td>
+                <td>التحول المؤسسي</td>
+                <td>19</td>
+                <td><span class="ASTableBadge ASTableBadge--info">متابعة</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================= -->
+    <!-- BULK ACTIONS TABLE -->
+    <!-- ========================================= -->
+    <section class="ASCardsBlock">
+      <h3>Bulk Actions Table</h3>
+      <p>Selection-based table inspired by modern admin dashboards</p>
+
+      <div class="ASCard ASTableCard">
+        <div class="ASTableBulkBar">
+          <div class="ASTableBulkInfo">3 عناصر محددة</div>
+          <div class="ASTableActions">
+            <button class="ASBtn ASBtnLight--primary ASBtn--sm">تصدير</button>
+            <button class="ASBtn ASBtnLight--secondary ASBtn--sm">نقل</button>
+            <button class="ASBtn ASBtnOutline ASBtnOutline--Error ASBtn--sm">حذف</button>
+          </div>
+        </div>
+
+        <div class="ASTableWrap">
+          <table class="ASTable ASTable--selectable">
+            <thead>
+              <tr>
+                <th><input type="checkbox" checked></th>
+                <th>المعاملة</th>
+                <th>الجهة</th>
+                <th>التاريخ</th>
+                <th>الوضع</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="is-selected">
+                <td><input type="checkbox" checked></td>
+                <td>TX-10021</td>
+                <td>إدارة المشاريع</td>
+                <td>12 مارس 2026</td>
+                <td><span class="ASTableBadge ASTableBadge--success">معتمد</span></td>
+              </tr>
+              <tr class="is-selected">
+                <td><input type="checkbox" checked></td>
+                <td>TX-10022</td>
+                <td>التشغيل</td>
+                <td>13 مارس 2026</td>
+                <td><span class="ASTableBadge ASTableBadge--alert">قيد المراجعة</span></td>
+              </tr>
+              <tr>
+                <td><input type="checkbox"></td>
+                <td>TX-10023</td>
+                <td>الموارد البشرية</td>
+                <td>14 مارس 2026</td>
+                <td><span class="ASTableBadge ASTableBadge--info">جارٍ التنفيذ</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================= -->
+    <!-- HIGHLIGHT TABLE -->
+    <!-- ========================================= -->
+    <section class="ASCardsBlock">
+      <h3>Highlight Row Table</h3>
+      <p>Colored highlight rows inspired by modern dashboard cards</p>
+
+      <div class="ASCard ASTableCard">
+        <div class="ASTableWrap">
+          <table class="ASTable ASTable--highlight">
+            <thead>
+              <tr>
+                <th>المشروع</th>
+                <th>المرحلة</th>
+                <th>النسبة</th>
+                <th>المؤشر</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>منصة متابعة الأعمال</td>
+                <td>التنفيذ</td>
+                <td>84%</td>
+                <td><span class="ASTablePill ASTablePill--primary">جيد جدًا</span></td>
+              </tr>
+              <tr class="is-featured">
+                <td>مؤشرات الأداء الاستراتيجي</td>
+                <td>المراجعة النهائية</td>
+                <td>95%</td>
+                <td><span class="ASTablePill ASTablePill--secondary">مميز</span></td>
+              </tr>
+              <tr>
+                <td>تطوير واجهات الخدمات</td>
+                <td>التحليل</td>
+                <td>43%</td>
+                <td><span class="ASTablePill ASTablePill--info">متابعة</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================= -->
+    <!-- METRIC TABLE -->
+    <!-- ========================================= -->
+    <section class="ASCardsBlock">
+      <h3>Metric Table</h3>
+      <p>Analytical table with visual value emphasis</p>
+
+      <div class="ASCard ASTableCard">
+        <div class="ASTableWrap">
+          <table class="ASTable ASTable--metrics">
+            <thead>
+              <tr>
+                <th>المؤشر</th>
+                <th>القيمة</th>
+                <th>التغير</th>
+                <th>الحالة</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>إنجاز المبادرات</td>
+                <td><strong>24</strong></td>
+                <td><span class="ASTrend ASTrend--up">+12%</span></td>
+                <td><span class="ASTableBadge ASTableBadge--success">مرتفع</span></td>
+              </tr>
+              <tr>
+                <td>الرضا الوظيفي</td>
+                <td><strong>81%</strong></td>
+                <td><span class="ASTrend ASTrend--up">+6%</span></td>
+                <td><span class="ASTableBadge ASTableBadge--info">مستقر</span></td>
+              </tr>
+              <tr>
+                <td>المهام المتأخرة</td>
+                <td><strong>7</strong></td>
+                <td><span class="ASTrend ASTrend--down">-3%</span></td>
+                <td><span class="ASTableBadge ASTableBadge--alert">يحتاج متابعة</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================= -->
+    <!-- TIMELINE TABLE -->
+    <!-- ========================================= -->
+    <section class="ASCardsBlock">
+      <h3>Timeline Table</h3>
+      <p>Extension style with visual timeline feel</p>
+
+      <div class="ASCard ASTableCard">
+        <div class="ASTableWrap">
+          <table class="ASTable ASTable--timeline">
+            <thead>
+              <tr>
+                <th>المهمة</th>
+                <th>المسؤول</th>
+                <th>المدة</th>
+                <th>التقدّم</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>رفع التقرير النهائي</td>
+                <td>فريق PMO</td>
+                <td>5 أيام</td>
+                <td>
+                  <div class="ASProgressMini">
+                    <span style="width: 88%;"></span>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td>تحديث السجلات</td>
+                <td>إدارة التحول</td>
+                <td>3 أيام</td>
+                <td>
+                  <div class="ASProgressMini ASProgressMini--secondary">
+                    <span style="width: 64%;"></span>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td>اعتماد البيانات</td>
+                <td>المراجعة الداخلية</td>
+                <td>7 أيام</td>
+                <td>
+                  <div class="ASProgressMini ASProgressMini--accent">
+                    <span style="width: 39%;"></span>
+                  </div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+  </div>
+</section>
