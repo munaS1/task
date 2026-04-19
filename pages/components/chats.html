@@ -1,0 +1,416 @@
+<section class="ASSection">
+  <header class="mb-3">
+    <h2>Chats Collection</h2>
+    <p class="text-muted">Interactive chat experiences with polished AS styling and live behavior.</p>
+  </header>
+
+  <!-- ========================================= -->
+  <!-- HERO CHAT EXPERIENCE -->
+  <!-- ========================================= -->
+  <section class="ASChatsBlock">
+    <h3>Advanced Chat Workspace</h3>
+    <p class="ASChatsBlock__sub">Live conversations, smart states, search, filters, quick replies, and profile details.</p>
+
+    <div class="ASChatsShell" data-as-chat-app>
+      <!-- Left -->
+      <aside class="ASChatsSidebar ASCard">
+        <div class="ASChatsSidebarTop">
+          <div>
+            <h4 class="ASChatsTitle">المحادثات</h4>
+            <p class="ASChatsHint">لوحة محادثات تفاعلية</p>
+          </div>
+
+          <button class="ASChatsIconBtn" type="button" data-as-chat-action="compose" aria-label="New chat">
+            <i class="fa-solid fa-pen-to-square"></i>
+          </button>
+        </div>
+
+        <div class="ASChatsSearchWrap">
+          <i class="fa-solid fa-magnifying-glass ASChatsSearchIcon"></i>
+          <input
+            type="text"
+            class="ASChatsSearch"
+            placeholder="ابحث عن اسم أو رسالة..."
+            data-as-chat-search
+          />
+        </div>
+
+        <div class="ASChatsFilters">
+          <button class="ASChatsFilter is-active" type="button" data-filter="all">الكل</button>
+          <button class="ASChatsFilter" type="button" data-filter="unread">غير المقروءة</button>
+          <button class="ASChatsFilter" type="button" data-filter="online">المتصلون</button>
+        </div>
+
+        <div class="ASChatsList" data-as-chat-list>
+          <button
+            type="button"
+            class="ASChatItem is-active"
+            data-chat-id="c1"
+            data-name="سارة أحمد"
+            data-role="إدارة المشاريع"
+            data-status="online"
+            data-unread="2"
+            data-last="تم تحديث عرض المبادرات"
+            data-email="s.ahmed@ars.gov.sa"
+            data-phone="+966 50 100 1122"
+            data-color="primary"
+          >
+            <span class="ASChatItemAvatar ASChatItemAvatar--primary">س</span>
+            <span class="ASChatItemBody">
+              <span class="ASChatItemRow">
+                <span class="ASChatItemName">سارة أحمد</span>
+                <span class="ASChatItemTime">09:40</span>
+              </span>
+              <span class="ASChatItemRow">
+                <span class="ASChatItemSnippet">تم تحديث عرض المبادرات</span>
+                <span class="ASChatItemBadge">2</span>
+              </span>
+            </span>
+            <span class="ASChatItemDot is-online"></span>
+          </button>
+
+          <button
+            type="button"
+            class="ASChatItem"
+            data-chat-id="c2"
+            data-name="محمد القحطاني"
+            data-role="الدعم التقني"
+            data-status="typing"
+            data-unread="0"
+            data-last="جاري كتابة رد..."
+            data-email="m.alqahtani@ars.gov.sa"
+            data-phone="+966 50 222 3344"
+            data-color="info"
+          >
+            <span class="ASChatItemAvatar ASChatItemAvatar--info">م</span>
+            <span class="ASChatItemBody">
+              <span class="ASChatItemRow">
+                <span class="ASChatItemName">محمد القحطاني</span>
+                <span class="ASChatItemTime">الآن</span>
+              </span>
+              <span class="ASChatItemRow">
+                <span class="ASChatItemSnippet">جاري كتابة رد...</span>
+              </span>
+            </span>
+            <span class="ASChatItemDot is-typing"></span>
+          </button>
+
+          <button
+            type="button"
+            class="ASChatItem"
+            data-chat-id="c3"
+            data-name="فريق المؤشرات"
+            data-role="مجموعة عمل"
+            data-status="online"
+            data-unread="5"
+            data-last="تم اعتماد نسخة التقرير"
+            data-email="kpi.team@ars.gov.sa"
+            data-phone="+966 11 000 0000"
+            data-color="success"
+          >
+            <span class="ASChatItemAvatar ASChatItemAvatar--success">
+              <i class="fa-solid fa-users"></i>
+            </span>
+            <span class="ASChatItemBody">
+              <span class="ASChatItemRow">
+                <span class="ASChatItemName">فريق المؤشرات</span>
+                <span class="ASChatItemTime">08:15</span>
+              </span>
+              <span class="ASChatItemRow">
+                <span class="ASChatItemSnippet">تم اعتماد نسخة التقرير</span>
+                <span class="ASChatItemBadge">5</span>
+              </span>
+            </span>
+            <span class="ASChatItemDot is-online"></span>
+          </button>
+
+          <button
+            type="button"
+            class="ASChatItem"
+            data-chat-id="c4"
+            data-name="مركز العمليات"
+            data-role="تنبيهات وتشغيل"
+            data-status="offline"
+            data-unread="0"
+            data-last="تم إغلاق البلاغ بنجاح"
+            data-email="ops.center@ars.gov.sa"
+            data-phone="+966 17 500 9988"
+            data-color="secondary"
+          >
+            <span class="ASChatItemAvatar ASChatItemAvatar--secondary">ع</span>
+            <span class="ASChatItemBody">
+              <span class="ASChatItemRow">
+                <span class="ASChatItemName">مركز العمليات</span>
+                <span class="ASChatItemTime">أمس</span>
+              </span>
+              <span class="ASChatItemRow">
+                <span class="ASChatItemSnippet">تم إغلاق البلاغ بنجاح</span>
+              </span>
+            </span>
+            <span class="ASChatItemDot is-offline"></span>
+          </button>
+
+          <button
+            type="button"
+            class="ASChatItem"
+            data-chat-id="c5"
+            data-name="إدارة التواصل"
+            data-role="اتصال مؤسسي"
+            data-status="online"
+            data-unread="1"
+            data-last="نحتاج نسخة النشر النهائي"
+            data-email="comms@ars.gov.sa"
+            data-phone="+966 50 456 7788"
+            data-color="alert"
+          >
+            <span class="ASChatItemAvatar ASChatItemAvatar--alert">ت</span>
+            <span class="ASChatItemBody">
+              <span class="ASChatItemRow">
+                <span class="ASChatItemName">إدارة التواصل</span>
+                <span class="ASChatItemTime">07:10</span>
+              </span>
+              <span class="ASChatItemRow">
+                <span class="ASChatItemSnippet">نحتاج نسخة النشر النهائي</span>
+                <span class="ASChatItemBadge">1</span>
+              </span>
+            </span>
+            <span class="ASChatItemDot is-online"></span>
+          </button>
+        </div>
+      </aside>
+
+      <!-- Center -->
+      <section class="ASChatsStage ASCard">
+        <header class="ASChatsStageHeader">
+          <div class="ASChatsStageUser">
+            <span class="ASChatsStageAvatar ASChatItemAvatar ASChatItemAvatar--primary" data-as-chat-avatar>س</span>
+
+            <div>
+              <h4 class="ASChatsStageName" data-as-chat-name>سارة أحمد</h4>
+              <p class="ASChatsStageMeta">
+                <span class="ASChatsPresence is-online" data-as-chat-presence></span>
+                <span data-as-chat-role>إدارة المشاريع</span>
+              </p>
+            </div>
+          </div>
+
+          <div class="ASChatsStageActions">
+            <button class="ASChatsIconBtn" type="button" data-as-chat-action="favorite" aria-label="Favorite">
+              <i class="fa-regular fa-star"></i>
+            </button>
+            <button class="ASChatsIconBtn" type="button" data-as-chat-action="call" aria-label="Call">
+              <i class="fa-solid fa-phone"></i>
+            </button>
+            <button class="ASChatsIconBtn" type="button" data-as-chat-action="video" aria-label="Video">
+              <i class="fa-solid fa-video"></i>
+            </button>
+          </div>
+        </header>
+
+        <div class="ASChatsQuickBar">
+          <button class="ASQuickReply" type="button" data-quick-reply="تم الاستلام، شكرًا لك">تم الاستلام</button>
+          <button class="ASQuickReply" type="button" data-quick-reply="سأراجع ذلك وأعود لك خلال قليل">سأراجع ذلك</button>
+          <button class="ASQuickReply" type="button" data-quick-reply="ممتاز، ننتظر الاعتماد النهائي">ننتظر الاعتماد</button>
+          <button class="ASQuickReply" type="button" data-quick-reply="هل يمكن إرسال النسخة النهائية؟">إرسال النسخة النهائية</button>
+        </div>
+
+        <div class="ASChatsMessages" id="ASChatMessages" data-as-chat-messages>
+          <div class="ASChatDayDivider">
+            <span>اليوم</span>
+          </div>
+
+          <article class="ASMessage ASMessage--received">
+            <div class="ASMessageBubble">
+              <p>صباح الخير، هل تم تحديث عرض المبادرات قبل الاجتماع؟</p>
+              <span class="ASMessageTime">09:34</span>
+            </div>
+          </article>
+
+          <article class="ASMessage ASMessage--sent">
+            <div class="ASMessageBubble">
+              <p>صباح النور، نعم تم التحديث وإضافة الملاحظات الجديدة.</p>
+              <span class="ASMessageTime">09:36</span>
+            </div>
+          </article>
+
+          <article class="ASMessage ASMessage--received">
+            <div class="ASMessageBubble ASMessageBubble--file">
+              <div class="ASMessageFileIcon">
+                <i class="fa-regular fa-file-lines"></i>
+              </div>
+              <div class="ASMessageFileMeta">
+                <strong>Initiatives-Deck-v2.pdf</strong>
+                <small>PDF • 2.4 MB</small>
+              </div>
+              <span class="ASMessageTime">09:38</span>
+            </div>
+          </article>
+
+          <article class="ASMessage ASMessage--received">
+            <div class="ASMessageBubble">
+              <p>رائع جدًا، أرسلي أيضًا نسخة مختصرة للعرض التنفيذي.</p>
+              <span class="ASMessageTime">09:40</span>
+            </div>
+          </article>
+        </div>
+
+        <footer class="ASChatsComposer">
+          <button class="ASChatsIconBtn" type="button" data-as-chat-action="attach" aria-label="Attach">
+            <i class="fa-solid fa-paperclip"></i>
+          </button>
+
+          <button class="ASChatsIconBtn ASChatsIconBtn--pulse" type="button" data-as-chat-action="voice" aria-label="Voice">
+            <i class="fa-solid fa-microphone"></i>
+          </button>
+
+          <div class="ASChatsComposerField">
+            <textarea
+              class="ASChatsTextarea"
+              rows="1"
+              placeholder="اكتب رسالتك هنا..."
+              data-as-chat-input
+            ></textarea>
+          </div>
+
+          <button class="ASBtn ASBtn--primary ASChatsSendBtn" type="button" data-as-chat-send>
+            <i class="fa-solid fa-paper-plane"></i>
+            <span>إرسال</span>
+          </button>
+        </footer>
+      </section>
+
+      <!-- Right -->
+      <aside class="ASChatsDetails ASCard">
+        <div class="ASChatsDetailsTop">
+          <span class="ASChatsDetailsAvatar ASChatItemAvatar ASChatItemAvatar--primary" data-as-chat-side-avatar>س</span>
+          <h4 class="ASChatsDetailsName" data-as-chat-side-name>سارة أحمد</h4>
+          <p class="ASChatsDetailsRole" data-as-chat-side-role>إدارة المشاريع</p>
+        </div>
+
+        <div class="ASChatsInfoList">
+          <div class="ASChatsInfoItem">
+            <span class="ASChatsInfoLabel">البريد</span>
+            <strong data-as-chat-email>s.ahmed@ars.gov.sa</strong>
+          </div>
+          <div class="ASChatsInfoItem">
+            <span class="ASChatsInfoLabel">الهاتف</span>
+            <strong data-as-chat-phone>+966 50 100 1122</strong>
+          </div>
+          <div class="ASChatsInfoItem">
+            <span class="ASChatsInfoLabel">الحالة</span>
+            <strong data-as-chat-status-text>متصل الآن</strong>
+          </div>
+        </div>
+
+        <div class="ASChatsMiniStats">
+          <article class="ASChatsMiniCard ASChatsMiniCard--primary">
+            <span>الرسائل اليوم</span>
+            <strong data-as-chat-stat-messages>12</strong>
+          </article>
+          <article class="ASChatsMiniCard ASChatsMiniCard--info">
+            <span>الملفات</span>
+            <strong>03</strong>
+          </article>
+        </div>
+
+        <div class="ASChatsMediaBlock">
+          <div class="ASChatsBlockHead">
+            <h5>الاختصارات</h5>
+          </div>
+          <div class="ASChatsShortcutGrid">
+            <button type="button" class="ASChatsShortcut">
+              <i class="fa-regular fa-image"></i>
+              <span>الوسائط</span>
+            </button>
+            <button type="button" class="ASChatsShortcut">
+              <i class="fa-regular fa-folder-open"></i>
+              <span>الملفات</span>
+            </button>
+            <button type="button" class="ASChatsShortcut">
+              <i class="fa-regular fa-bell"></i>
+              <span>التنبيهات</span>
+            </button>
+            <button type="button" class="ASChatsShortcut">
+              <i class="fa-regular fa-bookmark"></i>
+              <span>المحفوظة</span>
+            </button>
+          </div>
+        </div>
+      </aside>
+    </div>
+  </section>
+
+  <!-- ========================================= -->
+  <!-- EXTRA CREATIVE CARDS -->
+  <!-- ========================================= -->
+  <div class="ASChatsCardsGrid">
+    <section class="ASChatsBlock">
+      <h3>Chat Status Cards</h3>
+      <p class="ASChatsBlock__sub">Different states for presence and message activity.</p>
+
+      <div class="ASChatsStatusRow">
+        <article class="ASChatStateCard ASCard">
+          <div class="ASChatStateHead">
+            <span class="ASChatItemAvatar ASChatItemAvatar--success">ن</span>
+            <div>
+              <h4>نشط الآن</h4>
+              <p>آخر ظهور الآن</p>
+            </div>
+            <span class="ASChatItemDot is-online"></span>
+          </div>
+        </article>
+
+        <article class="ASChatStateCard ASCard">
+          <div class="ASChatStateHead">
+            <span class="ASChatItemAvatar ASChatItemAvatar--info">ك</span>
+            <div>
+              <h4>جاري الكتابة</h4>
+              <p>Typing indicator متحرك</p>
+            </div>
+            <span class="ASChatItemDot is-typing"></span>
+          </div>
+        </article>
+
+        <article class="ASChatStateCard ASCard">
+          <div class="ASChatStateHead">
+            <span class="ASChatItemAvatar ASChatItemAvatar--secondary">م</span>
+            <div>
+              <h4>غير متصل</h4>
+              <p>آخر ظهور قبل 15 دقيقة</p>
+            </div>
+            <span class="ASChatItemDot is-offline"></span>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="ASChatsBlock">
+      <h3>Mini Message Preview</h3>
+      <p class="ASChatsBlock__sub">Compact preview cards useful for dashboard widgets.</p>
+
+      <div class="ASChatsPreviewList">
+        <article class="ASChatPreviewCard ASCard">
+          <div class="ASChatPreviewTop">
+            <span class="ASChatItemAvatar ASChatItemAvatar--primary">ر</span>
+            <div>
+              <h4>رئيس القسم</h4>
+              <p>نحتاج ملخص التنفيذ اليوم</p>
+            </div>
+            <span class="ASChatItemBadge">3</span>
+          </div>
+        </article>
+
+        <article class="ASChatPreviewCard ASCard">
+          <div class="ASChatPreviewTop">
+            <span class="ASChatItemAvatar ASChatItemAvatar--alert">ع</span>
+            <div>
+              <h4>إدارة الإعلام</h4>
+              <p>فضلاً اعتماد صيغة النشر الجديدة</p>
+            </div>
+            <span class="ASChatItemDot is-online"></span>
+          </div>
+        </article>
+      </div>
+    </section>
+  </div>
+</section>

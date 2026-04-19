@@ -1,0 +1,758 @@
+/**
+ File: chats.css
+ Purpose: AS Chats collection styles
+ Notes:
+ - Follows AS section/card rhythm
+ - Keeps naming under ASChats / ASChat
+*/
+
+.ASChatsBlock {
+  margin-block-end: 1.5rem;
+}
+
+.ASChatsBlock__sub {
+  color: var(--ASTextMuted);
+  margin-block-end: 1rem;
+}
+
+.ASChatsShell {
+  display: grid;
+  grid-template-columns: 320px minmax(0, 1fr) 280px;
+  gap: 1rem;
+  align-items: stretch;
+}
+
+.ASChatsSidebar,
+.ASChatsStage,
+.ASChatsDetails {
+  min-block-size: 760px;
+}
+
+.ASChatsSidebar,
+.ASChatsStage,
+.ASChatsDetails {
+  overflow: hidden;
+}
+
+/* Sidebar */
+.ASChatsSidebar {
+  display: flex;
+  flex-direction: column;
+}
+
+.ASChatsSidebarTop {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem;
+  border-block-end: 1px solid var(--ASBorder);
+}
+
+.ASChatsTitle {
+  margin: 0;
+  font-size: 1.05rem;
+}
+
+.ASChatsHint {
+  margin: .2rem 0 0;
+  color: var(--ASTextMuted);
+  font-size: .88rem;
+}
+
+.ASChatsSearchWrap {
+  position: relative;
+  padding: 1rem 1rem .75rem;
+}
+
+.ASChatsSearchIcon {
+  position: absolute;
+  inset-inline-start: 1.85rem;
+  inset-block-start: 50%;
+  transform: translateY(-20%);
+  color: var(--ASTextMuted);
+  pointer-events: none;
+}
+
+.ASChatsSearch {
+  width: 100%;
+  border: 1px solid var(--ASBorder);
+  border-radius: 14px;
+  background: #fff;
+  color: var(--ASText);
+  padding: .85rem .95rem .85rem 2.5rem;
+  outline: none;
+  transition: border-color .2s ease, box-shadow .2s ease, transform .2s ease;
+}
+
+.ASChatsSearch:focus {
+  border-color: var(--ASPrimary);
+  box-shadow: var(--ASFocus);
+}
+
+.ASChatsFilters {
+  display: flex;
+  gap: .5rem;
+  padding-inline: 1rem;
+  padding-block-end: 1rem;
+  flex-wrap: wrap;
+}
+
+.ASChatsFilter {
+  border: 1px solid var(--ASBorder);
+  background: #fff;
+  color: var(--ASText);
+  border-radius: 999px;
+  padding: .45rem .85rem;
+  font: inherit;
+  cursor: pointer;
+  transition: all .2s ease;
+}
+
+.ASChatsFilter:hover,
+.ASChatsFilter.is-active {
+  background: rgba(0, 123, 105, .08);
+  color: var(--ASPrimary);
+  border-color: rgba(0, 123, 105, .18);
+}
+
+.ASChatsList {
+  flex: 1 1 auto;
+  overflow: auto;
+  padding: 0 .6rem .75rem;
+}
+
+/* Chat item */
+.ASChatItem {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: .8rem;
+  border: 0;
+  background: transparent;
+  text-align: start;
+  padding: .85rem;
+  border-radius: 18px;
+  cursor: pointer;
+  position: relative;
+  transition: transform .18s ease, background .2s ease, box-shadow .2s ease;
+}
+
+.ASChatItem:hover {
+  background: rgba(0, 0, 0, .035);
+  transform: translateY(-1px);
+}
+
+.ASChatItem.is-active {
+  background:
+    linear-gradient(180deg, rgba(0,123,105,.10), rgba(0,123,105,.06));
+  box-shadow: inset 0 0 0 1px rgba(0,123,105,.10);
+}
+
+.ASChatItemBody {
+  min-width: 0;
+  flex: 1 1 auto;
+}
+
+.ASChatItemRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: .75rem;
+}
+
+.ASChatItemName {
+  font-weight: 700;
+  color: var(--ASText);
+}
+
+.ASChatItemTime {
+  color: var(--ASTextMuted);
+  font-size: .8rem;
+  white-space: nowrap;
+}
+
+.ASChatItemSnippet {
+  color: var(--ASTextMuted);
+  font-size: .9rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  max-inline-size: 180px;
+}
+
+.ASChatItemBadge {
+  min-inline-size: 22px;
+  block-size: 22px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding-inline: .35rem;
+  border-radius: 999px;
+  background: var(--ASPrimary);
+  color: #fff;
+  font-size: .75rem;
+  font-weight: 700;
+}
+
+.ASChatItemAvatar,
+.ASChatsDetailsAvatar,
+.ASChatsStageAvatar {
+  inline-size: 48px;
+  block-size: 48px;
+  border-radius: 16px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  flex: 0 0 auto;
+  box-shadow: 0 12px 24px rgba(0, 0, 0, .08);
+}
+
+.ASChatItemAvatar--primary { background: rgba(0,123,105,.12); color: var(--ASPrimary); }
+.ASChatItemAvatar--secondary { background: rgba(163,121,86,.14); color: var(--ASSecondary); }
+.ASChatItemAvatar--info { background: rgba(14,165,233,.12); color: var(--ASColor-info, #0ea5e9); }
+.ASChatItemAvatar--success { background: rgba(34,197,94,.12); color: var(--ASColor-success, #22c55e); }
+.ASChatItemAvatar--alert { background: rgba(236,127,33,.12); color: var(--ASAccent); }
+
+.ASChatItemDot {
+  inline-size: 10px;
+  block-size: 10px;
+  border-radius: 50%;
+  flex: 0 0 auto;
+  box-shadow: 0 0 0 4px rgba(255,255,255,.9);
+}
+
+.ASChatItemDot.is-online {
+  background: #22c55e;
+}
+
+.ASChatItemDot.is-offline {
+  background: #cbd5e1;
+}
+
+.ASChatItemDot.is-typing {
+  background: var(--ASAccent);
+  animation: ASChatPulse 1.4s infinite;
+}
+
+@keyframes ASChatPulse {
+  0% { box-shadow: 0 0 0 0 rgba(236,127,33,.35); }
+  70% { box-shadow: 0 0 0 10px rgba(236,127,33,0); }
+  100% { box-shadow: 0 0 0 0 rgba(236,127,33,0); }
+}
+
+/* Stage */
+.ASChatsStage {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  background:
+    radial-gradient(circle at top right, rgba(0,123,105,.05), transparent 26%),
+    linear-gradient(180deg, #ffffff, #fcfcfd);
+}
+
+.ASChatsStageHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1rem 1.1rem;
+  border-block-end: 1px solid var(--ASBorder);
+  background: rgba(255,255,255,.82);
+  backdrop-filter: blur(8px);
+}
+
+.ASChatsStageUser {
+  display: flex;
+  align-items: center;
+  gap: .9rem;
+}
+
+.ASChatsStageName {
+  margin: 0;
+  font-size: 1rem;
+}
+
+.ASChatsStageMeta {
+  display: flex;
+  align-items: center;
+  gap: .5rem;
+  margin: .2rem 0 0;
+  color: var(--ASTextMuted);
+  font-size: .9rem;
+}
+
+.ASChatsPresence {
+  inline-size: 8px;
+  block-size: 8px;
+  border-radius: 50%;
+  background: #22c55e;
+}
+
+.ASChatsPresence.is-online { background: #22c55e; }
+.ASChatsPresence.is-typing {
+  background: var(--ASAccent);
+  animation: ASChatPulse 1.4s infinite;
+}
+.ASChatsPresence.is-offline { background: #cbd5e1; }
+
+.ASChatsStageActions {
+  display: flex;
+  align-items: center;
+  gap: .5rem;
+}
+
+.ASChatsIconBtn {
+  inline-size: 42px;
+  block-size: 42px;
+  border-radius: 14px;
+  border: 1px solid var(--ASBorder);
+  background: #fff;
+  color: var(--ASText);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: transform .18s ease, border-color .2s ease, color .2s ease, background .2s ease;
+}
+
+.ASChatsIconBtn:hover {
+  color: var(--ASPrimary);
+  border-color: rgba(0,123,105,.18);
+  background: rgba(0,123,105,.05);
+  transform: translateY(-1px);
+}
+
+.ASChatsIconBtn--pulse {
+  position: relative;
+}
+
+.ASChatsIconBtn--pulse::after {
+  content: "";
+  position: absolute;
+  inset: -4px;
+  border-radius: inherit;
+  border: 1px solid rgba(0,123,105,.18);
+  animation: ASVoiceRing 1.8s infinite;
+}
+
+@keyframes ASVoiceRing {
+  0% { transform: scale(.92); opacity: .9; }
+  100% { transform: scale(1.18); opacity: 0; }
+}
+
+.ASChatsQuickBar {
+  display: flex;
+  gap: .6rem;
+  flex-wrap: wrap;
+  padding: .85rem 1rem;
+  border-block-end: 1px solid var(--ASBorder);
+  background: rgba(249,250,251,.75);
+}
+
+.ASQuickReply {
+  border: 1px solid rgba(0,123,105,.12);
+  background: #fff;
+  color: var(--ASPrimary);
+  border-radius: 999px;
+  padding: .5rem .85rem;
+  cursor: pointer;
+  font: inherit;
+  transition: all .18s ease;
+}
+
+.ASQuickReply:hover {
+  background: rgba(0,123,105,.08);
+  transform: translateY(-1px);
+}
+
+.ASChatsMessages {
+  flex: 1 1 auto;
+  overflow: auto;
+  padding: 1.25rem 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: .9rem;
+}
+
+.ASChatDayDivider {
+  text-align: center;
+  position: relative;
+  margin-block: .25rem .5rem;
+}
+
+.ASChatDayDivider span {
+  display: inline-block;
+  padding: .25rem .75rem;
+  border-radius: 999px;
+  background: rgba(148,163,184,.12);
+  color: var(--ASTextMuted);
+  font-size: .8rem;
+}
+
+.ASMessage {
+  display: flex;
+}
+
+.ASMessage--sent {
+  justify-content: flex-start;
+}
+
+html[dir="rtl"] .ASMessage--sent {
+  justify-content: flex-end;
+}
+
+html[dir="rtl"] .ASMessage--received {
+  justify-content: flex-start;
+}
+
+html[dir="ltr"] .ASMessage--sent {
+  justify-content: flex-end;
+}
+
+html[dir="ltr"] .ASMessage--received {
+  justify-content: flex-start;
+}
+
+.ASMessageBubble {
+  max-inline-size: min(560px, 82%);
+  padding: .85rem 1rem;
+  border-radius: 20px;
+  box-shadow: var(--ASShadowSm);
+  position: relative;
+  animation: ASBubbleIn .25s ease;
+}
+
+@keyframes ASBubbleIn {
+  from {
+    opacity: 0;
+    transform: translateY(8px) scale(.98);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.ASMessage--received .ASMessageBubble {
+  background: #fff;
+  border: 1px solid var(--ASBorder);
+  border-start-start-radius: 8px;
+}
+
+.ASMessage--sent .ASMessageBubble {
+  background: linear-gradient(135deg, var(--ASPrimary), #0b8b77);
+  color: #fff;
+  border-end-end-radius: 8px;
+}
+
+.ASMessageBubble p {
+  margin: 0;
+  line-height: 1.7;
+}
+
+.ASMessageTime {
+  display: block;
+  margin-top: .45rem;
+  font-size: .75rem;
+  opacity: .78;
+}
+
+.ASMessageBubble--file {
+  display: flex;
+  align-items: center;
+  gap: .85rem;
+}
+
+.ASMessageFileIcon {
+  inline-size: 42px;
+  block-size: 42px;
+  border-radius: 14px;
+  background: rgba(0,123,105,.08);
+  color: var(--ASPrimary);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 auto;
+}
+
+.ASMessageFileMeta {
+  display: flex;
+  flex-direction: column;
+  gap: .15rem;
+}
+
+.ASMessageFileMeta small {
+  color: var(--ASTextMuted);
+}
+
+.ASMessageTyping {
+  display: inline-flex;
+  align-items: center;
+  gap: .35rem;
+  padding: .9rem 1rem;
+  border-radius: 18px;
+  background: #fff;
+  border: 1px solid var(--ASBorder);
+}
+
+.ASMessageTyping span {
+  inline-size: 8px;
+  block-size: 8px;
+  border-radius: 50%;
+  background: var(--ASAccent);
+  animation: ASTypingBounce 1s infinite ease-in-out;
+}
+
+.ASMessageTyping span:nth-child(2) { animation-delay: .12s; }
+.ASMessageTyping span:nth-child(3) { animation-delay: .24s; }
+
+@keyframes ASTypingBounce {
+  0%, 80%, 100% { transform: scale(.7); opacity: .45; }
+  40% { transform: scale(1); opacity: 1; }
+}
+
+/* Composer */
+.ASChatsComposer {
+  display: flex;
+  align-items: end;
+  gap: .6rem;
+  padding: .95rem 1rem;
+  border-block-start: 1px solid var(--ASBorder);
+  background: #fff;
+}
+
+.ASChatsComposerField {
+  flex: 1 1 auto;
+  position: relative;
+}
+
+.ASChatsTextarea {
+  width: 100%;
+  min-block-size: 48px;
+  max-block-size: 150px;
+  resize: none;
+  border: 1px solid var(--ASBorder);
+  border-radius: 16px;
+  padding: .8rem .95rem;
+  background: #fff;
+  color: var(--ASText);
+  outline: none;
+  font: inherit;
+  line-height: 1.6;
+  transition: border-color .2s ease, box-shadow .2s ease;
+}
+
+.ASChatsTextarea:focus {
+  border-color: var(--ASPrimary);
+  box-shadow: var(--ASFocus);
+}
+
+.ASChatsSendBtn {
+  min-inline-size: 122px;
+  display: inline-flex;
+  align-items: center;
+  gap: .5rem;
+  justify-content: center;
+}
+
+/* Right details */
+.ASChatsDetails {
+  display: flex;
+  flex-direction: column;
+}
+
+.ASChatsDetailsTop {
+  padding: 1.25rem 1rem 1rem;
+  text-align: center;
+  border-block-end: 1px solid var(--ASBorder);
+}
+
+.ASChatsDetailsAvatar {
+  inline-size: 70px;
+  block-size: 70px;
+  border-radius: 24px;
+  margin-inline: auto;
+  margin-block-end: .85rem;
+  font-size: 1.15rem;
+}
+
+.ASChatsDetailsName {
+  margin: 0;
+}
+
+.ASChatsDetailsRole {
+  margin: .35rem 0 0;
+  color: var(--ASTextMuted);
+}
+
+.ASChatsInfoList {
+  padding: 1rem;
+  display: grid;
+  gap: .8rem;
+}
+
+.ASChatsInfoItem {
+  border: 1px solid var(--ASBorder);
+  border-radius: 16px;
+  padding: .8rem .9rem;
+  background: #fff;
+}
+
+.ASChatsInfoLabel {
+  display: block;
+  color: var(--ASTextMuted);
+  font-size: .82rem;
+  margin-block-end: .25rem;
+}
+
+.ASChatsMiniStats {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: .7rem;
+  padding-inline: 1rem;
+  padding-block-end: 1rem;
+}
+
+.ASChatsMiniCard {
+  border-radius: 18px;
+  padding: .9rem;
+  display: flex;
+  flex-direction: column;
+  gap: .35rem;
+}
+
+.ASChatsMiniCard span {
+  font-size: .84rem;
+}
+
+.ASChatsMiniCard strong {
+  font-size: 1.2rem;
+}
+
+.ASChatsMiniCard--primary {
+  background: rgba(0,123,105,.08);
+  color: var(--ASPrimary);
+}
+
+.ASChatsMiniCard--info {
+  background: rgba(14,165,233,.10);
+  color: var(--ASColor-info, #0ea5e9);
+}
+
+.ASChatsMediaBlock {
+  padding: 0 1rem 1rem;
+}
+
+.ASChatsBlockHead h5 {
+  margin: 0 0 .75rem;
+}
+
+.ASChatsShortcutGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: .7rem;
+}
+
+.ASChatsShortcut {
+  border: 1px solid var(--ASBorder);
+  background: #fff;
+  border-radius: 16px;
+  padding: .9rem;
+  display: flex;
+  flex-direction: column;
+  gap: .45rem;
+  align-items: center;
+  justify-content: center;
+  color: var(--ASText);
+  cursor: pointer;
+  transition: transform .18s ease, color .2s ease, border-color .2s ease;
+}
+
+.ASChatsShortcut:hover {
+  color: var(--ASPrimary);
+  border-color: rgba(0,123,105,.18);
+  transform: translateY(-2px);
+}
+
+/* Extra cards */
+.ASChatsCardsGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.ASChatsStatusRow,
+.ASChatsPreviewList {
+  display: grid;
+  gap: .8rem;
+}
+
+.ASChatsStatusRow {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.ASChatStateCard,
+.ASChatPreviewCard {
+  overflow: hidden;
+}
+
+.ASChatStateHead,
+.ASChatPreviewTop {
+  display: flex;
+  align-items: center;
+  gap: .8rem;
+  padding: 1rem;
+}
+
+.ASChatStateHead h4,
+.ASChatPreviewTop h4 {
+  margin: 0;
+  font-size: 1rem;
+}
+
+.ASChatStateHead p,
+.ASChatPreviewTop p {
+  margin: .2rem 0 0;
+  color: var(--ASTextMuted);
+  font-size: .88rem;
+}
+
+/* Hidden state for search/filter */
+.is-chat-hidden {
+  display: none !important;
+}
+
+/* Responsive */
+@media (max-width: 1280px) {
+  .ASChatsShell {
+    grid-template-columns: 290px minmax(0, 1fr);
+  }
+
+  .ASChatsDetails {
+    grid-column: 1 / -1;
+    min-block-size: auto;
+  }
+}
+
+@media (max-width: 992px) {
+  .ASChatsShell,
+  .ASChatsCardsGrid,
+  .ASChatsStatusRow {
+    grid-template-columns: 1fr;
+  }
+
+  .ASChatsSidebar,
+  .ASChatsStage,
+  .ASChatsDetails {
+    min-block-size: auto;
+  }
+
+  .ASChatsSidebar {
+    max-block-size: 520px;
+  }
+
+  .ASChatsMessages {
+    min-block-size: 420px;
+  }
+}
