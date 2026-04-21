@@ -1,0 +1,239 @@
+<section class="ASSection">
+  <header class="mb-3">
+    <h2>Pagination Collection</h2>
+    <p class="text-muted">Comprehensive pagination styles based on our custom palette.</p>
+  </header>
+
+  <div class="ASPaginationGrid">
+    <!-- Basic -->
+    <section class="ASPaginationBlock">
+      <h3>Basic Pagination</h3>
+      <p>Standard numbered pagination with clean spacing and active state.</p>
+
+      <nav class="ASPaginationDemo" aria-label="Basic pagination">
+        <ul class="ASPagination" data-as-pagination data-total="8" data-current="3">
+          <li>
+            <button class="ASPageButton ASPageButton--nav" type="button" data-page-action="prev" aria-label="Previous page">
+              <span>‹</span>
+            </button>
+          </li>
+
+          <li><button class="ASPageButton" type="button" data-page="1">1</button></li>
+          <li><button class="ASPageButton" type="button" data-page="2">2</button></li>
+          <li><button class="ASPageButton is-active" type="button" data-page="3" aria-current="page">3</button></li>
+          <li><button class="ASPageButton" type="button" data-page="4">4</button></li>
+          <li><button class="ASPageButton" type="button" data-page="5">5</button></li>
+
+          <li>
+            <button class="ASPageButton ASPageButton--nav" type="button" data-page-action="next" aria-label="Next page">
+              <span>›</span>
+            </button>
+          </li>
+        </ul>
+      </nav>
+    </section>
+
+    <!-- Soft -->
+    <section class="ASPaginationBlock">
+      <h3>Soft Pagination</h3>
+      <p>Light surface style with elegant hover and softer current page highlight.</p>
+
+      <nav class="ASPaginationDemo" aria-label="Soft pagination">
+        <ul class="ASPagination ASPagination--soft" data-as-pagination data-total="6" data-current="2">
+          <li>
+            <button class="ASPageButton ASPageButton--nav" type="button" data-page-action="prev" aria-label="Previous page">
+              <span>‹</span>
+            </button>
+          </li>
+          <li><button class="ASPageButton" type="button" data-page="1">1</button></li>
+          <li><button class="ASPageButton is-active" type="button" data-page="2" aria-current="page">2</button></li>
+          <li><button class="ASPageButton" type="button" data-page="3">3</button></li>
+          <li><button class="ASPageButton" type="button" data-page="4">4</button></li>
+          <li><button class="ASPageButton" type="button" data-page="5">5</button></li>
+          <li>
+            <button class="ASPageButton ASPageButton--nav" type="button" data-page-action="next" aria-label="Next page">
+              <span>›</span>
+            </button>
+          </li>
+        </ul>
+      </nav>
+    </section>
+
+    <!-- Outline -->
+    <section class="ASPaginationBlock">
+      <h3>Outline Pagination</h3>
+      <p>Bordered pagination that fits tables, lists and admin interfaces.</p>
+
+      <nav class="ASPaginationDemo" aria-label="Outline pagination">
+        <ul class="ASPagination ASPagination--outline" data-as-pagination data-total="9" data-current="5">
+          <li>
+            <button class="ASPageButton ASPageButton--nav" type="button" data-page-action="prev" aria-label="Previous page">
+              Prev
+            </button>
+          </li>
+          <li><button class="ASPageButton" type="button" data-page="3">3</button></li>
+          <li><button class="ASPageButton" type="button" data-page="4">4</button></li>
+          <li><button class="ASPageButton is-active" type="button" data-page="5" aria-current="page">5</button></li>
+          <li><button class="ASPageButton" type="button" data-page="6">6</button></li>
+          <li><button class="ASPageButton" type="button" data-page="7">7</button></li>
+          <li>
+            <button class="ASPageButton ASPageButton--nav" type="button" data-page-action="next" aria-label="Next page">
+              Next
+            </button>
+          </li>
+        </ul>
+      </nav>
+    </section>
+
+    <!-- Rounded -->
+    <section class="ASPaginationBlock">
+      <h3>Rounded Pagination</h3>
+      <p>Pill-based style for a more polished and modern visual direction.</p>
+
+      <nav class="ASPaginationDemo" aria-label="Rounded pagination">
+        <ul class="ASPagination ASPagination--pill" data-as-pagination data-total="7" data-current="4">
+          <li>
+            <button class="ASPageButton ASPageButton--nav" type="button" data-page-action="prev" aria-label="Previous page">
+              <span>‹</span>
+            </button>
+          </li>
+          <li><button class="ASPageButton" type="button" data-page="1">1</button></li>
+          <li><button class="ASPageButton" type="button" data-page="2">2</button></li>
+          <li><button class="ASPageButton" type="button" data-page="3">3</button></li>
+          <li><button class="ASPageButton is-active" type="button" data-page="4" aria-current="page">4</button></li>
+          <li><button class="ASPageButton" type="button" data-page="5">5</button></li>
+          <li>
+            <button class="ASPageButton ASPageButton--nav" type="button" data-page-action="next" aria-label="Next page">
+              <span>›</span>
+            </button>
+          </li>
+        </ul>
+      </nav>
+    </section>
+
+    <!-- Compact -->
+    <section class="ASPaginationBlock">
+      <h3>Compact Pagination</h3>
+      <p>Small-size pagination for cards, tables and compact layouts.</p>
+
+      <nav class="ASPaginationDemo" aria-label="Compact pagination">
+        <ul class="ASPagination ASPagination--sm" data-as-pagination data-total="5" data-current="1">
+          <li>
+            <button class="ASPageButton ASPageButton--nav is-disabled" type="button" data-page-action="prev" aria-label="Previous page" disabled>
+              ‹
+            </button>
+          </li>
+          <li><button class="ASPageButton is-active" type="button" data-page="1" aria-current="page">1</button></li>
+          <li><button class="ASPageButton" type="button" data-page="2">2</button></li>
+          <li><button class="ASPageButton" type="button" data-page="3">3</button></li>
+          <li>
+            <button class="ASPageButton ASPageButton--nav" type="button" data-page-action="next" aria-label="Next page">
+              ›
+            </button>
+          </li>
+        </ul>
+      </nav>
+    </section>
+
+    <!-- Large -->
+    <section class="ASPaginationBlock">
+      <h3>Large Pagination</h3>
+      <p>Generous spacing and larger touch targets for stronger presence.</p>
+
+      <nav class="ASPaginationDemo" aria-label="Large pagination">
+        <ul class="ASPagination ASPagination--lg" data-as-pagination data-total="10" data-current="6">
+          <li>
+            <button class="ASPageButton ASPageButton--nav" type="button" data-page-action="prev" aria-label="Previous page">
+              Previous
+            </button>
+          </li>
+          <li><button class="ASPageButton" type="button" data-page="4">4</button></li>
+          <li><button class="ASPageButton" type="button" data-page="5">5</button></li>
+          <li><button class="ASPageButton is-active" type="button" data-page="6" aria-current="page">6</button></li>
+          <li><button class="ASPageButton" type="button" data-page="7">7</button></li>
+          <li><button class="ASPageButton" type="button" data-page="8">8</button></li>
+          <li>
+            <button class="ASPageButton ASPageButton--nav" type="button" data-page-action="next" aria-label="Next page">
+              Next
+            </button>
+          </li>
+        </ul>
+      </nav>
+    </section>
+
+    <!-- Status -->
+    <section class="ASPaginationBlock">
+      <h3>Status Pagination</h3>
+      <p>Pagination paired with content counters and current-page summary.</p>
+
+      <div class="ASPaginationMeta">
+        <div class="ASPaginationMeta__item">
+          <span class="ASPaginationMeta__label">Showing</span>
+          <strong>21–30</strong>
+        </div>
+        <div class="ASPaginationMeta__item">
+          <span class="ASPaginationMeta__label">From</span>
+          <strong>96 Items</strong>
+        </div>
+      </div>
+
+      <nav class="ASPaginationDemo" aria-label="Status pagination">
+        <ul class="ASPagination ASPagination--status" data-as-pagination data-total="10" data-current="3">
+          <li>
+            <button class="ASPageButton ASPageButton--nav" type="button" data-page-action="prev" aria-label="Previous page">
+              ‹
+            </button>
+          </li>
+          <li><button class="ASPageButton" type="button" data-page="1">1</button></li>
+          <li><button class="ASPageButton" type="button" data-page="2">2</button></li>
+          <li><button class="ASPageButton is-active" type="button" data-page="3" aria-current="page">3</button></li>
+          <li><button class="ASPageButton" type="button" data-page="4">4</button></li>
+          <li><button class="ASPageButton" type="button" data-page="5">5</button></li>
+          <li>
+            <button class="ASPageButton ASPageButton--nav" type="button" data-page-action="next" aria-label="Next page">
+              ›
+            </button>
+          </li>
+        </ul>
+      </nav>
+    </section>
+
+    <!-- Creative Step -->
+    <section class="ASPaginationBlock">
+      <h3>Step Pagination</h3>
+      <p>Creative segmented style for processes, forms and guided steps.</p>
+
+      <nav class="ASPaginationDemo" aria-label="Step pagination">
+        <ul class="ASPagination ASPagination--steps" data-as-pagination data-total="4" data-current="2">
+          <li><button class="ASPageButton" type="button" data-page="1">Start</button></li>
+          <li><button class="ASPageButton is-active" type="button" data-page="2" aria-current="page">Review</button></li>
+          <li><button class="ASPageButton" type="button" data-page="3">Approve</button></li>
+          <li><button class="ASPageButton" type="button" data-page="4">Done</button></li>
+        </ul>
+      </nav>
+    </section>
+
+    <!-- Minimal -->
+    <section class="ASPaginationBlock">
+      <h3>Minimal Pagination</h3>
+      <p>Very clean navigation with current page readout for elegant layouts.</p>
+
+      <div class="ASPaginationMinimal" data-as-pagination data-total="12" data-current="7">
+        <button class="ASPageMinimalBtn" type="button" data-page-action="prev" aria-label="Previous page">
+          ‹
+        </button>
+
+        <div class="ASPaginationMinimal__text">
+          <span class="ASPaginationMinimal__label">Page</span>
+          <strong class="ASPaginationMinimal__current" data-page-current>7</strong>
+          <span class="ASPaginationMinimal__divider">/</span>
+          <span class="ASPaginationMinimal__total" data-page-total>12</span>
+        </div>
+
+        <button class="ASPageMinimalBtn" type="button" data-page-action="next" aria-label="Next page">
+          ›
+        </button>
+      </div>
+    </section>
+  </div>
+</section>
