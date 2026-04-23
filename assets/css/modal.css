@@ -1,0 +1,482 @@
+/**
+ * File: modal.css
+ * Purpose: AS Modal collection
+ * Notes:
+ * - Designed to match AS buttons/cards/layout structure
+ * - Uses Bootstrap modal foundation with AS visual language
+ */
+
+.ASModalGrid {
+  display: grid;
+  gap: 1.25rem;
+}
+
+.ASModalActionsRow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .75rem;
+}
+
+.ASModal .modal-dialog {
+  padding-inline: .75rem;
+}
+
+.ASModalDialog {
+  --as-modal-shadow:
+    0 24px 70px rgba(0, 0, 0, .14),
+    0 10px 30px rgba(0, 0, 0, .08);
+}
+
+.ASModal .modal-content {
+  border: 0;
+  background: transparent;
+  box-shadow: none;
+}
+
+.ASModalContent {
+  position: relative;
+  overflow: hidden;
+  border-radius: 24px;
+  background:
+    linear-gradient(180deg, rgba(255,255,255,.98), rgba(255,255,255,.96));
+  border: 1px solid rgba(0, 123, 105, .08);
+  box-shadow: var(--as-modal-shadow);
+  backdrop-filter: blur(12px);
+}
+
+.ASModalContent::before {
+  content: "";
+  position: absolute;
+  inset-inline: 0;
+  inset-block-start: 0;
+  block-size: 4px;
+  background: linear-gradient(
+    90deg,
+    var(--ASPrimary, #007b69),
+    var(--ASAccent, #ec7f21),
+    var(--ASSecondary, #a37956)
+  );
+  opacity: .95;
+}
+
+.ASModalGlow {
+  position: absolute;
+  inset-inline-end: -70px;
+  inset-block-start: -70px;
+  inline-size: 180px;
+  block-size: 180px;
+  border-radius: 50%;
+  background:
+    radial-gradient(circle, rgba(0,123,105,.16) 0%, rgba(0,123,105,0) 70%);
+  pointer-events: none;
+}
+
+.ASModalHeader,
+.ASModalFooter {
+  position: relative;
+  z-index: 1;
+  border: 0;
+  background: transparent;
+  padding: 1.1rem 1.25rem;
+}
+
+.ASModalHeader {
+  display: flex;
+  align-items: start;
+  justify-content: space-between;
+  gap: 1rem;
+  padding-block-end: .6rem;
+}
+
+.ASModalFooter {
+  display: flex;
+  align-items: center;
+  gap: .75rem;
+  justify-content: flex-end;
+  padding-block-start: .4rem;
+}
+
+.ASModalFooter--center {
+  justify-content: center;
+}
+
+.ASModalBody {
+  position: relative;
+  z-index: 1;
+  padding: .35rem 1.25rem 1.25rem;
+}
+
+.ASModalBody--center {
+  text-align: center;
+  padding-block-start: 1rem;
+}
+
+.ASModalHeadGroup {
+  display: flex;
+  flex-direction: column;
+  gap: .25rem;
+}
+
+.ASModalEyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: .35rem;
+  font-size: .78rem;
+  font-weight: 700;
+  color: var(--ASPrimary, #007b69);
+  letter-spacing: .04em;
+  text-transform: uppercase;
+}
+
+.ASModalTitle {
+  margin: 0;
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: var(--ASText, #1f2937);
+}
+
+.ASModalBodyTitle {
+  margin: .35rem 0 .5rem;
+  font-size: 1.2rem;
+  font-weight: 800;
+  color: var(--ASText, #1f2937);
+}
+
+.ASModalBodyText {
+  margin: 0;
+  color: var(--ASSubText, #667085);
+  line-height: 1.9;
+}
+
+.ASModalClose {
+  flex: 0 0 auto;
+  border-radius: 12px;
+  opacity: 1;
+  padding: .6rem;
+  box-shadow: none !important;
+  filter: none;
+  background-color: rgba(0, 123, 105, .06);
+}
+
+.ASModalClose:hover {
+  background-color: rgba(0, 123, 105, .12);
+  transform: translateY(-1px);
+}
+
+.ASModalHeroIcon {
+  inline-size: 84px;
+  block-size: 84px;
+  margin-inline: auto;
+  margin-block-end: 1rem;
+  display: grid;
+  place-items: center;
+  border-radius: 24px;
+  font-size: 2rem;
+  box-shadow: inset 0 0 0 1px rgba(255,255,255,.35);
+}
+
+.ASModalHeroIcon--primary {
+  color: var(--ASPrimary, #007b69);
+  background: linear-gradient(180deg, rgba(0,123,105,.14), rgba(0,123,105,.08));
+}
+
+.ASModalHeroIcon--success {
+  color: var(--ASSuccess, #16a34a);
+  background: linear-gradient(180deg, rgba(22,163,74,.14), rgba(22,163,74,.08));
+}
+
+.ASModalHeroIcon--info {
+  color: var(--ASInfo, #0ea5e9);
+  background: linear-gradient(180deg, rgba(14,165,233,.14), rgba(14,165,233,.08));
+}
+
+.ASModalHeroIcon--warning {
+  color: var(--ASAlert, #ec7f21);
+  background: linear-gradient(180deg, rgba(236,127,33,.16), rgba(236,127,33,.09));
+}
+
+.ASModalHeroIcon--danger {
+  color: var(--ASError, #dc2626);
+  background: linear-gradient(180deg, rgba(220,38,38,.14), rgba(220,38,38,.08));
+}
+
+.ASModalMeta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .5rem;
+  margin-top: 1rem;
+}
+
+.ASModalChip {
+  display: inline-flex;
+  align-items: center;
+  border-radius: 999px;
+  padding: .4rem .75rem;
+  font-size: .82rem;
+  font-weight: 700;
+  color: var(--ASPrimary, #007b69);
+  background: rgba(0, 123, 105, .08);
+}
+
+.ASModalPanel {
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+  padding: 1rem;
+  border-radius: 18px;
+  background: linear-gradient(180deg, rgba(0,123,105,.05), rgba(0,123,105,.02));
+  border: 1px solid rgba(0, 123, 105, .08);
+}
+
+.ASModalPanel__icon {
+  inline-size: 54px;
+  block-size: 54px;
+  flex: 0 0 54px;
+  display: grid;
+  place-items: center;
+  border-radius: 16px;
+  font-size: 1.2rem;
+}
+
+.ASModalPanel__icon--success {
+  background: rgba(22,163,74,.12);
+  color: var(--ASSuccess, #16a34a);
+}
+
+.ASModalSplit {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.ASModalSplitCard {
+  padding: 1rem;
+  border-radius: 18px;
+  border: 1px solid var(--ASBorder, #e5e7eb);
+  background: #fff;
+  box-shadow: 0 8px 20px rgba(15, 23, 42, .04);
+}
+
+.ASModalSplitCard strong {
+  display: block;
+  margin-bottom: .35rem;
+  color: var(--ASText, #1f2937);
+}
+
+.ASModalSplitCard p {
+  margin: 0;
+  color: var(--ASSubText, #667085);
+}
+
+.ASModalSplitLabel {
+  display: inline-block;
+  margin-bottom: .45rem;
+  font-size: .78rem;
+  font-weight: 700;
+  color: var(--ASPrimary, #007b69);
+}
+
+.ASModalScrollContent {
+  display: grid;
+  gap: .9rem;
+  margin-top: 1rem;
+  padding-inline-end: .25rem;
+}
+
+.ASModalScrollContent p {
+  margin: 0;
+  padding: .85rem 1rem;
+  border-radius: 14px;
+  background: rgba(0,123,105,.04);
+  border: 1px solid rgba(0,123,105,.07);
+  color: var(--ASSubText, #667085);
+}
+
+.ASModalStage {
+  min-block-size: 58vh;
+  display: grid;
+  place-content: center;
+  text-align: center;
+  padding: 2rem;
+  border-radius: 28px;
+  background:
+    radial-gradient(circle at top, rgba(0,123,105,.10), transparent 42%),
+    linear-gradient(180deg, rgba(255,255,255,.96), rgba(249,239,233,.72));
+  border: 1px solid rgba(0,123,105,.08);
+}
+
+.ASModalStage__badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-inline: auto;
+  margin-bottom: 1rem;
+  padding: .5rem .9rem;
+  border-radius: 999px;
+  background: rgba(0,123,105,.10);
+  color: var(--ASPrimary, #007b69);
+  font-weight: 700;
+}
+
+.ASModalStage__title {
+  margin: 0 0 .75rem;
+  font-size: clamp(1.5rem, 2vw, 2.2rem);
+  font-weight: 800;
+  color: var(--ASText, #1f2937);
+}
+
+.ASModalStage__text {
+  margin: 0;
+  max-inline-size: 720px;
+  color: var(--ASSubText, #667085);
+  line-height: 1.9;
+}
+
+.ASModalForm {
+  display: grid;
+  gap: 1rem;
+}
+
+.ASFieldLabel {
+  display: inline-block;
+  margin-bottom: .45rem;
+  font-weight: 700;
+  color: var(--ASText, #1f2937);
+}
+
+/* state skins */
+.ASModalContent--success {
+  background:
+    linear-gradient(180deg, rgba(248,255,251,.98), rgba(245,255,249,.97));
+}
+
+.ASModalContent--info {
+  background:
+    linear-gradient(180deg, rgba(248,252,255,.98), rgba(244,249,255,.97));
+}
+
+.ASModalContent--warning {
+  background:
+    linear-gradient(180deg, rgba(255,251,245,.98), rgba(255,248,240,.97));
+}
+
+.ASModalContent--danger,
+.ASModalContent--dangerSoft {
+  background:
+    linear-gradient(180deg, rgba(255,249,249,.98), rgba(255,245,245,.97));
+}
+
+/* Backdrop */
+.modal-backdrop.show {
+  opacity: .58;
+  backdrop-filter: blur(4px);
+}
+
+/* =========================================
+   ANIMATION EFFECTS
+========================================= */
+.ASModal--fx .modal-dialog {
+  transition: transform .45s cubic-bezier(.22, 1, .36, 1), opacity .35s ease;
+  transform-origin: center;
+}
+
+.ASModalEffect--scale .modal-dialog {
+  transform: scale(.82);
+}
+.ASModal.show.ASModalEffect--scale .modal-dialog {
+  transform: scale(1);
+}
+
+.ASModalEffect--slideRight .modal-dialog {
+  transform: translateX(72px);
+}
+.ASModal.show.ASModalEffect--slideRight .modal-dialog {
+  transform: translateX(0);
+}
+
+.ASModalEffect--slideBottom .modal-dialog {
+  transform: translateY(72px);
+}
+.ASModal.show.ASModalEffect--slideBottom .modal-dialog {
+  transform: translateY(0);
+}
+
+.ASModalEffect--newspaper .modal-dialog {
+  transform: scale(.55) rotate(-10deg);
+  filter: blur(3px);
+}
+.ASModal.show.ASModalEffect--newspaper .modal-dialog {
+  transform: scale(1) rotate(0);
+  filter: blur(0);
+}
+
+.ASModalEffect--fall .modal-dialog {
+  transform: translateY(-60px) rotateX(18deg);
+  transform-origin: top center;
+}
+.ASModal.show.ASModalEffect--fall .modal-dialog {
+  transform: translateY(0) rotateX(0);
+}
+
+.ASModalEffect--flipHorizontal .modal-dialog {
+  transform: perspective(1200px) rotateY(18deg) scale(.95);
+}
+.ASModal.show.ASModalEffect--flipHorizontal .modal-dialog {
+  transform: perspective(1200px) rotateY(0) scale(1);
+}
+
+.ASModalEffect--flipVertical .modal-dialog {
+  transform: perspective(1200px) rotateX(-16deg) scale(.95);
+}
+.ASModal.show.ASModalEffect--flipVertical .modal-dialog {
+  transform: perspective(1200px) rotateX(0) scale(1);
+}
+
+.ASModalEffect--superScale .modal-dialog {
+  transform: scale(1.18);
+  opacity: 0;
+}
+.ASModal.show.ASModalEffect--superScale .modal-dialog {
+  transform: scale(1);
+  opacity: 1;
+}
+
+.ASModalEffect--sign .modal-dialog {
+  transform: perspective(1200px) rotateX(-28deg);
+  transform-origin: top center;
+}
+.ASModal.show.ASModalEffect--sign .modal-dialog {
+  transform: perspective(1200px) rotateX(0);
+}
+
+.ASModalEffect--rotateBottom .modal-dialog {
+  transform: perspective(1200px) rotateX(15deg) translateY(40px);
+  transform-origin: bottom center;
+}
+.ASModal.show.ASModalEffect--rotateBottom .modal-dialog {
+  transform: perspective(1200px) rotateX(0) translateY(0);
+}
+
+.ASModalEffect--rotateLeft .modal-dialog {
+  transform: perspective(1200px) rotateY(-16deg) translateX(-30px);
+  transform-origin: left center;
+}
+.ASModal.show.ASModalEffect--rotateLeft .modal-dialog {
+  transform: perspective(1200px) rotateY(0) translateX(0);
+}
+
+@media (max-width: 768px) {
+  .ASModalSplit {
+    grid-template-columns: 1fr;
+  }
+
+  .ASModalHeader,
+  .ASModalBody,
+  .ASModalFooter {
+    padding-inline: 1rem;
+  }
+
+  .ASModalActionsRow {
+    gap: .6rem;
+  }
+}
