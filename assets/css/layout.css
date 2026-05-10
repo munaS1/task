@@ -276,3 +276,24 @@ body.isActive .ASLayout {
     padding-inline-end: calc(3rem + env(safe-area-inset-right));
   }
 }
+.ASNav {
+  display: block;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.ASSidebarSceneDivider {
+  inline-size: 100%;
+  block-size: 210px;
+  overflow: hidden;
+  margin-block-start: 1rem;
+  background: #fff;
+}
+
+.ASSidebarSceneDivider img {
+  display: block;
+  inline-size: 100%;
+  block-size: 100%;
+  object-fit: cover;
+  object-position: center bottom;
+}
